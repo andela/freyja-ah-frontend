@@ -5,4 +5,8 @@ export default {
     user: {},
     errors: {},
   },
+  profile: {
+    data: {},
+    error: null,
+  },
 };
