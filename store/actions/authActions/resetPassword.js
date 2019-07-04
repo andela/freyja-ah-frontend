@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 import axios from 'axios';
 
 export const loading = () => ({
@@ -14,22 +15,16 @@ export const passwordResetError = data => ({
   payload: data,
 });
 
-export const ResetPassword = user => async (dispatch) => {
-  try {
-    dispatch(loading());
+export const ResetPassword = user => (dispatch) => {
+  dispatch(loading());
 
-    const resetPassword = await axios('https://freyja-ah-backend.herokuapp.com/api/users/reset', {
-      method: 'POST',
-      data: { email: user },
-      headers: {
-        accept: 'application/json',
-        'Content-type': 'application/json; charset=UTF-8',
-
-      },
-    });
-
-    dispatch(passwordResetSuccess(resetPassword.data.message));
-  } catch (error) {
-    dispatch(passwordResetError(error.response.data.message));
-  }
+  axios('https://freyja-ah-backend.herokuapp.com/api/users/reset', {
+    method: 'POST',
+    data: { email: user },
+    headers: {
+      accept: 'application/json',
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  }).then(res => dispatch(passwordResetSuccess(res.data.message)))
+    .catch(err => dispatch(passwordResetError(err.response.data.message)));
 };
