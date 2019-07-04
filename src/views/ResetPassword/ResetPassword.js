@@ -1,6 +1,9 @@
 import React from 'react';
-import { ResetPasswordCard } from '../../components/ResetPassword';
+import ResetPasswordCard from '../../components/ResetPassword/ResetPasswordCard';
 
-const ResetPassword = () => <ResetPasswordCard />;
+const ResetPassword = () => (
+  <ResetPasswordCard />
+);
+
 
 export default ResetPassword;
