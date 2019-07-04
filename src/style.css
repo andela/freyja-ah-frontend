@@ -1,4 +1,23 @@
+<<<<<<< HEAD
 h2 {
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
+=======
+html,
+body {
+	height: 100%;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap');
+
+body {
+	font-family: 'Roboto', 'Roboto Slab', Verdana, Geneva, Tahoma, sans-serif;
+	background-color: #f4f4f4;
+	line-height: 1.5;
+>>>>>>> set up resetPassword component
 }

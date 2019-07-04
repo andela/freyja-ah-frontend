@@ -6,6 +6,8 @@ import store from '../../store/index';
 import NotFound from '../views/NotFound';
 import signUpPage from '../views/Signup/SignUp';
 import Modules from '../views/Modules/modules';
+import ResetPassword from '../views/ResetPassword/ResetPassword';
+
 
 const Routes = () => (
   <Provider store={store}>
