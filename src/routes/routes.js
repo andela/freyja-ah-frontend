@@ -4,7 +4,8 @@ import Home from '../views/Home/Home';
 import Login from '../views/Login';
 import Profile from '../views/Profile/Profile';
 import NotFound from '../views/NotFound';
-import ResetPassword from '../views/ResetPassword';
+import ResetPassword from '../views/ResetPassword/ResetPassword';
+
 
 const Routes = () => (
   <Switch>

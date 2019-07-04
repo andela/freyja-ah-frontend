@@ -1,0 +1,1 @@
+export { ResetPasswordCard } from './ResetPasswordCard';
