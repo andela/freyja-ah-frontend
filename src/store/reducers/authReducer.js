@@ -1,4 +1,8 @@
 import {
+<<<<<<< HEAD
+=======
+  SIGNUP_ERROR,
+>>>>>>> Created Login component with its action creators
   LOGIN_ERROR,
   INIT_AUTH_REQUEST,
   END_AUTH_REQUEST,
@@ -32,6 +36,14 @@ export default (state = initialState, action) => {
         isAuthenticated: !isEmpty(action.payload),
         user: action.payload,
       };
+<<<<<<< HEAD
+=======
+    case SIGNUP_ERROR:
+      return {
+        ...state,
+        errors: action.payload,
+      };
+>>>>>>> Created Login component with its action creators
     case LOGIN_ERROR:
       return {
         ...state,
