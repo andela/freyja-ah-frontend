@@ -18,7 +18,7 @@ export const passwordResetError = data => ({
 export const ResetPassword = user => (dispatch) => {
   dispatch(loading());
 
-  axios('https://freyja-ah-backend.herokuapp.com/api/users/reset', {
+  return axios('https://freyja-ah-backend.herokuapp.com/api/users/reset', {
     method: 'POST',
     data: { email: user },
     headers: {

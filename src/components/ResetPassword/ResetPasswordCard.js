@@ -6,34 +6,30 @@ import {
   Card, Input, CardText, CardBody, CardTitle, CardSubtitle, Button, FormGroup,
 } from 'reactstrap';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import propTypes from 'prop-types';
 import './resetpassword.scss';
 import { ResetPassword } from '../../../store/actions/authActions/resetPassword';
-
 
 /**
  * @description
  * @param
  * @returns
  */
-class ResetPasswordCard extends PureComponent {
+export class ResetPasswordCard extends PureComponent {
   constructor(props) {
     super(props);
+    // this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
       email: '',
     };
   }
 
   handleEmail(e) {
-    e.preventDefault();
     const { value } = e.target;
     this.setState({ email: value });
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-
+  handleSubmit() {
     const { email } = this.state;
 
     // eslint-disable-next-line react/prop-types
@@ -51,8 +47,8 @@ class ResetPasswordCard extends PureComponent {
             </CardSubtitle>
             <CardTitle className="forgot"> Forgot Password? </CardTitle>
             <CardText>
-						Please enter your email address here and
-						we will send you information to change your password
+							Please enter your email address here and we will send you information to change your
+							password
             </CardText>
             <div className="error">{this.props.passwordResetError}</div>
             <div className="success">{this.props.passwordResetSuccess}</div>
@@ -60,9 +56,16 @@ class ResetPasswordCard extends PureComponent {
               <div className="icon">
                 <i className="far fa-envelope" />
               </div>
-              <Input placeholder="Email" className="input" id="email" onChange={e => this.handleEmail(e)} />
+              <Input
+                placeholder="Email"
+                className="input"
+                id="email"
+                onChange={e => this.handleEmail(e)}
+              />
             </FormGroup>
-            <Button className="buttons" onClick={e => this.handleSubmit(e)}>{this.props.loading === true ? 'Loading...' : 'Reset Password'}</Button>
+            <Button className="buttons" onClick={e => this.handleSubmit(e)}>
+              {this.props.loading === true ? 'Loading...' : 'Reset Password'}
+            </Button>
           </CardBody>
         </Card>
       </div>
@@ -81,6 +84,7 @@ const mapStateToProps = state => ({
 });
 
 ResetPasswordCard.propTypes = {
-  ResetPassword: propTypes.func.isRequired,
+  // eslint-disable-next-line react/require-default-props
+  ResetPassword: propTypes.func,
 };
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ResetPasswordCard));
+export default connect(mapStateToProps, mapDispatchToProps)(ResetPasswordCard);
