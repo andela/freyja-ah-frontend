@@ -1,0 +1,155 @@
+$base-color: #5F3518;
+$white: #fff;
+
+
+.landing-container {
+    height: 100vh;
+    position: relative;
+}
+.slide-container .carousel-inner .carousel-item img{
+    height: 52vh;
+    filter: brightness(50%);
+}
+
+
+.iconsHolder{
+    height: 120px;
+    background: $base-color;
+    z-index: 20;
+    width: 100%;
+    position: absolute;
+    top: 60%;
+}
+.desc-container{
+    position: absolute;
+    top: 75%;
+    z-index: 25;
+}
+
+.about-us, .howitworks, .testimonial{
+   
+    background: $white;
+    width: 100%;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+
+.hiw-content {
+    background: $base-color;
+    padding: 20px;
+    
+}
+.hiw-card-content.card {
+    background: $base-color;
+}
+
+
+.hiw .hiw-card{
+    border: none;   
+}
+.hiw-card .card-body{
+    color: $white;
+    
+}
+.hiw-card .card-body .card-title{
+    text-align: center;
+}
+.hiw-card .card-body .card-title h1{
+    font-size: 40px;
+    text-align: left;
+}
+.hiw .hiw-card-img,.hiw .test-card-img{
+    border-radius: 0;
+    height: 200px;
+}
+
+.hiw-card .hiw-button{
+    background: $base-color;
+    border: 2px solid $white
+}
+.hwu{
+    width: 70%;
+    position: absolute;
+    left: 15%;
+    
+    top: 15%;
+    color: $white;
+}
+.hwu h2{
+    font-size: 20px;
+}
+.hwu h4{
+    font-size: 15px;
+}
+a .absolute-button{
+    position: absolute;
+    left: 15%;
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    top:50%;
+    z-index: 35;
+    background: $base-color;
+    border: 2px solid $white
+}
+
+.card-body-content.card-body{
+    padding: 15px;
+}
+
+a .absolute-button:hover{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.90);
+    background: #5F3518;
+}
+
+@media screen and (min-width: 768px) {
+    .about-us, .howitworks, .testimonial{
+        display: flex;
+    }
+    .hiw {
+        flex: 1;
+       
+    }
+    .iconsHolder{
+        height: 300px;
+        top: 82%;
+    }
+    .hiw-card .card-body{
+        padding: 0;
+        
+    }
+    .about-us, .howitworks, .testimonial{
+   
+        background: $white;
+        width: 70%;
+        padding: 40px;
+        position: relative;
+        left: 15%;
+    }
+    .hiw .test-card-img{
+        border-radius: 50%;
+        height: 250px;
+        width: 50%;
+        margin: 0 auto;
+    }
+    .hiw .hiw-card-img{
+        border-radius: 0;
+        height: 324px;
+    }
+    .hwu{
+        width: 40%;
+    }
+    .slide-container .carousel-inner .carousel-item img{
+        height: 90vh;
+        
+    }
+    a .absolute-button{
+        top:70%;
+    }
+    .desc-container{
+        top: 95%;
+    }
+    
+}

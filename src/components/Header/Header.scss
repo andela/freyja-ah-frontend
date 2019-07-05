@@ -1,0 +1,26 @@
+
+.headerNav .nav{
+    background: #000;
+    height: 80px;
+}
+.link{
+    margin: 0 10px;
+    padding: 5px 10px;
+    border: 2px solid #f1771f;
+    border-radius: 5px;
+    color: #fff;
+    
+}
+.logo{
+    color: #fff;
+}
+.logo:hover{
+    text-decoration: none;
+    color: #fff;
+}
+.link:hover{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.90);
+    background: #5F3518;
+}
+
