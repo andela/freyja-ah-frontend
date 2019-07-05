@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component should render without errors 1`] = `
+<footer
+  className="resp"
+>
+  <ul
+    className="footer-nav navvv"
+  >
+    <li>
+      <div>
+        How it works     |    
+      </div>
+    </li>
+    <li>
+      <div>
+        Need help?     |    
+      </div>
+    </li>
+    <li>
+      <div>
+        Create an account
+      </div>
+    </li>
+  </ul>
+  <div
+    className="copyright"
+  >
+    © cslc 2019
+  </div>
+</footer>
+`;

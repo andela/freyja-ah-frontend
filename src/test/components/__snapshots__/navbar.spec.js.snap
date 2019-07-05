@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar component should render without errors 1`] = `
+<div>
+  <Navbar
+    expand="md"
+    light={true}
+    tag="nav"
+  >
+    <NavbarBrand
+      href="/"
+      tag="a"
+    >
+      <img
+        alt="Logo"
+        className="logo"
+        src=""
+      />
+    </NavbarBrand>
+    <NavbarToggler
+      onClick={[Function]}
+      tag="button"
+      type="button"
+    />
+    <Collapse
+      appear={false}
+      enter={true}
+      exit={true}
+      in={false}
+      isOpen={false}
+      mountOnEnter={false}
+      navbar={true}
+      onEnter={[Function]}
+      onEntered={[Function]}
+      onEntering={[Function]}
+      onExit={[Function]}
+      onExited={[Function]}
+      onExiting={[Function]}
+      tag="div"
+      timeout={350}
+      unmountOnExit={false}
+    >
+      <Nav
+        className="ml-auto"
+        navbar={true}
+        tag="ul"
+        vertical={false}
+      >
+        <NavItem
+          tag="li"
+        >
+          <NavLink
+            className="navc"
+            href="/"
+            tag="a"
+          >
+            Home
+          </NavLink>
+        </NavItem>
+        <NavItem
+          tag="li"
+        >
+          <NavLink
+            className="navc"
+            href="/login"
+            tag="a"
+          >
+            Sign In
+          </NavLink>
+        </NavItem>
+      </Nav>
+    </Collapse>
+  </Navbar>
+</div>
+`;

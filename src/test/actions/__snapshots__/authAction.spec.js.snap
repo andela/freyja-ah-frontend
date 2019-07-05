@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`authAction should decode user token when registerUser is successful 1`] = `
+Array [
+  Object {
+    "payload": Object {
+      "email": "princess@gmail.com",
+      "exp": 1563133457,
+      "iat": 1562528657,
+      "userId": 24,
+      "userName": "gr",
+    },
+    "type": "SET_CURRENT_USER",
+  },
+  Object {
+    "payload": [TypeError: Cannot read property 'push' of undefined],
+    "type": "GET_ERRORS",
+  },
+]
+`;
+
+exports[`authAction should decode user token when registerUser is successful 2`] = `
+Array [
+  Object {
+    "payload": Object {
+      "email": "princess@gmail.com",
+      "exp": 1563133457,
+      "iat": 1562528657,
+      "userId": 24,
+      "userName": "gr",
+    },
+    "type": "SET_CURRENT_USER",
+  },
+  Object {
+    "payload": [TypeError: Cannot read property 'push' of undefined],
+    "type": "GET_ERRORS",
+  },
+  Object {
+    "payload": Object {
+      "email": "princess@gmail.com",
+      "exp": 1563133457,
+      "iat": 1562528657,
+      "userId": 24,
+      "userName": "gr",
+    },
+    "type": "SET_CURRENT_USER",
+  },
+]
+`;

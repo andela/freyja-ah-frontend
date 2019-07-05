@@ -1,0 +1,92 @@
+html {
+  color: #6d6666;
+}
+.sec-signup {
+  width: 100%;
+  background-image: linear-gradient(rgba(5, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('../../assets/images/signupbg.jpg');
+  background-size: cover;
+  margin: auto;
+}
+.container {
+  width: 1200px;
+  padding: 0 15px;
+  margin: auto;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+.signup-box {
+  width: 400px;
+  background: #ffffff;
+  border-radius: 5px;
+  margin: auto;
+  z-index: 1000;
+  text-align: center;
+  padding-top: 2%;
+
+  @media screen and (max-width: 420px) {
+    width: 300px;
+  }
+}
+
+.navbar {
+  background-color: #5f3518 !important;
+}
+.btnSubmit,
+.firstname,
+.lastname,
+.email,
+.password,
+.cpassword {
+  border: 0.5px solid #707070;
+  width: 90%;
+  padding: 6%;
+  border-radius: 5px;
+}
+.boxx-tex {
+  margin-bottom: 3%;
+}
+.inf {
+  margin-bottom: 1.5rem;
+}
+.btnSubmit,
+.input {
+  margin: auto;
+}
+.btnSubmit {
+  background-color: #f2994a;
+  border: 0.5px solid #f2994a;
+  padding: 3.5%;
+}
+.form-control.is-invalid {
+  background-image: none !important;
+}
+.btnSubmit:hover,
+.btnSubmit:active,
+.btnSubmit:focus {
+  background-color: #f2994a;
+  border: 0.5px solid #f2994a;
+}
+.btnSubmit:hover {
+  opacity: 0.6;
+}
+.logo {
+  margin-top: 2%;
+}
+.feedbackk,
+.feedback {
+  color: red;
+  padding: 0.3em 0 0 0.4em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  text-align: left;
+  margin-left: 5%;
+}
+.feedbackk {
+  text-align: center;
+  margin-bottom: 2%;
+}
+.headsi {
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
