@@ -1,5 +1,15 @@
 h2 {
+  color: #212529;
   font-family: 'Roboto', sans-serif;
 	font-size: 18px;
-	color: #212529;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
 }
