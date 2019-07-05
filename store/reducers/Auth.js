@@ -1,4 +1,4 @@
-const initialState = {
+export const initialState = {
   passwordResetError: '',
   passwordResetSuccess: '',
   loading: 'false',
