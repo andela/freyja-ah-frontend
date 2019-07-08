@@ -29,8 +29,8 @@ export const ResetPassword = user => async (dispatch) => {
       },
     });
 
-    console.log(resetPassword);
-    // dispatch(passwordResetSuccess(resetPassword.data.message));
+    // console.log(resetPassword);
+    dispatch(passwordResetSuccess(resetPassword.data.message));
   } catch (error) {
     dispatch(passwordResetError(error.response.data.message));
   }
