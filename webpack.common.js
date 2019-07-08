@@ -11,7 +11,7 @@ const miniCssPlugin = new MiniCssExtractPlugin({
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, './src/dist'),
+    path: path.resolve(__dirname, './dist'),
     filename: '[name].bundle.js',
     publicPath: '/',
   },

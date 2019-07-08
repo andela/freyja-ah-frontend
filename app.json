@@ -1,21 +1,17 @@
 {
-  "addons": [
-
-  ],
-  "buildpacks": [
-    {
-      "url": "heroku/nodejs"
-    }
-  ],
-  "env": {
-  },
+  "name": "freyja-ah-frontend",
+  "scripts": {},
+  "env": {},
   "formation": {
     "web": {
       "quantity": 1
     }
   },
-  "name": "freyja-ah-frontend",
-  "scripts": {
-  },
+  "addons": [],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
   "stack": "heroku-18"
 }
