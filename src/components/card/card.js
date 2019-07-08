@@ -1,28 +1,17 @@
-/* eslint-disable react/require-default-props */
-/* eslint-disable no-tabs */
-import React, { PureComponent } from 'react';
-import {
-  Card,
-} from 'reactstrap';
+import React from 'react';
+import { Card as ReactStrapCard } from 'reactstrap';
 import propTypes from 'prop-types';
 import './card.scss';
 
-class CardComponent extends PureComponent {
-  render() {
-    const {
-      children, cardStyle,
-    } = this.props;
-    return (
-      <Card className={cardStyle}>
-        {children}
-      </Card>
-    );
-  }
-}
+const Card = ({ children, cardStyle }) => (
+  <ReactStrapCard className={cardStyle}>
+    {children}
+  </ReactStrapCard>
+);
 
-CardComponent.propTypes = {
+Card.propTypes = {
   children: propTypes.element,
   cardStyle: propTypes.string,
 };
 
-export default CardComponent;
+export default Card;

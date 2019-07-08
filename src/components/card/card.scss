@@ -1,15 +1,14 @@
+$base-color: #ffffff;
 
-	.card {
-		width: 400px;
-		height: 400px;
-		background: #ffffff;
-		border-radius: 5px;
-		margin: auto;
-		z-index: 1000;
+.card {
+  background: $base-color;
+  border-radius: 5px;
+  height: 400px;
+  margin: auto;
+  width: 400px;
+  z-index: 1000;
 
-		@media screen and (max-width: 420px) {
-			width: 300px;
-		}
-	}
-
-	
+  @media screen and (max-width: 420px) {
+    width: 300px;
+  }
+}
