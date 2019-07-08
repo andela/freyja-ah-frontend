@@ -1,7 +1,11 @@
 {
   "presets": ["@babel/preset-env", "@babel/preset-react"],
+<<<<<<< HEAD
   "plugins": [
     "@babel/plugin-proposal-class-properties",
     "@babel/plugin-transform-runtime"
   ]
+=======
+  "plugins": ["@babel/plugin-proposal-class-properties", "@babel/plugin-transform-runtime"]
+>>>>>>> convert to async
 }
