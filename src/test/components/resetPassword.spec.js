@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { ResetPasswordCard } from '../../components/ResetPassword/ResetPasswordCard';
+import { ResetPasswordCard } from '../../components/ResetPassword/ResetPassword';
 import store from '../../../store';
 
 let ResetPassword;
