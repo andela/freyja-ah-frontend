@@ -1,5 +1,6 @@
 import React from 'react';
 import './testComponent.scss';
+import ButtonComponent from '../Button';
 
 const TestComponent = () => (
   <React.Fragment>
@@ -12,6 +13,7 @@ const TestComponent = () => (
         </p>
       </div>
     </div>
+    <ButtonComponent text="Submit" />
   </React.Fragment>
 );
 
