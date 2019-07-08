@@ -1,28 +1,32 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-tabs */
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import {
-  Card, Input, CardText, CardBody, CardTitle, CardSubtitle, Button, FormGroup,
+  Input, CardText, CardBody, CardTitle, CardSubtitle, Button, FormGroup,
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
 import './resetpassword.scss';
 import { ResetPassword } from '../../../store/actions/authActions/resetPassword';
+import Card from '../card/card';
 
 /**
  * @description
  * @param
  * @returns
  */
-export class ResetPasswordCard extends PureComponent {
+export class ResetPasswordCard extends Component {
   constructor(props) {
     super(props);
-    // this.handleSubmit = this.handleSubmit.bind(this);
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleEmail = this.handleEmail.bind(this);
     this.state = {
       email: '',
     };
   }
+
 
   handleEmail(e) {
     const { value } = e.target;
@@ -84,7 +88,6 @@ const mapStateToProps = state => ({
 });
 
 ResetPasswordCard.propTypes = {
-  // eslint-disable-next-line react/require-default-props
   ResetPassword: propTypes.func,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(ResetPasswordCard);
