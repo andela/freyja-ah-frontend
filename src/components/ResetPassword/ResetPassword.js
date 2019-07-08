@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import propTypes from 'prop-types';
 import './resetpassword.scss';
 import { ResetPassword } from '../../../store/actions/authActions/resetPassword';
+import Card from '../Card';
 
 /**
  * @description
