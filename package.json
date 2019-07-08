@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "heroku-postbuild": "NODE_ENV=production webpack -p --config webpack.prod.js",
+    "heroku-postbuild": "webpack -p --config webpack.prod.js",
     "start:dev": "NODE_ENV=development webpack-dev-server --open --config webpack.dev.js",
     "test": "jest",
     "coveralls": "jest --config=jest.config.js --coverage -u && cat ./coverage/lcov.info | coveralls"
