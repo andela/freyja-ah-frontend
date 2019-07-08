@@ -8,8 +8,9 @@ const TestComponent = () => (
       <div className="newcomponent">
         <h2>Customer Service Learning Community</h2>
         <p>
-          Testing the sass configuration on webpack Testing the sass configuration on webpackTesting the sass configuration on webpack
-          Testing the sass configuration on webpackTesting the sass configuration on webpack
+          Testing the sass configuration on webpack Testing the sass configuration on webpackTesting
+          the sass configuration on webpack Testing the sass configuration on webpackTesting the
+          sass configuration on webpack
         </p>
       </div>
     </div>
