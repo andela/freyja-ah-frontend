@@ -1,30 +1,24 @@
-import React, { Component } from 'react';
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable no-tabs */
+import React, { PureComponent } from 'react';
 import {
-  CardText, CardBody, CardSubtitle, FormGroup,
+  Card, Input, CardText, CardBody, CardTitle, CardSubtitle, Button, FormGroup,
 } from 'reactstrap';
 import { connect } from 'react-redux';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import propTypes from 'prop-types';
 import './resetpassword.scss';
-import * as actions from '../../../store/actions/authActions/resetPassword';
-import Card from '../card/card';
-import Button from '../Button';
-import Input from '../Inputs/Input';
-import Footer from '../Footer/Footer';
-import { Header } from '../Header/Header';
-import { Heading } from '../Heading/Heading';
+import { ResetPassword } from '../../../store/actions/authActions/resetPassword';
 
 /**
  * @description
  * @param
  * @returns
  */
-export class ResetPasswordCard extends Component {
+export class ResetPasswordCard extends PureComponent {
   constructor(props) {
     super(props);
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleEmail = this.handleEmail.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
       email: '',
     };
@@ -36,65 +30,61 @@ export class ResetPasswordCard extends Component {
   }
 
   handleSubmit() {
-    const { ResetPassword, history } = this.props;
     const { email } = this.state;
-    ResetPassword(email, history);
+
+    // eslint-disable-next-line react/prop-types
+    this.props.ResetPassword(email, this.props.history);
   }
 
   render() {
-    const { passwordResetSuccess, passwordResetError, loading } = this.props;
     return (
-      <div className="containers">
+      <div className="container">
         <div className="bg-image" />
-        <Header />
         <Card>
           <CardBody>
             <CardSubtitle>
-              <FontAwesomeIcon icon="lock" />
+              <i className="fas fa-lock" />
             </CardSubtitle>
-            <Heading title="Forgot Password?" />
+            <CardTitle className="forgot"> Forgot Password? </CardTitle>
             <CardText>
-             Please enter your email address here and we will send you information to change your
-             password
+							Please enter your email address here and we will send you information to change your
+							password
             </CardText>
-            <div className="success">{passwordResetSuccess}</div>
+            <div className="error">{this.props.passwordResetError}</div>
+            <div className="success">{this.props.passwordResetSuccess}</div>
             <FormGroup>
+              <div className="icon">
+                <i className="far fa-envelope" />
+              </div>
               <Input
                 placeholder="Email"
+                className="input"
                 id="email"
                 onChange={e => this.handleEmail(e)}
               />
-              <div className="error">{passwordResetError}</div>
             </FormGroup>
-            <Button
-              classname="buttons"
-              type="button"
-              onClick={e => this.handleSubmit(e)}
-              text={loading === true ? 'Loading...' : 'Reset Password'}
-            />
+            <Button className="buttons" onClick={e => this.handleSubmit(e)}>
+              {this.props.loading === true ? 'Loading...' : 'Reset Password'}
+            </Button>
           </CardBody>
         </Card>
-        <Footer />
       </div>
     );
   }
 }
 
 const mapDispatchToProps = {
-  ResetPassword: actions.ResetPassword,
+  ResetPassword,
 };
 
 const mapStateToProps = state => ({
   passwordResetError: state.auth.passwordResetError,
   passwordResetSuccess: state.auth.passwordResetSuccess,
-  loading: state.auth.isLoading,
+  loading: state.auth.loading,
 });
 
 ResetPasswordCard.propTypes = {
+  // eslint-disable-next-line react/require-default-props
   ResetPassword: propTypes.func,
-  history: propTypes.string,
-  loading: propTypes.bool,
-  passwordResetError: propTypes.string,
-  passwordResetSuccess: propTypes.string,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(ResetPasswordCard);

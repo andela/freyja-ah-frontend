@@ -2,7 +2,7 @@
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import React from 'react';
-import { ResetPasswordCard } from '../../../components/ResetPassword/ResetPasswordCard';
+import { ResetPasswordCard } from '../../../components/ResetPassword/ResetPassword';
 
 describe('Test methods', () => {
   sinon.spy(ResetPasswordCard.prototype, 'handleSubmit');
