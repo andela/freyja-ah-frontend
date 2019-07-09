@@ -1,7 +1,4 @@
 import React, { Fragment } from 'react';
-import { FormGroup, Input } from 'reactstrap';
-import classnames from 'classnames';
-import PropTypes from 'prop-types';
 import InputField from './input';
 import './inputs.scss';
 

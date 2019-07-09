@@ -24,11 +24,9 @@ const InputField = ({
         value={value}
         onChange={onChange}
       />
-      {displayError && <div className="feedback">{displayError[0].msg}</div>}
     </FormGroup>
   </Fragment>
 );
-
 InputField.propTypes = {
   displayError: PropTypes.string,
   type: PropTypes.string,
@@ -36,5 +34,9 @@ InputField.propTypes = {
   value: PropTypes.string,
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
+};
+
+InputField.defaultProps = {
+  type: 'text',
 };
 export default InputField;

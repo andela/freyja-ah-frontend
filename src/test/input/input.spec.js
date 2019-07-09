@@ -4,14 +4,7 @@ import toJson from 'enzyme-to-json';
 import InputField from '../../components/inputs/input';
 
 const setUp = (props = {}) => {
-  const component = shallow(
-    <InputField
-      {...props}
-      type="text"
-      placeholder="Last name"
-      name="lastName"
-    />,
-  );
+  const component = shallow(<InputField {...props} type="text" placeholder="Last name" name="lastName" />);
   return component;
 };
 describe('InputField component', () => {
