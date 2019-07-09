@@ -6,7 +6,7 @@ import store from '../../store/index';
 import Login from '../views/login';
 import NotFound from '../views/NotFound';
 import { Header } from '../components/Header/Header';
-import Signup from '../views/Signup/SignUp';
+import signUpPage from '../views/Signup/SignUp';
 import Modules from '../views/Modules/modules';
 
 const Routes = () => (
@@ -14,7 +14,7 @@ const Routes = () => (
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/login" component={Login} />
-      <Route path="/signup" component={Signup} />
+      <Route path="/signup" component={signUpPage} />
       <Route path="/modules" component={Modules} />
       <Route component={Header} path="/sass-check" />
       <Route component={NotFound} />

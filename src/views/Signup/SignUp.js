@@ -11,6 +11,7 @@ import Heading from '../../components/heading/heading';
 import Navbar from '../../components/navbar/navbar';
 import 'bootstrap/dist/css/bootstrap.css';
 import './SignUp.scss';
+import validateSignupInput from '../../validations/validateSignupInput';
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class SignUp extends React.Component {
       email: '',
       password: '',
       confirmPassword: '',
+      authErrors: {},
       errors: {},
     };
     this.onSubmit = this.onSubmit.bind(this);
@@ -34,6 +36,7 @@ class SignUp extends React.Component {
       });
     }
   }
+
 
   onChange(e) {
     const { name } = e.target;
@@ -60,26 +63,51 @@ class SignUp extends React.Component {
       password,
       confirmPassword,
     };
-
-    this.props.registerUser(newUser, history);
+    const { validationErrors, isValid } = validateSignupInput(newUser);
+    if (!isValid) {
+      this.setState({
+        authErrors: validationErrors,
+      });
+    } else {
+      this.props.registerUser(newUser, history);
+    }
   }
 
   render() {
-    const { errors } = this.state;
-    // console.log(errors);
     let displayError;
     let secDisplayError;
-    displayError = errors.error;
-    secDisplayError = errors.error;
-    if (errors && typeof secDisplayError === 'string') {
-      secDisplayError = errors.error;
-      console.log(secDisplayError);
+    const { authErrors } = this.state;
+    if (authErrors.status) {
+      displayError = authErrors;
+      // console.log(displayError);
     }
+    // console.log(errors);
 
-    if (errors && typeof secDisplayError === 'object') {
-      displayError = errors.error;
-      console.log(displayError);
-    }
+
+    // let firstError;
+    // let lastError;
+    // let email;
+    // let password;
+    // displayError = errors.error;
+    // secDisplayError = errors.error;
+    // if (errors && typeof secDisplayError === 'string') {
+    //   secDisplayError = errors.error;
+    //   console.log(secDisplayError);
+    // }
+
+    // if (errors && typeof secDisplayError === 'object') {
+    //   displayError = errors.error;
+    //   const errArray = displayError.filter(err => err.param === 'firstName');
+    // displayError.forEach((err) => {
+    //   const errormessage = err.msg;
+    //   const errorParam = err.param;
+    //   if (errorParam === 'firstName') {
+    //     firstError = errormessage;
+    //   }else
+    // });
+    //   console.log(errArray);
+    //   console.log(displayError);
+    // }
 
     return (
       <Fragment>
@@ -105,7 +133,7 @@ class SignUp extends React.Component {
                     onChange={e => this.onChange(e)}
                   />
                   {displayError && (
-                    <div className="feedback">{displayError[0].msg}</div>
+                    <div className="feedback">{displayError.firstName}</div>
                   )}
                 </FormGroup>
                 <FormGroup className="inf">
@@ -120,12 +148,12 @@ class SignUp extends React.Component {
                     onChange={e => this.onChange(e)}
                   />
                   {displayError && (
-                    <div className="feedback">{displayError[2].msg}</div>
+                    <div className="feedback">{displayError.lastName}</div>
                   )}
                 </FormGroup>
                 <FormGroup className="inf">
                   <Input
-                    className="input lastname"
+                    className="input username"
                     type="text"
                     placeholder="User Name"
                     name="userName"
@@ -145,7 +173,7 @@ class SignUp extends React.Component {
                     onChange={e => this.onChange(e)}
                   />
                   {displayError && (
-                    <div className="feedback">{displayError[4].msg}</div>
+                    <div className="feedback">{displayError.email}</div>
                   )}
                 </FormGroup>
                 <FormGroup className="inf">
@@ -160,7 +188,7 @@ class SignUp extends React.Component {
                     onChange={e => this.onChange(e)}
                   />
                   {displayError && (
-                    <div className="feedback">{displayError[5].msg}</div>
+                    <div className="feedback">{displayError.password}</div>
                   )}
                 </FormGroup>
                 <FormGroup className="inf">
@@ -175,7 +203,7 @@ class SignUp extends React.Component {
                     onChange={e => this.onChange(e)}
                   />
                   {displayError && (
-                    <div className="feedback">{displayError[6].msg}</div>
+                    <div className="feedback">{displayError.confirmPassword}</div>
                   )}
                 </FormGroup>
                 <Button className="btnSubmit">Sign up</Button>{' '}
@@ -198,7 +226,10 @@ const mapStateToProps = state => ({
   auth: state.auth,
   errors: state.errors,
 });
-export default connect(
+
+const signUpPage = connect(
   mapStateToProps,
   { registerUser },
 )(withRouter(SignUp));
+export default signUpPage;
+export { SignUp };

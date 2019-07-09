@@ -31,6 +31,7 @@ export const registerUser = (newUser, history) => dispatch => {
     .catch(
       error => {
         dispatch(setError(error));
+        console.log(error)
       },
 
       // eslint-disable-next-line function-paren-newline

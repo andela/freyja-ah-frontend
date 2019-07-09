@@ -7,7 +7,7 @@ const setUp = (props = {}) => {
   const component = shallow(<Heading {...props} title="create an account" />);
   return component;
 };
-describe('Footer component', () => {
+describe('Heading component', () => {
   let component;
   beforeEach(() => {
     component = setUp();
