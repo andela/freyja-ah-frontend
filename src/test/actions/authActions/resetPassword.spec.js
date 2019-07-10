@@ -40,6 +40,9 @@ describe('Test methods', () => {
 function shallowSetup() {
   const props = {
     ResetPassword: () => {},
+    loading: true,
+    passwordResetSuccess: 'please check you email',
+    passwordResetError: 'invalid email',
   };
 
   const enzymeWrapper = shallow(<ResetPasswordCard {...props} />);
@@ -54,11 +57,8 @@ describe('Shallow rendered Reset password Card', () => {
   it('should render a card with the details of the Reset password page', () => {
     // Setup wrapper and assign props.
     const { enzymeWrapper } = shallowSetup();
-    // enzymeWrapper.find(selector) : Find every
-    // node in the render tree that matches the provided selector.
-    // expect(enzymeWrapper.find('cardTitle').hasClass('card-title')).toBe(true);
-    expect(enzymeWrapper.find('.error').text()).toBe('');
-    expect(enzymeWrapper.find('.success').text()).toBe('');
+    expect(enzymeWrapper.find('.error').text()).toBe('invalid email');
+    expect(enzymeWrapper.find('.success').text()).toBe('please check you email');
     expect(enzymeWrapper.find('Button').text()).toBe('<Button />');
     expect(enzymeWrapper.find('i').first().text()).toBe('');
     expect(enzymeWrapper.find('CardText').first().text()).toBe('<CardText />');
@@ -83,7 +83,7 @@ describe('Reset Password', () => {
   });
 
   it('should display current values in edit fields', () => {
-    const input = wrapper.find('Input').first();
+    const input = wrapper.find('InputField');
     const mockedEvent = { target: {} };
     input.simulate('change', mockedEvent);
 
