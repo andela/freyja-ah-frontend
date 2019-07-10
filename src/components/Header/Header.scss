@@ -1,30 +1,25 @@
-
-// .headerNav .nav{
-//     height: 80px;
-// }
-.link{
-    margin: 0 10px;
-    padding: 5px 10px;
-    border: 2px solid #f1771f;
-    border-radius: 5px;
-    color: #fff;
-    
-}
-
-.headerNav .nav-item{
-    margin: 10px;
-}
- 
-.logo{
-    color: #fff;
-}
-.logo:hover{
-    text-decoration: none;
-    color: #fff;
-}
-.link:hover{
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.90);
-    background: #5F3518;
-}
-
+.navStyle {
+    background: #5f3518;
+    color: white;
+    .navBrand {
+      color: #ffffff;
+      display: inline-block;
+      padding-top: 0.3125rem;
+      padding-bottom: 0.3125rem;
+      margin-right: 1rem;
+      font-size: 1.5em;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    .buttonStyle {
+      background: #5f3518;
+      box-sizing: border-box;
+      border-radius: 4px;
+      border: 0;
+      margin-right: 10px;
+      &:hover {
+        background: #775945;
+      }
+    }
+  }
