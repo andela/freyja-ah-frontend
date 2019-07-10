@@ -1,8 +1,11 @@
 import {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   SIGNUP_ERROR,
 >>>>>>> Created Login component with its action creators
+=======
+>>>>>>> Add tests for login component [delivers 166236212]
   LOGIN_ERROR,
   INIT_AUTH_REQUEST,
   END_AUTH_REQUEST,
@@ -37,6 +40,7 @@ export default (state = initialState, action) => {
         user: action.payload,
       };
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     case SIGNUP_ERROR:
       return {
@@ -44,6 +48,8 @@ export default (state = initialState, action) => {
         errors: action.payload,
       };
 >>>>>>> Created Login component with its action creators
+=======
+>>>>>>> Add tests for login component [delivers 166236212]
     case LOGIN_ERROR:
       return {
         ...state,

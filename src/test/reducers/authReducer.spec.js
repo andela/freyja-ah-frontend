@@ -10,7 +10,7 @@ const initialState = {
   isLoading: false,
   isAuthenticated: false,
   user: {},
-  error: {},
+  errors: {},
 };
 
 const newUser = {
