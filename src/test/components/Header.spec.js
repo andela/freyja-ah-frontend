@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
-import Header from '../../components/Header/Header';
+import { Header } from '../../components/Header/Header';
 
 describe('component: Header', () => {
   beforeEach(() => {

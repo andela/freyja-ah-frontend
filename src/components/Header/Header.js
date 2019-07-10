@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Collapse, Navbar, NavbarToggler, Nav, NavItem, Button } from 'reactstrap';
-import getToken from '../../../store/actions/auth';
+import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from 'reactstrap';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import './header.scss';
+import Button from '../Button';
 
-class Header extends React.Component {
+export class Header extends React.Component {
   constructor(props) {
     super(props);
 
@@ -22,25 +24,25 @@ class Header extends React.Component {
   }
 
   render() {
-    const token = getToken();
+    const { isAuthenticated } = this.props;
     let display = (
       <NavItem>
         <Link to="/login">
-          <Button className="button-style"> Log in </Button>
+          <Button type="button" text="Log in" classname="button-style" />
         </Link>
         <Link to="/signup">
-          <Button className="button-style"> Sign up </Button>
+          <Button type="button" text="SignIn" classname="button-style" />
         </Link>
       </NavItem>
     );
-    if (token) {
+    if (isAuthenticated) {
       display = (
         <NavItem>
           <Link to="/profile">
-            <Button className="button-style"> Profile </Button>
+            <Button type="button" text="Profile" classname="button-style" />
           </Link>
           <Link to="/logout">
-            <Button className="button-style"> Log out </Button>
+            <Button type="button" text="Sign out" classname="button-style" />
           </Link>
         </NavItem>
       );
@@ -66,4 +68,14 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+Header.defaultProps = {
+  isAuthenticated: false,
+};
+
+Header.propTypes = {
+  isAuthenticated: PropTypes.bool,
+};
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+export default connect(mapStateToProps)(Header);
