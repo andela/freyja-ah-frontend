@@ -13,7 +13,6 @@ import Routes from './routes/routes';
 import store from '../store';
 import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser } from '../store/actions/authActions';
-
 import './style.css';
 
 

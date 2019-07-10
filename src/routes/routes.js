@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Home from '../views/Home/Home';
 import Login from '../views/Login';
 import Profile from '../views/Profile/Profile';
-import Modules from '../views/Modules/modules';
+import Dashboard from '../views/Dashboard/Dashboard';
 import NotFound from '../views/NotFound';
 import signUpPage from '../views/Signup/SignUp';
 import ResetPassword from '../views/ResetPassword/ResetPassword';
@@ -17,11 +17,11 @@ const Routes = () => (
     <Route path="/signup" component={signUpPage} />
     <Route path="/login" component={Login} />
     <Route path="/aboutus" component={About} />
-    <Route path="/modules" component={Modules} />
     <Route path="/profile" component={Profile} />
     <Route path="/reset-password" component={ResetPassword} />
     <Route path="/signup" component={signUpPage} />
     <Route path="/change-password" component={changePassword} />
+    <Route path="/dashboard" component={Dashboard} />
     <Route component={NotFound} />
   </Switch>
 );

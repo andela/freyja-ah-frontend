@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from 'reactstrap';
+import {
+  Collapse, Navbar, NavbarToggler, Nav, NavItem,
+} from 'reactstrap';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import './header.scss';

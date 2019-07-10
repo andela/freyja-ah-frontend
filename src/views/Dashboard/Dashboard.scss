@@ -1,0 +1,32 @@
+.d-container {
+  width: 100%;
+}
+
+div .d-row {
+   margin-top:20px;
+    margin-left: 5%;
+}
+
+div .d-sidebar{
+  height: 100vh;
+  background: #a5a2a2;
+}
+
+.view {
+    display: none;
+  }
+  .cd-view {
+    display: block;
+  }
+  
+  :target {
+    display: block;
+  }
+  
+  :target ~ .cd-view {
+    display: none;
+  }
+  
+  .visited {
+    background: #553402;
+  }
