@@ -2,7 +2,7 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import nock from 'nock';
-import { registerUser } from '../../../store/actions/authActions';
+import { registerUser, loginUser } from '../../../store/actions/authActions';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -15,9 +15,16 @@ const mockUser = {
   confirmPassword: 'password',
 };
 
+const userData = {
+  email: 'davidchizindu@gmail.com',
+  password: '11111111',
+};
+
 const history = { push: jest.fn() };
+
 describe('authAction', () => {
   let store;
+
   beforeEach(() => {
     store = mockStore({});
   });
@@ -46,6 +53,7 @@ describe('authAction', () => {
       done();
     });
   });
+
   it('should decode user token when registerUser is successful', done => {
     const errorMessage = 'This username is already in use';
     nock('https://freyja-ah-backend.herokuapp.com')
@@ -55,5 +63,37 @@ describe('authAction', () => {
       expect(store.getActions()).toMatchSnapshot();
       done();
     });
+  });
+
+  it('Logs in a user', () => {
+    nock('https://localhost:3000')
+      .post('/api/users', userData)
+      .reply();
+
+    return store.dispatch(loginUser(userData))
+      .then(() => {
+        const expectedActions = ['INIT_AUTH_REQUEST', 'END_AUTH_REQUEST', 'SET_CURRENT_USER'];
+
+        const dispatchedAction = store.getActions();
+        const actionTypes = dispatchedAction.map(action => action.type);
+
+        expect(actionTypes).toEqual(expectedActions);
+      });
+  });
+
+  it('Logs in a user', () => {
+    nock('https://localhost:3000')
+      .post('/api/users', {})
+      .replyWithError();
+
+    return store.dispatch(loginUser({}))
+      .catch(() => {
+        const expectedActions = ['END_AUTH_REQUEST', 'LOGIN_ERROR'];
+
+        const dispatchedAction = store.getActions();
+        const actionTypes = dispatchedAction.map(action => action.type);
+
+        expect(actionTypes).toEqual(expectedActions);
+      });
   });
 });
