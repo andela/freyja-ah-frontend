@@ -1,6 +1,6 @@
-
+$base-color: #ffffff;
 .card {
-  background: #ffffff;
+  background: $base-color;
   border-radius: 5px;
   height: 400px;
   margin: auto;
@@ -11,6 +11,3 @@
     width: 300px;
   }
 }
-
-
-	

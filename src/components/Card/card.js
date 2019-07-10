@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  Card as ReactStrapCard,
-} from 'reactstrap';
+import { Card as ReactStrapCard } from 'reactstrap';
 import propTypes from 'prop-types';
 import './card.scss';
 
