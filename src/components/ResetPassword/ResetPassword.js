@@ -44,7 +44,7 @@ export class ResetPasswordCard extends Component {
   render() {
     const { passwordResetSuccess, passwordResetError, loading } = this.props;
     return (
-      <div className="container">
+      <div className="containers">
         <div className="bg-image" />
         <Header />
         <Card>

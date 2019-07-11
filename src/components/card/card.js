@@ -14,4 +14,8 @@ Card.propTypes = {
   cardStyle: propTypes.string,
 };
 
+Card.defaultProps = {
+  cardStyle: 'c-card',
+};
+
 export default Card;
