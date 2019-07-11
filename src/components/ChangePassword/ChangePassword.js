@@ -7,18 +7,14 @@ import './changePassword.scss';
 import { withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as actions from '../../../store/actions/authActions/changePassword';
-import Card from '../card/card';
+import Card from '../Card/Card';
 import Button from '../Button';
 import Input from '../Inputs/Input';
 import Footer from '../Footer/Footer';
 import { Header } from '../Header/Header';
 import { Heading } from '../Heading/Heading';
 
-/**
- * @description
- * @param
- * @returns
- */
+
 export class ChangePassword extends Component {
   constructor(props) {
     super(props);
@@ -43,19 +39,26 @@ export class ChangePassword extends Component {
   async handleSubmit() {
     const { password, confirmPassword } = this.state;
     const { changePassword, history, location } = this.props;
-    this.setState({ passwordFieldError: '' });
-    this.setState({ confirmPasswordFieldError: '' });
-    this.setState({ error: '' });
-    this.setState({ success: '' });
-    if (password === '') {
+    this.setState({
+      passwordFieldError: '',
+      confirmPasswordFieldError: '',
+      error: '',
+      success: '',
+    });
+    const pass = password.trim();
+    const pass2 = confirmPassword.trim();
+    if (pass === '') {
       this.setState({ passwordFieldError: 'password field cannot be empty' });
-    } else if (password === confirmPassword) {
+    } else if (pass === pass2) {
       const { token } = queryString.parse(location.search);
-      await changePassword(password, token, history);
+      await changePassword(pass, token, history);
       const { passwordChangeSuccess, passwordChangeError } = this.props;
-      this.setState({ error: passwordChangeError });
-      this.setState({ password: '', confirmPassword: '' });
-      this.setState({ success: passwordChangeSuccess });
+      this.setState({
+        error: passwordChangeError,
+        password: '',
+        confirmPassword: '',
+        success: passwordChangeSuccess,
+      });
     } else {
       this.setState({ confirmPasswordFieldError: 'password does not match' });
     }
@@ -107,7 +110,7 @@ export class ChangePassword extends Component {
               classname="buttons"
               type="button"
               onClick={this.handleSubmit}
-              text={loading === true ? 'Loading...' : 'Change Password'}
+              text={loading ? 'Loading...' : 'Change Password'}
             />
           </CardBody>
         </Card>

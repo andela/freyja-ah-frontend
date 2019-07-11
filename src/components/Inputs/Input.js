@@ -3,9 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import PropTypes from 'prop-types';
 import './inputs.scss';
 
-const InputField = ({
-  id, type, placeholder, name, onChange, value,
-}) => (
+const InputField = ({ id, type, placeholder, name, onChange, value }) => (
   <Fragment>
     <input
       id={id}

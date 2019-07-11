@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Home from '../views/Home/Home';
 import Login from '../views/Login';
 import Profile from '../views/Profile/Profile';
+import Modules from '../views/Modules/modules';
 import NotFound from '../views/NotFound';
 import signUpPage from '../views/Signup/SignUp';
 import ResetPassword from '../views/ResetPassword/ResetPassword';

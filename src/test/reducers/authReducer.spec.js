@@ -37,7 +37,6 @@ describe('Auth Reducer', () => {
       errors: {},
     });
   });
-
   it('should handle action type SET_CURRENT_USER', () => {
     action = setCurrentUser(newUser);
     newState = authReducer(initialState, action);

@@ -1,10 +1,4 @@
-import {
-  LOGIN_ERROR,
-  INIT_AUTH_REQUEST,
-  END_AUTH_REQUEST,
-  SET_CURRENT_USER,
-  GET_ERRORS,
-} from '../actions/types';
+import { SET_CURRENT_USER, GET_ERRORS, LOGIN_ERROR, INIT_AUTH_REQUEST, END_AUTH_REQUEST } from '../actions/types';
 import isEmpty from '../../src/validations/isEmpty';
 
 export const initialState = {
@@ -34,7 +28,8 @@ const authReducer = (state = initialState, action) => {
     case SET_CURRENT_USER:
       return {
         ...state,
-        isLoading: true,
+        isAuthenticated: !isEmpty(action.payload),
+        user: action.payload,
       };
     case LOGIN_ERROR:
       return {
@@ -44,16 +39,8 @@ const authReducer = (state = initialState, action) => {
     case GET_ERRORS:
       return {
         ...state,
-        passwordResetError: 'invalid email',
-        passwordResetSuccess: '',
-        isLoading: false,
-      };
-    case 'PASSWORD_RESET_SUCCESS':
-      return {
-        ...state,
-        passwordResetError: '',
-        passwordResetSuccess: 'Please check your email',
-        isLoading: false,
+        isAuthenticated: !isEmpty(action.error),
+        errors: action.errors,
       };
     case 'LOADING':
       return {
@@ -65,6 +52,13 @@ const authReducer = (state = initialState, action) => {
         ...state,
         passwordResetError: 'invalid email',
         passwordResetSuccess: '',
+        isLoading: false,
+      };
+    case 'PASSWORD_RESET_SUCCESS':
+      return {
+        ...state,
+        passwordResetError: '',
+        passwordResetSuccess: 'Please check your email',
         isLoading: false,
       };
     case 'PASSWORD_CHANGE_ERROR':

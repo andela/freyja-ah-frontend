@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import axios from 'axios';
 
 export const loading = () => ({
@@ -29,7 +28,6 @@ export const ResetPassword = user => async (dispatch) => {
       },
     });
 
-    // console.log(resetPassword);
     dispatch(passwordResetSuccess(resetPassword.data.message));
   } catch (error) {
     dispatch(passwordResetError(error.response.data.message));

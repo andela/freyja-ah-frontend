@@ -1,7 +1,7 @@
 $btn: #f3994a;
 $button: #fff;
 .b-button {
-  background-color: #f3994a;
+  background-color: $btn;
   border-radius: 4px;
   color: $button;
   cursor: pointer;

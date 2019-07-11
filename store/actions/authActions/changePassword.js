@@ -33,6 +33,5 @@ export const ChangePassword = (password, token) => async (dispatch) => {
     dispatch(passwordChangeSuccess(resetPassword.data.message));
   } catch (error) {
     dispatch(passwordChangeError('please send reset password request again'));
-    // console.log(error.response.data.message);
   }
 };
