@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import './header.scss';
+import './Header.scss';
 import Button from '../Button';
 
 export class Header extends React.Component {
@@ -52,7 +52,7 @@ export class Header extends React.Component {
       <header>
         <Navbar className="nav-style" light expand="md">
           <div>
-            <Link to="/" className="navBrand">
+            <Link to="/" className="nav-brand">
               Communitee
             </Link>
           </div>
