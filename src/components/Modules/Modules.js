@@ -1,51 +1,69 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import {
-  CardBody, CardTitle, Row, Col, CardSubtitle, CardText,
+  CardBody, CardTitle, Row, Col, CardSubtitle, CardText, Button,
 } from 'reactstrap';
-import Card from '../card/card';
+import Card from '../Card/Card';
 import './modules.scss';
 
 const Module = () => (
   <div className="m-container cd-view view">
+    <div className="m-intro">
+      <h3>Modules</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
     <Row>
       <Col sm={{ size: 'auto' }}>
         <Card>
-          <CardBody>
-            <CardTitle>Card title</CardTitle>
-            <CardSubtitle>Card subtitle</CardSubtitle>
+          <CardBody className="m-c-title">
+            <CardTitle>Module 1</CardTitle>
+            <CardSubtitle>Description</CardSubtitle>
             <CardText>
-          Some quick example text to build on the card title and make up the bulk of the content.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </CardText>
-            <CardSubtitle>Card subtitle</CardSubtitle>
+            <CardSubtitle>Introduction</CardSubtitle>
+            <CardText>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </CardText>
           </CardBody>
         </Card>
       </Col>
       <Col sm={{ size: 'auto' }}>
         <Card>
-          <CardBody>
-            <CardTitle>Card title</CardTitle>
-            <CardSubtitle>Card subtitle</CardSubtitle>
+          <CardBody className="m-c-title">
+            <CardTitle>Module 2</CardTitle>
+            <CardSubtitle>Description</CardSubtitle>
             <CardText>
-          Some quick example text to build on the card title and make up the bulk of the content.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </CardText>
-            <CardSubtitle>Card subtitle</CardSubtitle>
+            <CardSubtitle>Introduction</CardSubtitle>
+            <CardText>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </CardText>
           </CardBody>
         </Card>
       </Col>
       <Col sm={{ size: 'auto' }}>
         <Card>
-          <CardBody>
-            <CardTitle>Card title</CardTitle>
-            <CardSubtitle>Card subtitle</CardSubtitle>
+          <CardBody className="m-c-title">
+            <CardTitle>Module 3</CardTitle>
+            <CardSubtitle>Description</CardSubtitle>
             <CardText>
-          Some quick example text to build on the card title and make up the bulk of the content.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </CardText>
-            <CardSubtitle>Card subtitle</CardSubtitle>
+            <CardSubtitle>Introduction</CardSubtitle>
+            <CardText>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </CardText>
           </CardBody>
         </Card>
       </Col>
     </Row>
+    <div className="take-course">
+      <Button>
+        Take Course
+      </Button>
+    </div>
   </div>
 );
 

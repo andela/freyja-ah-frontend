@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
-import PropTypes from 'prop-types';
+import React, { Fragment } from './node_modules/react';
+import './node_modules/bootstrap/dist/css/bootstrap.css';
+import PropTypes from './node_modules/prop-types';
 import './inputs.scss';
 
 const InputField = ({ id, type, placeholder, name, onChange, value }) => (

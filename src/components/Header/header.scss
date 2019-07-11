@@ -1,8 +1,10 @@
+$base-color: #5f3518;
+$white: #fff;
 .navStyle {
-    background: #5f3518;
-    color: white;
+    background: $base-color;
+    color: $white;
     .navBrand {
-      color: #ffffff;
+      color: $white;
       display: inline-block;
       padding-top: 0.3125rem;
       padding-bottom: 0.3125rem;
@@ -13,13 +15,13 @@
       }
     }
     .buttonStyle {
-      background: #5f3518;
+      background: $base-color;
       box-sizing: border-box;
       border-radius: 4px;
       border: 0;
       margin-right: 10px;
       &:hover {
-        background: #775945;
+        background: $base-color;
       }
     }
 }
