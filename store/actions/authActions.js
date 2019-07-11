@@ -12,28 +12,28 @@ export const setCurrentUser = decoded => ({
 });
 export const setError = error => ({
   type: GET_ERRORS,
-  payload: error,
+  errors: error,
 });
 
 // Register
-export const registerUser = (newUser, history) => dispatch => {
-  return axios
-    .post('https://freyja-ah-backend.herokuapp.com/api/users', newUser)
-    .then(res => {
+export const registerUser = (newUser, history) => async dispatch => {
+  try {
+    const user = await axios.post('https://freyja-ah-backend.herokuapp.com/api/users', newUser);
+
+    if (user) {
       // Save to local storage
-      const { token } = res.data;
+      const { token } = user.data;
+      // Set token to local storage
+      localStorage.setItem('jwtToken', token);
       // Decode token to get user data
       const decoded = jwtDecode(token);
       // Set current user
       dispatch(setCurrentUser(decoded));
-      history.push('/modules');
-    })
-    .catch(
-      error => {
-        dispatch(setError(error));
-        console.log(error)
-      },
 
-      // eslint-disable-next-line function-paren-newline
-    );
+      history.push('/modules');
+    }
+  } catch (err) {
+    const { error } = err.response.data;
+    dispatch(setError(error));
+  }
 };

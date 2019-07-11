@@ -1,6 +1,14 @@
+$orangecolor: #f2994a;
+$browncolor: #5f3518;
+$linkcolor: #6d6666;
+$signcolor: #fff;
+$red: #ff0000;
+$htmlcolor: #6d6666;
+
 html {
-  color: #6d6666;
+  color: $htmlcolor;
 }
+
 .sec-signup {
   width: 100%;
   background-image: linear-gradient(rgba(5, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
@@ -8,16 +16,22 @@ html {
   background-size: cover;
   margin: auto;
 }
-.container {
+
+.container-s {
   width: 1200px;
   padding: 0 15px;
   margin: auto;
   padding-top: 3%;
   padding-bottom: 3%;
+
+  a {
+    color: inherit;
+  }
 }
+
 .signup-box {
   width: 400px;
-  background: #ffffff;
+  background: $signcolor;
   border-radius: 5px;
   margin: auto;
   z-index: 1000;
@@ -29,65 +43,94 @@ html {
   }
 }
 
-.navbar {
-  background-color: #5f3518 !important;
+.font {
+  width: 30%;
 }
-.btnSubmit,
-.firstname,
-.lastname,
-.username,
-.email,
-.password,
-.cpassword {
-  border: 0.5px solid #707070;
-  width: 90%;
-  padding: 6%;
-  border-radius: 5px;
-}
+
 .boxx-tex {
   margin-bottom: 3%;
 }
+
 .inf {
   margin-bottom: 1.5rem;
 }
-.btnSubmit,
+
+.sign-form .b-button,
 .input {
   margin: auto;
 }
-.btnSubmit {
-  background-color: #f2994a;
-  border: 0.5px solid #f2994a;
+
+.sign-form .b-button {
+  background-color: $orangecolor;
+  border: 0.5px solid $orangecolor;
   padding: 3.5%;
 }
-.form-control.is-invalid {
-  background-image: none !important;
+
+.sign-form .b-button:hover,
+.sign-form .b-button:active,
+.sign-form .b-button:focus {
+  background-color: $orangecolor;
+  border: 0.5px solid $orangecolor;
 }
-.btnSubmit:hover,
-.btnSubmit:active,
-.btnSubmit:focus {
-  background-color: #f2994a;
-  border: 0.5px solid #f2994a;
-}
-.btnSubmit:hover {
+
+.sign-form .b-button:hover {
   opacity: 0.6;
 }
+
 .logo {
   margin-top: 2%;
 }
+
 .feedbackk,
 .feedback {
-  color: red;
-  padding: 0.3em 0 0 0.4em;
+  color: $red;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
+  padding-bottom: 0;
+  padding-left: 0.4rem;
+  padding-right: 0;
+  padding-top: 0.3rem;
+
   text-align: left;
-  margin-left: 5%;
 }
+
 .feedbackk {
-  text-align: center;
   margin-bottom: 2%;
+  text-align: center;
 }
+
 .headsi {
-  margin-top: 2%;
+  color: $htmlcolor;
+  font-size: 18px;
   margin-bottom: 3%;
+  margin-top: 2%;
+}
+
+.btm {
+  a:hover {
+    color: $orangecolor;
+    text-decoration: none;
+  }
+
+  a {
+    color: $linkcolor;
+    font-weight: normal;
+  }
+
+  .mid {
+    padding: 0 3%;
+  }
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.acct,
+.soc-media {
+  color: $linkcolor;
+  cursor: pointer;
+  font-size: 12px;
+  margin-bottom: 5%;
+  margin-top: 0.8%;
 }

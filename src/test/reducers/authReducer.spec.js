@@ -7,6 +7,7 @@ let newState;
 const initialState = {
   user: {},
   isAuthenticated: false,
+  errors: {},
 };
 
 const newUser = {
@@ -22,6 +23,7 @@ describe('Auth Reducer', () => {
   it(' should return Initial state for undefined prop types', () => {
     expect(authReducer(undefined, { type: 'undefinedAction' })).toEqual({
       user: {},
+      error: {},
       isAuthenticated: false,
     });
   });

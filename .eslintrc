@@ -13,11 +13,11 @@
   "parser": "babel-eslint",
   "parserOptions": {
     "allowImportExportEverywhere": true,
+    "esversion": 6,
+    "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
-    },
-    "esversion": 6,
-    "sourceType": "module"
+    }
   },
   "plugins": ["react"],
   "rules": {

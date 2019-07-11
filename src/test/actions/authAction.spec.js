@@ -2,11 +2,7 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import nock from 'nock';
-import jwtDecode from 'jwt-decode';
-import {
-  registerUser,
-  setCurrentUser,
-} from '../../../store/actions/authActions';
+import { registerUser } from '../../../store/actions/authActions';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -14,15 +10,12 @@ const mockUser = {
   firstName: 'Ochowo',
   lastName: 'Jones',
   userName: 'gr',
-  email: 'princess@gmail.com',
+  email: 'pricess@gmail.com',
   password: 'password',
   confirmPassword: 'password',
 };
 
-const token =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI0LCJlbWFpbCI6InByaW5jZXNzQGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiZ3IiLCJpYXQiOjE1NjI1Mjg2NTcsImV4cCI6MTU2MzEzMzQ1N30.oWthtPvSh-zz4RwgHZsJtdxpjhHlUKix0oK1I9nqkOA';
-
-const decoded = jwtDecode(token);
+const history = { push: jest.fn() };
 describe('authAction', () => {
   let store;
   beforeEach(() => {
@@ -48,10 +41,17 @@ describe('authAction', () => {
         token:
           'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI0LCJlbWFpbCI6InByaW5jZXNzQGdtYWlsLmNvbSIsInVzZXJOYW1lIjoiZ3IiLCJpYXQiOjE1NjI1Mjg2NTcsImV4cCI6MTU2MzEzMzQ1N30.oWthtPvSh-zz4RwgHZsJtdxpjhHlUKix0oK1I9nqkOA',
       });
-
-    store.dispatch(registerUser(mockUser)).then(() => {
+    store.dispatch(registerUser(mockUser, history)).then(() => {
       expect(store.getActions()).toMatchSnapshot();
-      store.dispatch(setCurrentUser(decoded));
+      done();
+    });
+  });
+  it('should decode user token when registerUser is successful', done => {
+    const errorMessage = 'This username is already in use';
+    nock('https://freyja-ah-backend.herokuapp.com')
+      .post('/api/users')
+      .reply(400, { error: errorMessage });
+    store.dispatch(registerUser({})).then(() => {
       expect(store.getActions()).toMatchSnapshot();
       done();
     });
