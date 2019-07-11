@@ -10,19 +10,19 @@ html {
 }
 
 .sec-signup {
-  width: 100%;
   background-image: linear-gradient(rgba(5, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url('../../assets/images/signupbg.jpg');
   background-size: cover;
   margin: auto;
+  width: 100%;
 }
 
 .container-s {
-  width: 1200px;
-  padding: 0 15px;
   margin: auto;
-  padding-top: 3%;
+  padding: 0 15px;
   padding-bottom: 3%;
+  padding-top: 3%;
+  width: 1200px;
 
   a {
     color: inherit;
@@ -30,13 +30,13 @@ html {
 }
 
 .signup-box {
-  width: 400px;
   background: $signcolor;
   border-radius: 5px;
   margin: auto;
-  z-index: 1000;
-  text-align: center;
   padding-top: 2%;
+  text-align: center;
+  width: 400px;
+  z-index: 1000;
 
   @media screen and (max-width: 420px) {
     width: 300px;
@@ -90,7 +90,6 @@ html {
   padding-left: 0.4rem;
   padding-right: 0;
   padding-top: 0.3rem;
-
   text-align: left;
 }
 
