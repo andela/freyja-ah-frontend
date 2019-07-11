@@ -10,7 +10,8 @@ export default {
     error: null,
   },
   modules: {
-    errors: {},
     modules: [],
+    singleModule: {},
+    errors: {},
   },
 };

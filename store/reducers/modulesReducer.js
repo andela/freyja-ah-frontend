@@ -1,7 +1,12 @@
-import { GET_ALL_MODULES, MODULES_ERROR } from '../actions/types';
+import {
+  GET_ALL_MODULES,
+  MODULES_ERROR,
+  GET_SINGLE_MODULE,
+} from '../actions/types';
 
 const initialState = {
   allModules: [],
+  singleModule: {},
   errors: {},
 };
 
@@ -12,13 +17,16 @@ const modulesReducer = (state = initialState, { type, payload }) => {
         ...state,
         allModules: payload,
       };
-
+    case GET_SINGLE_MODULE:
+      return {
+        ...state,
+        singleModule: payload,
+      };
     case MODULES_ERROR:
       return {
         ...state,
         errors: payload,
       };
-
     default:
       return state;
   }
