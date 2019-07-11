@@ -1,4 +1,4 @@
-import reducer, { initialState } from '../../../store/reducers/Auth';
+import reducer, { initialState } from '../../../store/reducers/authReducer';
 
 
 describe('reset password reducer', () => {

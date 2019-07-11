@@ -1,26 +1,33 @@
-import { SET_CURRENT_USER, GET_ERRORS } from '../actions/types';
-import isEmpty from '../../src/validations/isEmpty';
-
-const initialState = {
-  isAuthenticated: false,
-  user: {},
-  error: {},
+export const initialState = {
+  passwordResetError: '',
+  passwordResetSuccess: '',
+  isloading: false,
 };
-export default function (state = initialState, action) {
+
+const authReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_CURRENT_USER:
+    case 'LOADING':
       return {
         ...state,
-        isAuthenticated: !isEmpty(action.payload),
-        user: action.payload,
+        isloading: true,
       };
-    case GET_ERRORS:
+    case 'PASSWORD_RESET_ERROR':
       return {
         ...state,
-        isAuthenticated: !isEmpty(action.error),
-        errors: action.errors,
+        passwordResetError: 'invalid email',
+        passwordResetSuccess: '',
+        isloading: false,
+      };
+    case 'PASSWORD_RESET_SUCCESS':
+      return {
+        ...state,
+        passwordResetError: '',
+        passwordResetSuccess: 'Please check your email',
+        isloading: false,
       };
     default:
       return state;
   }
-}
+};
+
+export default authReducer;

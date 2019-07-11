@@ -1,6 +1,4 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable no-tabs */
+
 import React, { Component } from 'react';
 import {
   CardText, CardBody, CardTitle, CardSubtitle, FormGroup,
@@ -37,13 +35,14 @@ export class ResetPasswordCard extends Component {
   }
 
   handleSubmit() {
+    const { history } = this.props;
     const { email } = this.state;
-
-    // eslint-disable-next-line react/prop-types
-    this.props.ResetPassword(email, this.props.history);
+    // eslint-disable-next-line react/destructuring-assignment
+    this.props.ResetPassword(email, history);
   }
 
   render() {
+    const { passwordResetSuccess, passwordResetError, loading } = this.props;
     return (
       <div className="container">
         <div className="bg-image" />
@@ -55,23 +54,23 @@ export class ResetPasswordCard extends Component {
             </CardSubtitle>
             <CardTitle className="forgot"> Forgot Password? </CardTitle>
             <CardText>
-							Please enter your email address here and we will send you information to change your
-							password
+             Please enter your email address here and we will send you information to change your
+             password
             </CardText>
-            <div className="success">{this.props.passwordResetSuccess}</div>
+            <div className="success">{passwordResetSuccess}</div>
             <FormGroup>
               <Input
                 placeholder="Email"
                 id="email"
                 onChange={e => this.handleEmail(e)}
               />
-              <div className="error">{this.props.passwordResetError}</div>
+              <div className="error">{passwordResetError}</div>
             </FormGroup>
             <Button
               classname="button"
               type="button"
               onClick={e => this.handleSubmit(e)}
-              text={this.props.loading === true ? 'Loading...' : 'Reset Password'}
+              text={loading === true ? 'Loading...' : 'Reset Password'}
             />
           </CardBody>
         </Card>
@@ -88,10 +87,14 @@ const mapDispatchToProps = {
 const mapStateToProps = state => ({
   passwordResetError: state.auth.passwordResetError,
   passwordResetSuccess: state.auth.passwordResetSuccess,
-  loading: state.auth.loading,
+  loading: state.auth.isloading,
 });
 
 ResetPasswordCard.propTypes = {
   ResetPassword: propTypes.func,
+  history: propTypes.string,
+  loading: propTypes.bool,
+  passwordResetError: propTypes.string,
+  passwordResetSuccess: propTypes.string,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(ResetPasswordCard);
