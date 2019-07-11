@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import propTypes from 'prop-types';
 import './resetpassword.scss';
 import { ResetPassword } from '../../../store/actions/authActions/resetPassword';
-import Card from '../Card';
+import Card from '../card';
 import Button from '../Button';
 import Input from '../inputs/input';
 import Footer from '../Footer/Footer';
