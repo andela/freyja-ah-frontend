@@ -7,6 +7,8 @@ let newState;
 const initialState = {
   passwordResetError: '',
   passwordResetSuccess: '',
+  passwordChangeError: '',
+  passwordChangeSuccess: '',
   isLoading: false,
   isAuthenticated: false,
   user: {},
@@ -27,6 +29,8 @@ describe('Auth Reducer', () => {
     expect(authReducer(undefined, { type: 'undefinedAction' })).toEqual({
       passwordResetError: '',
       passwordResetSuccess: '',
+      passwordChangeError: '',
+      passwordChangeSuccess: '',
       isLoading: false,
       isAuthenticated: false,
       user: {},

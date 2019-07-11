@@ -10,6 +10,8 @@ import isEmpty from '../../src/validations/isEmpty';
 export const initialState = {
   passwordResetError: '',
   passwordResetSuccess: '',
+  passwordChangeError: '',
+  passwordChangeSuccess: '',
   isLoading: false,
   isAuthenticated: false,
   user: {},
@@ -63,6 +65,20 @@ const authReducer = (state = initialState, action) => {
         ...state,
         passwordResetError: '',
         passwordResetSuccess: 'Please check your email',
+        isLoading: false,
+      };
+    case 'PASSWORD_CHANGE_ERROR':
+      return {
+        ...state,
+        passwordChangeError: action.payload,
+        passwordChangeSuccess: '',
+        isLoading: false,
+      };
+    case 'PASSWORD_CHANGE_SUCCESS':
+      return {
+        ...state,
+        passwordChangeError: '',
+        passwordChangeSuccess: action.payload,
         isLoading: false,
       };
     default:
