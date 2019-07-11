@@ -13,6 +13,7 @@ import Card from '../card';
 import Button from '../Button';
 import Input from '../inputs/input';
 import Footer from '../Footer/Footer';
+import { Header } from '../Header/Header';
 /**
  * @description
  * @param
@@ -46,6 +47,7 @@ export class ResetPasswordCard extends Component {
     return (
       <div className="container">
         <div className="bg-image" />
+        <Header />
         <Card>
           <CardBody>
             <CardSubtitle>

@@ -1,7 +1,7 @@
 export const initialState = {
   passwordResetError: '',
   passwordResetSuccess: '',
-  loading: 'false',
+  loading: false,
 };
 
 const authReducer = (state = initialState, action) => {
