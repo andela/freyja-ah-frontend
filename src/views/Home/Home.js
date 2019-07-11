@@ -53,7 +53,7 @@ const Home = () => (
       </ul>
       <Link className="slink" to="/signup"><Button text="Get Started" classname="absolute-button hiw-button" /></Link>
 
-      <div className="iconsHolder">
+      <div className="icons-holder">
         <div className="icons">
           <img className="info" src="./src/assets/img/rate.svg" alt="take-courses" />
           <span>Take Courses</span>

@@ -52,7 +52,7 @@ export class Header extends React.Component {
       <header>
         <Navbar className="nav-style" light expand="md">
           <div>
-            <Link to="/" className="navBrand">
+            <Link to="/" className="nav-brand">
               Communitee
             </Link>
           </div>

@@ -1,7 +1,7 @@
 $base-color: #5f3518;
 $white: #fff;
 $black: #000;
-$lp-animation-color: rgba(0,0,0,0.7);
+$lp-animation-color: rgba(0, 0, 0, 0.7);
 
 
 
@@ -15,7 +15,7 @@ $lp-animation-color: rgba(0,0,0,0.7);
   background: $black;
 }
 
-.iconsHolder {
+.icons-holder {
   background: $base-color;
   height: 120px;
   display: flex;
@@ -35,7 +35,7 @@ $lp-animation-color: rgba(0,0,0,0.7);
   width: 30px;
 }
 
-.icons Span {
+.icons span {
   font-size: 12px;
   padding-left: 4px;
 }
@@ -153,7 +153,7 @@ a .absolute-button:hover {
   animation: imageAnimation 40s linear infinite;
   background: $white;
   position: absolute;
-  left:20%;
+  left: 20%;
   opacity: 0;
   width: 60%;
   z-index: 0;
@@ -161,12 +161,12 @@ a .absolute-button:hover {
 
 .slide-container li {
   animation: imageAnimation 40s linear infinite;
-  background: #000;
+  background: $black;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
-  left:0;
+  left: 0;
   opacity: 0;
   position: absolute;
   top: 0;
@@ -177,16 +177,16 @@ a .absolute-button:hover {
 // Biz slide
 .slide-container li:nth-child(1) {
   animation-delay: 15s;
-  background-image: linear-gradient($lp-animation-color, $lp-animation-color),url('../../assets/img/landing1.jpg')
+  background-image: linear-gradient($lp-animation-color, $lp-animation-color), url("../../assets/img/landing1.jpg")
 }
 
 .slide-container li:nth-child(2) {
-  background-image: linear-gradient($lp-animation-color, $lp-animation-color),url('../../assets/img/landing2.jpg');
+  background-image: linear-gradient($lp-animation-color, $lp-animation-color), url("../../assets/img/landing2.jpg");
 }
 
 .slide-container li:nth-child(3) {
   animation-delay: 30s;
-  background-image: linear-gradient($lp-animation-color, $lp-animation-color),url('../../assets/img/landing3.jpg');
+  background-image: linear-gradient($lp-animation-color, $lp-animation-color), url("../../assets/img/landing3.jpg");
 }
 // testimonial slide
 .t-slide li:nth-child(2) {
@@ -235,16 +235,18 @@ a .absolute-button:hover {
   .testimonial {
     display: flex;
   }
+
   .hiw {
     flex: 1;
   }
-  .iconsHolder {
+
+  .icons-holder {
     height: 300px;
     top: 92%;
   }
+
   .hiw-card .card-body {
-    padding: 0;
-        
+    padding: 0; 
   }
 
   .about-us,
@@ -270,25 +272,25 @@ a .absolute-button:hover {
     height: 250px;
     margin: 0 auto;
     width: 50%;
-    
   }
+
   .hiw .hiw-card-img {
     border-radius: 0;
     height: 324px;
   }
+
   .hwu {
     top: 25%;
     width: 40%;
   }
-  .slide-container .carousel-inner .carousel-item img {
-    height: 90vh;
-  }
+
   a .absolute-button {
     top:55%;
   }
   .desc-container {
     top: 105%;
   }
+
   .icons {
     font-size: 40px;
     padding: 0;
@@ -297,12 +299,15 @@ a .absolute-button:hover {
     padding: 10px;
 
   }
-  .icons Span {
+
+  .icons span {
     font-size: 18px;
   }
+
   .hwu h2 {
     font-size: 40px;
   }
+
   .hwu h4 {
     font-size: 25px;
   }
