@@ -67,7 +67,7 @@ export class ResetPasswordCard extends Component {
               <div className="error">{passwordResetError}</div>
             </FormGroup>
             <Button
-              classname="button"
+              classname="buttons"
               type="button"
               onClick={e => this.handleSubmit(e)}
               text={loading === true ? 'Loading...' : 'Reset Password'}
