@@ -21,14 +21,6 @@ $border: #707070;
   width: 90%;
 }
 
-::placeholder {
-  font-size: 12px;
-}
-
-:-ms-input-placeholder {
-  font-size: 12px;
-}
-
-::-ms-input-placeholder {
+::-webkit-input-placeholder {
   font-size: 12px;
 }

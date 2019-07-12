@@ -4,13 +4,14 @@ $linkcolor: #6d6666;
 $signcolor: #fff;
 $red: #ff0000;
 $htmlcolor: #6d6666;
+$backgroundcolor:rgba(5, 0, 0, 0.7), rgba(0, 0, 0, 0.7);
 
 html {
   color: $htmlcolor;
 }
 
 .sec-signup {
-  background-image: linear-gradient(rgba(5, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+  background-image: linear-gradient($backgroundcolor),
     url('../../assets/images/signupbg.jpg');
   background-size: cover;
   margin: auto;

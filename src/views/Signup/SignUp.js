@@ -2,10 +2,10 @@ import React, { Fragment } from 'react';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import 'bootstrap/dist/css/bootstrap.css';
 import { registerUser } from '../../../store/actions/authActions';
 import Footer from '../../components/Footer/Footer';
 import SignUpForm from './SignUpForm';
-import 'bootstrap/dist/css/bootstrap.css';
 import './SignUp.scss';
 import validateSignupInput from '../../validations/validateSignupInput';
 
@@ -29,9 +29,7 @@ class SignUp extends React.Component {
   }
 
   onSubmit(e) {
-    const {
-      firstName, lastName, userName, email, password, confirmPassword,
-    } = this.state;
+    const { firstName, lastName, userName, email, password, confirmPassword } = this.state;
     const { history } = this.props;
     e.preventDefault();
     const newUser = {
@@ -50,9 +48,7 @@ class SignUp extends React.Component {
   render() {
     let valError;
     let authError;
-    const {
-      firstName, lastName, userName, email, password, confirmPassword,
-    } = this.state;
+    const { firstName, lastName, userName, email, password, confirmPassword } = this.state;
     const newUser = {
       firstName,
       lastName,
@@ -87,8 +83,11 @@ class SignUp extends React.Component {
 }
 SignUp.propTypes = {
   registerUser: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired,
-  history: PropTypes.object.isRequired,
+  auth: PropTypes.shape({
+    root: PropTypes.string,
+    error: PropTypes.shape({ root: PropTypes.string }),
+  }),
+  history: PropTypes.shape({ root: PropTypes.string }),
 };
 const mapStateToProps = state => ({
   auth: state.auth,

@@ -111,7 +111,7 @@ const SignUpForm = ({ onSubmit, onChange, authError, valError }) => (
 SignUpForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
-  valError: PropTypes.object,
+  valError: PropTypes.shape({ root: PropTypes.string }),
   authError: PropTypes.string,
 };
 export default SignUpForm;
