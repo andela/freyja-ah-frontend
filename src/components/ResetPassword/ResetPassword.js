@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import {
   CardText, CardBody, CardTitle, CardSubtitle, FormGroup,
@@ -6,7 +5,7 @@ import {
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
 import './resetpassword.scss';
-import { ResetPassword } from '../../../store/actions/authActions/resetPassword';
+import * as actions from '../../../store/actions/authActions/resetPassword';
 import Card from '../card/card';
 import Button from '../Button';
 import Input from '../inputs/input';
@@ -28,17 +27,16 @@ export class ResetPasswordCard extends Component {
     };
   }
 
-
   handleEmail(e) {
     const { value } = e.target;
     this.setState({ email: value });
   }
 
   handleSubmit() {
+    const { ResetPassword } = this.props;
     const { history } = this.props;
     const { email } = this.state;
-    // eslint-disable-next-line react/destructuring-assignment
-    this.props.ResetPassword(email, history);
+    ResetPassword(email, history);
   }
 
   render() {
@@ -81,7 +79,7 @@ export class ResetPasswordCard extends Component {
 }
 
 const mapDispatchToProps = {
-  ResetPassword,
+  ResetPassword: actions.ResetPassword,
 };
 
 const mapStateToProps = state => ({
