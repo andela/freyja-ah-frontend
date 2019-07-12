@@ -7,6 +7,7 @@ files:
   include: 'sass/**/*.s+(a|c)ss'
 
 rules:
+<<<<<<< HEAD
   no-important: 1
   no-color-literals: 0
   no-color-hex: 0
@@ -15,3 +16,7 @@ rules:
   property-sort-order: 0
   pseudo-element: 0
   shorthand-values: 0
+=======
+   no-important: 1
+   no-color-literals: 0
+>>>>>>> feat(view modules):

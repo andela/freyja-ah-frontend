@@ -7,7 +7,7 @@ import Card from '../Card/Card';
 import './modules.scss';
 
 const Module = () => (
-  <div className="m-container cd-view view">
+  <div className="m-container cd-view">
     <div className="m-intro">
       <h3>Modules</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>

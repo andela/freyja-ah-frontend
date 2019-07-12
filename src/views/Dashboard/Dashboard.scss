@@ -43,18 +43,4 @@ ul.d-links {
   border-radius: 2px;
 }
 
-.view {
-    display: none;
-  }
-  .cd-view {
-    display: block;
-  }
-  
-  :target {
-    display: block;
-  }
-  
-  :target ~ .cd-view {
-    display: none;
-  }
   
