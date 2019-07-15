@@ -15,7 +15,6 @@ module.exports = {
     '!jest.config.js',
     '!<rootDir>/server.js',
     '!webpack.common.js',
-    '!**/*.scss',
     '!webpack.dev.js',
     '!webpack.prod.js',
     '!**/src/App.jsx',

@@ -3,6 +3,7 @@ import {
   CardText, CardBody, CardSubtitle, FormGroup,
 } from 'reactstrap';
 import { connect } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import propTypes from 'prop-types';
 import './resetpassword.scss';
 import * as actions from '../../../store/actions/authActions/resetPassword';
@@ -12,6 +13,7 @@ import Input from '../Inputs/Input';
 import Footer from '../Footer/Footer';
 import { Header } from '../Header/Header';
 import { Heading } from '../Heading/Heading';
+
 /**
  * @description
  * @param
@@ -34,8 +36,7 @@ export class ResetPasswordCard extends Component {
   }
 
   handleSubmit() {
-    const { ResetPassword } = this.props;
-    const { history } = this.props;
+    const { ResetPassword, history } = this.props;
     const { email } = this.state;
     ResetPassword(email, history);
   }
@@ -49,7 +50,7 @@ export class ResetPasswordCard extends Component {
         <Card>
           <CardBody>
             <CardSubtitle>
-              <i className="fas fa-lock" />
+              <FontAwesomeIcon icon="lock" />
             </CardSubtitle>
             <Heading title="Forgot Password?" />
             <CardText>
