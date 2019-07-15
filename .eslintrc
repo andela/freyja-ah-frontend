@@ -25,6 +25,7 @@
     "react/require-default-props": 0,
     "function-paren-newline": ["error", "multiline"],
     "jsx-a11y/anchor-is-valid": 0,
-    "object-curly-newline": ["error", { "consistent": true }]
+    "object-curly-newline": ["error", { "consistent": true }],
+    "no-underscore-dangle": 0,
   }
 }
