@@ -15,6 +15,7 @@ describe('test methods', () => {
       loading: true,
       passwordchangeSuccess: 'please check you email',
       passwordChangeError: 'invalid email',
+      location: { search: 'ddd' },
     };
 
     const enzymeWrapper = shallow(<ChangePassword {...props} />);

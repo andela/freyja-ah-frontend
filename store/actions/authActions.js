@@ -39,7 +39,7 @@ export const registerUser = (newUser, history) => async dispatch => {
       // Set current user
       dispatch(setCurrentUser(decoded));
 
-      history.push('/modules');
+      history.push('/dashboard');
     }
   } catch (err) {
     const { error } = err.response.data;

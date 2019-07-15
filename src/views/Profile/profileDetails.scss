@@ -24,6 +24,13 @@
       font-size: 25px;
       color: #666666;
     }
+
+    .spinner-position {
+      position: absolute;
+      left: 88px;
+      top: 80px;
+      height: 64px;
+    }
   }
   
   .profileDetails {
@@ -58,3 +65,4 @@
       }
     }
   }
+
