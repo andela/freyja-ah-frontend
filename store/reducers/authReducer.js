@@ -1,12 +1,16 @@
 import { SET_CURRENT_USER, GET_ERRORS } from '../actions/types';
 import isEmpty from '../../src/validations/isEmpty';
 
-const initialState = {
+export const initialState = {
+  passwordResetError: '',
+  passwordResetSuccess: '',
+  isLoading: false,
   isAuthenticated: false,
   user: {},
   error: {},
 };
-export default function (state = initialState, action) {
+
+const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_CURRENT_USER:
       return {
@@ -20,7 +24,28 @@ export default function (state = initialState, action) {
         isAuthenticated: !isEmpty(action.error),
         errors: action.errors,
       };
+    case 'LOADING':
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case 'PASSWORD_RESET_ERROR':
+      return {
+        ...state,
+        passwordResetError: 'invalid email',
+        passwordResetSuccess: '',
+        isLoading: false,
+      };
+    case 'PASSWORD_RESET_SUCCESS':
+      return {
+        ...state,
+        passwordResetError: '',
+        passwordResetSuccess: 'Please check your email',
+        isLoading: false,
+      };
     default:
       return state;
   }
-}
+};
+
+export default authReducer;

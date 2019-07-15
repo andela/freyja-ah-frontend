@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import { Heading } from '../../components/Heading/heading';
+import { Heading } from '../../components/Heading/Heading';
 
 const setUp = (props = {}) => {
   const component = shallow(<Heading {...props} title="create an account" />);

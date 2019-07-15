@@ -5,9 +5,12 @@ let action;
 let newState;
 
 const initialState = {
-  user: {},
+  passwordResetError: '',
+  passwordResetSuccess: '',
+  isLoading: false,
   isAuthenticated: false,
-  errors: {},
+  user: {},
+  error: {},
 };
 
 const newUser = {
@@ -22,9 +25,12 @@ const newUser = {
 describe('Auth Reducer', () => {
   it(' should return Initial state for undefined prop types', () => {
     expect(authReducer(undefined, { type: 'undefinedAction' })).toEqual({
+      passwordResetError: '',
+      passwordResetSuccess: '',
+      isLoading: false,
+      isAuthenticated: false,
       user: {},
       error: {},
-      isAuthenticated: false,
     });
   });
   it('should handle action type SET_CURRENT_USER', () => {
