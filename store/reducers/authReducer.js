@@ -34,7 +34,7 @@ const authReducer = (state = initialState, action) => {
     case SET_CURRENT_USER:
       return {
         ...state,
-        isloading: true,
+        isLoading: true,
       };
     case LOGIN_ERROR:
       return {
@@ -46,14 +46,14 @@ const authReducer = (state = initialState, action) => {
         ...state,
         passwordResetError: 'invalid email',
         passwordResetSuccess: '',
-        isloading: false,
+        isLoading: false,
       };
     case 'PASSWORD_RESET_SUCCESS':
       return {
         ...state,
         passwordResetError: '',
         passwordResetSuccess: 'Please check your email',
-        isloading: false,
+        isLoading: false,
       };
     case 'LOADING':
       return {
