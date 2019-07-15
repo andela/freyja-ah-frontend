@@ -1,9 +1,18 @@
-.b-button {
-  background-color: #f3994a;
+$btn: #f3994a;
+$button: #fff;
+
+.sign-form .b-button {
+  background-color: $btn;
   border-radius: 4px;
-  color: #fff;
+  color: $button;
   cursor: pointer;
   font-size: 15px;
   padding: 14px;
   width: 100%;
+}
+.sign-form .b-button:active,
+.sign-form .b-button:focus {
+  background-color: $btn;
+  border-color: $btn;
+  box-shadow: none;
 }

@@ -7,15 +7,15 @@ const Footer = () => (
     <nav>
       <ul className="footer-links">
         <Link className="flink" to="/about">
-            About
+          About
         </Link>
         <span>|</span>
         <Link className="flink" to="how-it-work">
-            How it works
+          How it works
         </Link>
         <span>|</span>
         <Link className="flink" to="contacts">
-           Contact us
+          Contact us
         </Link>
       </ul>
       <p className="rights">© CSLC 2019. All rights Reserved.</p>
