@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  CardText, CardBody, CardTitle, CardSubtitle, FormGroup,
+  CardText, CardBody, CardSubtitle, FormGroup,
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
@@ -8,9 +8,10 @@ import './resetpassword.scss';
 import * as actions from '../../../store/actions/authActions/resetPassword';
 import Card from '../card/card';
 import Button from '../Button';
-import Input from '../inputs/input';
+import Input from '../Inputs/Input';
 import Footer from '../Footer/Footer';
 import { Header } from '../Header/Header';
+import { Heading } from '../Heading/Heading';
 /**
  * @description
  * @param
@@ -50,7 +51,7 @@ export class ResetPasswordCard extends Component {
             <CardSubtitle>
               <i className="fas fa-lock" />
             </CardSubtitle>
-            <CardTitle className="forgot"> Forgot Password? </CardTitle>
+            <Heading title="Forgot Password?" />
             <CardText>
              Please enter your email address here and we will send you information to change your
              password
@@ -85,7 +86,7 @@ const mapDispatchToProps = {
 const mapStateToProps = state => ({
   passwordResetError: state.auth.passwordResetError,
   passwordResetSuccess: state.auth.passwordResetSuccess,
-  loading: state.auth.isloading,
+  loading: state.auth.isLoading,
 });
 
 ResetPasswordCard.propTypes = {

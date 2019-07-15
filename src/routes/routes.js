@@ -15,6 +15,7 @@ const Routes = () => (
       <Route path="/" exact component={Home} />
       <Route path="/signup" component={signUpPage} />
       <Route path="/modules" component={Modules} />
+      <Route path="/reset-password" component={ResetPassword} />
       <Route component={NotFound} />
     </Switch>
   </Provider>

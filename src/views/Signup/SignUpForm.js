@@ -5,7 +5,7 @@ import { Card, CardBody } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import Logo from '../../assets/images/logo3.png';
-import { Heading } from '../../components/Heading/heading';
+import { Heading } from '../../components/Heading/Heading';
 import Navbar from '../../components/Header/Header';
 import Input from '../../components/Inputs/Input';
 import Button from '../../components/Button/index';
