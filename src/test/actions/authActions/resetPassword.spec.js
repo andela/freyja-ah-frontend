@@ -42,7 +42,6 @@ describe('Test methods', () => {
     it('should update the state property _**`formOpen`**_ and call handleOpen when edit button is clicked', () => {
       const button = wrapper.find('Button').first();
       button.simulate('click');
-
       expect(ResetPasswordCard.prototype.handleSubmit.calledOnce).toBe(true);
     });
 
