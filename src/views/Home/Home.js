@@ -12,6 +12,14 @@ import { Header } from '../../components/Header/Header';
 import Button from '../../components/Button';
 import Footer from '../../components/Footer/Footer';
 import './home.scss';
+import aboutus from '../../assets/img/aboutus.jpg';
+import howitworks from '../../assets/img/howitworks.jpg';
+import testimonial1 from '../../assets/img/testimonial.jpg';
+import testimonial2 from '../../assets/img/testimonial2.jpg';
+import testimonial3 from '../../assets/img/testimonial3.jpg';
+import rateImg from '../../assets/img/rate.svg';
+import medal from '../../assets/img/medal.svg';
+import education from '../../assets/img/education.svg';
 
 
 const Home = () => (
@@ -55,17 +63,17 @@ const Home = () => (
 
       <div className="icons-holder">
         <div className="icons">
-          <img className="info" src="./src/assets/img/rate.svg" alt="take-courses" />
+          <img className="info" src={rateImg} alt="take-courses" />
           <span>Take Courses</span>
 
         </div>
         <div className="icons">
-          <img className="info" src="./src/assets/img/medal.svg" alt="get-started" />
+          <img className="info" src={medal} alt="get-started" />
           <span>Get Certified</span>
 
         </div>
         <div className="icons">
-          <img className="info" src="./src/assets/img/education.svg" alt="community" />
+          <img className="info" src={education} alt="community" />
           <span>community</span>
 
         </div>
@@ -76,7 +84,7 @@ const Home = () => (
           <div className="hiw-img hiw">
             <Card className="hiw-card">
               <CardBody>
-                <CardImg className="hiw-card-img" src="./src/assets/img/howitworks.jpg" alt="howitworks" />
+                <CardImg className="hiw-card-img" src={howitworks} alt="howitworks" />
               </CardBody>
             </Card>
           </div>
@@ -98,7 +106,7 @@ const Home = () => (
           <div className="hiw-img hiw">
             <Card className="hiw-card">
               <CardBody>
-                <CardImg className="hiw-card-img" src="./src/assets/img/aboutus.jpg" alt="about-us" />
+                <CardImg className="hiw-card-img" src={aboutus} alt="about-us" />
               </CardBody>
             </Card>
           </div>
@@ -122,7 +130,7 @@ const Home = () => (
             <div className="hiw-img hiw">
               <Card className="hiw-card">
                 <CardBody>
-                  <CardImg className="test-card-img" src="./src/assets/img/testimonial.jpg" alt="testimonial" />
+                  <CardImg className="test-card-img" src={testimonial1} alt="testimonial" />
                 </CardBody>
               </Card>
             </div>
@@ -143,7 +151,7 @@ const Home = () => (
             <div className="hiw-img hiw">
               <Card className="hiw-card">
                 <CardBody>
-                  <CardImg className="test-card-img" src="./src/assets/img/testimonial2.jpg" alt="testimonial" />
+                  <CardImg className="test-card-img" src={testimonial2} alt="testimonial" />
                 </CardBody>
               </Card>
             </div>
@@ -164,7 +172,7 @@ const Home = () => (
             <div className="hiw-img hiw">
               <Card className="hiw-card">
                 <CardBody>
-                  <CardImg className="test-card-img" src="./src/assets/img/testimonial3.jpg" alt="testimonial" />
+                  <CardImg className="test-card-img" src={testimonial3} alt="testimonial" />
                 </CardBody>
               </Card>
             </div>
