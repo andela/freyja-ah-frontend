@@ -9,12 +9,14 @@ import signUpPage from '../views/Signup/SignUp';
 import ResetPassword from '../views/ResetPassword/ResetPassword';
 import changePassword from '../views/ChangePassword/changePassword';
 
+import About from '../views/AboutUs/AboutUs';
 
 const Routes = () => (
   <Switch>
     <Route path="/" exact component={Home} />
     <Route path="/signup" component={signUpPage} />
     <Route path="/login" component={Login} />
+    <Route path="/aboutus" component={About} />
     <Route path="/modules" component={Modules} />
     <Route path="/profile" component={Profile} />
     <Route path="/reset-password" component={ResetPassword} />

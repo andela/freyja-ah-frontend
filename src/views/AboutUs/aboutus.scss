@@ -1,0 +1,95 @@
+$bgcolor: #fff;
+$fontcolor: #676666;
+$headingcolor: #6d6666;
+$altbgcolor: #f4f4f4;
+$bordercolor: #f2994a;
+
+.wrapper {
+  color: $fontcolor;
+  font-size: 14px;
+
+  .container-A {
+    margin: auto;
+    padding: 0 15px;
+    width: 1200px;
+  }
+
+  section {
+    margin: 0;
+    padding-bottom: 8%;
+    padding-top: 5%;
+    width: 100%;
+  }
+
+  .abt-h {
+    color: $headingcolor;
+    padding-bottom: 2%;
+    text-align: center;
+    width: 100%;
+  }
+
+  .sect-wrks {
+    background-color: $altbgcolor;
+  }
+
+  .spe {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .textg {
+    margin: 0;
+    margin-bottom: 50px;
+    justify-content: flex-end;
+
+    .boxxx {
+      width: 10%;
+    }
+
+    .nummm {
+      border: 2px solid $bordercolor;
+      border-radius: 50%;
+      color: $bordercolor;
+      display: inline-block;
+      font-size: 25px;
+      height: 54px;
+      margin-right: 25px;
+      padding: 5px;
+      text-align: center;
+      width: 54px;
+    }
+
+    .numw {
+      width: 10%;
+    }
+
+    .tesx {
+      width: 90%;
+    }
+  }
+  .tutors {
+    width: 33.333%;
+    border: none;
+
+    .circ1,
+    .circ3,
+    .circ {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      background-image: url('../../assets/images/8.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .circ1 {
+      background-image: url('../../assets/images/2.jpg');
+    }
+    .circ3 {
+      background-image: url('../../assets/images/4.jpg');
+    }
+  }
+  .tw {
+  }
+  .th {
+  }
+}
