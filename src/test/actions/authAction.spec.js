@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* eslint-disable arrow-parens */
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
@@ -26,29 +25,10 @@ const history = { push: jest.fn() };
 describe('authAction', () => {
   let store;
 
-=======
-import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
-import nock from 'nock';
-import { loginUser } from '../../store/actions/authActions';
-
-const middlewares = [thunk];
-const mockStore = configureMockStore(middlewares);
-
-describe('async actions', () => {
-  let store;
-
-  const userData = {
-    email: 'davidchizindu@gmail.com',
-    password: '11111111',
-  };
-
->>>>>>> Add tests for login component [delivers 166236212]
   beforeEach(() => {
     store = mockStore({});
   });
   afterEach(() => {
-<<<<<<< HEAD
     // clear all HTTP mocks after each test
     nock.cleanAll();
   });
@@ -85,11 +65,6 @@ describe('async actions', () => {
     });
   });
 
-=======
-    nock.cleanAll();
-  });
-
->>>>>>> Add tests for login component [delivers 166236212]
   it('Logs in a user', () => {
     nock('https://localhost:3000')
       .post('/api/users', userData)
@@ -114,16 +89,10 @@ describe('async actions', () => {
     return store.dispatch(loginUser({}))
       .catch(() => {
         const expectedActions = ['END_AUTH_REQUEST', 'LOGIN_ERROR'];
-
         const dispatchedAction = store.getActions();
         const actionTypes = dispatchedAction.map(action => action.type);
 
         expect(actionTypes).toEqual(expectedActions);
       });
   });
-<<<<<<< HEAD
-=======
-
-
->>>>>>> Add tests for login component [delivers 166236212]
 });

@@ -1,9 +1,0 @@
-export const INIT_AUTH_REQUEST = 'INIT_AUTH_REQUEST';
-
-export const END_AUTH_REQUEST = 'END_AUTH_REQUEST';
-
-export const SET_CURRENT_USER = 'SET_CURRENT_USER';
-
-export const SIGNUP_ERROR = 'SIGNUP_ERROR';
-
-export const LOGIN_ERROR = 'LOGIN_ERROR';

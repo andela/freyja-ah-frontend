@@ -1,4 +1,10 @@
-import { SET_CURRENT_USER, GET_ERRORS } from '../actions/types';
+import {
+  LOGIN_ERROR,
+  INIT_AUTH_REQUEST,
+  END_AUTH_REQUEST,
+  SET_CURRENT_USER,
+  GET_ERRORS,
+} from '../actions/types';
 import isEmpty from '../../src/validations/isEmpty';
 
 export const initialState = {
@@ -7,16 +13,32 @@ export const initialState = {
   isLoading: false,
   isAuthenticated: false,
   user: {},
-  error: {},
+  errors: {},
 };
 
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
+    case INIT_AUTH_REQUEST:
+      return {
+        ...state,
+        isLoading: true,
+        errors: {},
+      };
+    case END_AUTH_REQUEST:
+      return {
+        ...state,
+        isLoading: false,
+      };
     case SET_CURRENT_USER:
       return {
         ...state,
         isAuthenticated: !isEmpty(action.payload),
         user: action.payload,
+      };
+    case LOGIN_ERROR:
+      return {
+        ...state,
+        errors: action.payload,
       };
     case GET_ERRORS:
       return {

@@ -30,7 +30,7 @@ describe('Auth Reducer', () => {
       isLoading: false,
       isAuthenticated: false,
       user: {},
-      error: {},
+      errors: {},
     });
   });
 
