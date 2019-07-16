@@ -140,7 +140,11 @@ export class Login extends Component {
               />
               <span className="error">{password || ''}</span>
 
-              <Button type="submit" classname="submit" text={isLoading ? 'Please wait..' : 'Submit'} />
+              <Button
+                type="submit"
+                classname="submit"
+                text={isLoading ? 'Please wait..' : 'Submit'}
+              />
 
               <p>
                 <Link className="forgot-password" to="/password-reset">
@@ -149,7 +153,10 @@ export class Login extends Component {
               </p>
               <p>
                 Dont have an account yet?
-                <Link className="sign-up" to="/sign-up"> Sign Up</Link>
+                <Link className="sign-up" to="/sign-up">
+                  {' '}
+                  Sign Up
+                </Link>
               </p>
             </Form>
           </Card>
@@ -177,4 +184,7 @@ const mapDispatchToProps = {
   loginUser,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Login);

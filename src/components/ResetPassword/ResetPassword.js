@@ -52,8 +52,8 @@ export class ResetPasswordCard extends Component {
             </CardSubtitle>
             <Heading title="Forgot Password?" />
             <CardText>
-              Please enter your email address here and we will
-              send you information to change your password
+              Please enter your email address here and we will send you information to change your
+              password
             </CardText>
             <div className="success">{passwordResetSuccess}</div>
             <FormGroup>
@@ -91,4 +91,7 @@ ResetPasswordCard.propTypes = {
   passwordResetError: propTypes.string,
   passwordResetSuccess: propTypes.string,
 };
-export default connect(mapStateToProps, mapDispatchToProps)(ResetPasswordCard);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(ResetPasswordCard);

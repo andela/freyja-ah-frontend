@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react';
-import { Card, CardImg, CardText, CardBody, CardLink, CardTitle, CardSubtitle } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import { Button, Form, FormGroup, Input } from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Header } from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import './aboutus.scss';
@@ -8,9 +10,9 @@ const About = () => (
   <Fragment>
     <Header />
     <div className="wrapper">
-      <section className="sec-abt row">
+      <section className="sec-abt row" name="sec-abt" id="sec-abt">
         <div className="container-A">
-          <h2 className="abt-h">About us</h2>
+          <h1 className="abt-h">About us</h1>
           <p className="top-texx">
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
             laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
@@ -26,9 +28,10 @@ const About = () => (
           </p>
         </div>
       </section>
-      <section className="sect-wrks row">
+
+      <section className="sect-wrks row" id="sect-wrks">
         <div className="container-A spe">
-          <h2 className="abt-h">How it works</h2>
+          <h1 className="abt-h">How it works</h1>
           <br />
           <div className="textg row">
             <div className="boxxx">
@@ -60,57 +63,88 @@ const About = () => (
               dolores eos qui ratione voluptatem sequi n
             </div>
           </div>
-        </div>
-      </section>
-      <section className="Ms-t row">
-        <div className="container-A">
-          <h2 className="abt-h">Meet out Trainers</h2>
-          <br />
-          <div className="row">
-            <Card className="tutors">
-              <div className="circ" />
-              <div className="nam"> Chizindu David</div>
-              <div className="handlesd">
-                @chizzy_davis
-                <br />
-                @chizzy_davis
-                {' '}
-                <br />
-                @chizzy_davis
-              </div>
-            </Card>
-            <Card className="tutors">
-              <CardBody className="circ1" />
-              <div className="nam"> Bisola Johnson</div>
-              <div className="handlesd">
-                @Bisi
-                <br />
-                @Bisola
-                {' '}
-                <br />
-                @Bisi
-              </div>
-            </Card>
-            <Card className="tutors">
-              <CardBody className="circ3" />
-              <div className="nam">Allen Adeboye</div>
-              <div className="handlesd">
-                @Kareem
-                <br />
-                @Kareem_A
-                {' '}
-                <br />
-                @kareem
-              </div>
-            </Card>
+          <div id="psub">
+            {' '}
+            <Link to="/signup">
+              <Button className="psub">Get Started</Button>
+            </Link>
           </div>
         </div>
       </section>
-      <section className="nbg-t row">
+
+      <section className="Ms-t row">
         <div className="container-A">
-          <h2 className="abt-h">Contact us</h2>
+          <h1 className="abt-h">Meet out Trainers</h1>
           <br />
-          <h3> Sed ut perspiciatis unde omnis iste natus error</h3>
+          <div className="row">
+            <div className="tutors">
+              <div className="circ" />
+              <div className="nam"> Gabriella David</div>
+              <div className="handlesd">
+                <Link to="/aboutus">
+                  <FontAwesomeIcon icon={['fab', 'twitter']} className="icon alt fci" />
+                </Link>
+                <Link to="/aboutus" className="icii">
+                  <FontAwesomeIcon icon={['fab', 'facebook-f']} className="icon alt fci" />
+                </Link>
+                <Link to="/aboutus">
+                  <FontAwesomeIcon icon={['fab', 'google']} className="icon alt fci" />
+                </Link>
+              </div>
+            </div>
+            <div className="tutors">
+              <div className="circ1" />
+              <div className="nam"> Kareem David</div>
+              <div className="handlesd">
+                <Link to="/aboutus">
+                  <FontAwesomeIcon icon={['fab', 'twitter']} className="icon alt fci" />
+                </Link>
+                <Link to="/aboutus" className="icii">
+                  <FontAwesomeIcon icon={['fab', 'facebook-f']} className="icon alt fci" />
+                </Link>
+                <Link to="/aboutus">
+                  <FontAwesomeIcon icon={['fab', 'google']} className="icon alt fci" />
+                </Link>
+              </div>
+            </div>
+            <div className="tutors">
+              <div className="circ3" />
+              <div className="nam">Aliona Adeboye</div>
+              <div className="handlesd">
+                <Link to="/aboutus">
+                  <FontAwesomeIcon icon={['fab', 'twitter']} className="icon alt fci" />
+                </Link>
+                <Link to="/aboutus" className="icii">
+                  <FontAwesomeIcon icon={['fab', 'facebook-f']} className="icon alt fci" />
+                </Link>
+                <Link to="/aboutus">
+                  <FontAwesomeIcon icon={['fab', 'google']} className="icon alt fci" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="nbg-t row" id="nbg-t">
+        <div className="container-A spe">
+          <h1 className="abt-h">Contact us</h1>
+          <h3> You can drop a message for us using the form below</h3>
+          <Form className="form-hw">
+            <FormGroup>
+              <Input type="text" name="firstname" placeholder="First Name" className="inp" />
+            </FormGroup>
+            <FormGroup>
+              <Input type="text" name="lastname" placeholder="Last Name" className="inp" />
+            </FormGroup>
+            <FormGroup>
+              <Input type="email" name="email" placeholder="Email" className="inp" />
+            </FormGroup>
+            <FormGroup>
+              <Input type="textarea" name="text" placeholder="Message" className="textar" />
+            </FormGroup>
+            <Button className="psub">Submit</Button>
+          </Form>
         </div>
       </section>
     </div>

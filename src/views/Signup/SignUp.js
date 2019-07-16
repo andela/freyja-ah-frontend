@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { registerUser } from '../../../store/actions/authActions';
 import Footer from '../../components/Footer/Footer';
 import SignUpForm from './SignUpForm';
-import './SignUp.scss';
+import './signUp.scss';
 import validateSignupInput from '../../validations/validateSignupInput';
 
 class SignUp extends React.Component {
@@ -57,15 +57,17 @@ class SignUp extends React.Component {
       password,
       confirmPassword,
     };
-    const { validationErrors, isValid } = validateSignupInput(newUser);
 
     const { auth } = this.props;
     const { errors } = auth;
-    if (typeof errors === 'string') {
-      authError = errors;
-    } else if (typeof errors === 'object') {
-      if (!isValid) {
-        valError = validationErrors;
+    if (errors && !(Object.keys(errors).length === 0 && errors.constructor === Object)) {
+      const { validationErrors, isValid } = validateSignupInput(newUser);
+      if (typeof errors === 'string') {
+        authError = errors;
+      } else if (typeof errors === 'object') {
+        if (!isValid) {
+          valError = validationErrors;
+        }
       }
     }
     return (
@@ -86,7 +88,7 @@ SignUp.propTypes = {
   registerUser: PropTypes.func.isRequired,
   auth: PropTypes.shape({
     root: PropTypes.string,
-    error: PropTypes.shape({ root: PropTypes.string }),
+    errors: PropTypes.any,
   }),
   history: PropTypes.shape({ root: PropTypes.string }),
 };

@@ -8,6 +8,16 @@ $bordercolor: #f2994a;
   color: $fontcolor;
   font-size: 14px;
 
+  h1 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+    padding-bottom: 3%;
+    text-align: center;
+  }
+
   .container-A {
     margin: auto;
     padding: 0 15px;
@@ -23,11 +33,11 @@ $bordercolor: #f2994a;
 
   .abt-h {
     color: $headingcolor;
-    padding-bottom: 2%;
     text-align: center;
     width: 100%;
   }
 
+  .nbg-t,
   .sect-wrks {
     background-color: $altbgcolor;
   }
@@ -38,9 +48,9 @@ $bordercolor: #f2994a;
   }
 
   .textg {
+    justify-content: flex-end;
     margin: 0;
     margin-bottom: 50px;
-    justify-content: flex-end;
 
     .boxxx {
       width: 10%;
@@ -67,29 +77,65 @@ $bordercolor: #f2994a;
       width: 90%;
     }
   }
+
   .tutors {
-    width: 33.333%;
     border: none;
+    padding: 6%;
+    padding-top: 0;
+    width: 33.333%;
 
     .circ1,
     .circ3,
     .circ {
-      width: 250px;
-      height: 250px;
       border-radius: 50%;
-      background-image: url('../../assets/images/8.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-    .circ1 {
       background-image: url('../../assets/images/2.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 250px;
+      margin-bottom: 10%;
+      width: 250px;
     }
+
+    .circ1 {
+      background-image: url('../../assets/images/6.jpg');
+    }
+
     .circ3 {
-      background-image: url('../../assets/images/4.jpg');
+      background-image: url('../../assets/images/9.jpg');
+      background-position: center;
+    }
+
+    .handlesd,
+    .nam {
+      text-align: center;
+      .fci {
+        color: $headingcolor;
+        &:hover {
+          color: $bordercolor;
+        }
+      }
+    }
+
+    .icii {
+      padding: 0 5%;
     }
   }
-  .tw {
+
+  .textar,
+  .inp {
+    margin: auto;
+    width: 50%;
   }
-  .th {
+  .psub:active,
+  .psub:focus,
+  .psub {
+    background-color: $bordercolor;
+    border: none;
+  }
+  .form-hw {
+    text-align: center;
+  }
+  #psub {
+    text-align: center;
   }
 }
