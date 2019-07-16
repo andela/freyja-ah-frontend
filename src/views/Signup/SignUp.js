@@ -81,6 +81,7 @@ class SignUp extends React.Component {
     );
   }
 }
+
 SignUp.propTypes = {
   registerUser: PropTypes.func.isRequired,
   auth: PropTypes.shape({

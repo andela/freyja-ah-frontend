@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import propTypes from 'prop-types';
 import './resetpassword.scss';
 import * as actions from '../../../store/actions/authActions/resetPassword';
-import Card from '../card/card';
+import Card from '../Card/card';
 import Button from '../Button';
 import Input from '../Inputs/Input';
 import Footer from '../Footer/Footer';

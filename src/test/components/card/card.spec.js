@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Card from '../../../components/card/card';
+import Card from '../../../components/Card/card';
 
 let Cards;
 

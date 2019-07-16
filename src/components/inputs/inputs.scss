@@ -1,5 +1,5 @@
 $input-color: #f2994a;
-$feedback: #ff0000;
+$feedback: #f00;
 $border: #707070;
 
 .input {
@@ -9,7 +9,6 @@ $border: #707070;
   padding: 0.6rem;
   width: 100%;
 }
-
 .input:active,
 .input:focus,
 .input:focus-within {
