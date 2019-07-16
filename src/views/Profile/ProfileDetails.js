@@ -12,13 +12,13 @@ const ProfileDetails = ({ profile, loading, imageFile, uploadImage }) => (
       <img
         src={profile.image || defaultImage}
         alt="profile"
-        style={{ filter: loading ? 'blur(4px)' : '' }}
+        style={{ filter: loading && 'blur(4px)' }}
       />
-      {loading ? (
+      {loading && (
         <div className="spinner-position">
           <Spinner />
         </div>
-      ) : ''}
+      )}
       <input
         type="file"
         name="mediaFile"

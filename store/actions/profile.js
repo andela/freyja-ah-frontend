@@ -12,6 +12,7 @@ export const getProfileFailed = error => ({
   type: actionCreators.GET_PROFILE_FAILED,
   error,
 });
+
 export const getProfile = userId => async (dispatch) => {
   const config = {
     headers: {
@@ -22,6 +23,11 @@ export const getProfile = userId => async (dispatch) => {
     const profile = await axios.get(`${url}/${userId}`, config);
     const { data } = profile;
     const { user } = data;
+    let dob = null;
+    if (user.profile.dateOfBirth) {
+      const dobArray = (user.profile.dateOfBirth).split('T');
+      [dob] = dobArray;
+    }
 
     const userDetails = {
       name: `${user.firstName} ${user.lastName}`,
@@ -35,9 +41,10 @@ export const getProfile = userId => async (dispatch) => {
         { name: 'twitter', url: user.profile.twitter },
         { name: 'linkedin', url: user.profile.linkedIn },
       ],
-      DOB: user.profile.dateOfBirth,
+      DOB: dob,
       industry: user.profile.industry,
       yrsOfExperience: user.profile.yrsOfExperience,
+      isEnrolled: user.profile.isEnrolled,
     };
 
     dispatch(getProfileSuccess(userDetails));
@@ -77,5 +84,25 @@ export const uploadImage = image => async (dispatch) => {
     dispatch(uploadSuccess(imageUrl));
   } catch (error) {
     dispatch(uploadFailed(error.response.data));
+  }
+};
+
+export const updateProfileFailed = error => ({
+  type: actionCreators.UPDATE_PROFILE_FAILED,
+  error,
+});
+
+
+export const updateProfile = data => async (dispatch) => {
+  const config = {
+    headers: {
+      Authorization: token,
+    },
+  };
+  try {
+    const profile = await axios.put(url, data, config);
+    await dispatch(getProfile(profile.data.profile.userId));
+  } catch (error) {
+    dispatch(updateProfileFailed(error.response.data.error));
   }
 };

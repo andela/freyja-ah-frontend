@@ -1,7 +1,7 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import nock from 'nock';
-import { getProfile, getProfileSuccess, uploadSuccess, uploadFailed } from '../../../store/actions/profile';
+import { getProfile, getProfileSuccess, uploadSuccess, uploadFailed, updateProfileFailed, updateProfile } from '../../../store/actions/profile';
 import profileReducer, { initialState } from '../../../store/reducers/profile';
 
 const token = 'token';
@@ -70,9 +70,27 @@ describe('async actions', () => {
       done();
     });
   });
+  it('should dispatch updateProfile', (done) => {
+    nock('https://freyja-ah-backend.herokuapp.com')
+      .put('/api/profiles', { industry: 'Andela' })
+      .reply(201, { profile: { userId: 45 } });
+    return store.dispatch(updateProfile({ industry: 'Andela' })).then(() => {
+      expect(store.getActions()).toMatchSnapshot();
+      done();
+    });
+  });
+  it('should dispatch update profile failed', (done) => {
+    nock('https://freyja-ah-backend.herokuapp.com')
+      .put('/api/profiles', { dateOfBirth: '10-12' })
+      .reply(422, { error: 'invalid date of birth' });
+    return store.dispatch(updateProfile({ dateOfBirth: '10-12' })).then(() => {
+      expect(store.getActions()).toMatchSnapshot();
+      done();
+    });
+  });
 });
 
-describe('upload actions', () => {
+describe('profile actions', () => {
   const store = mockStore({});
   it('dispatch UPLOAD_SUCCESS with image url', (done) => {
     store.dispatch(uploadSuccess('http//'));
@@ -81,6 +99,11 @@ describe('upload actions', () => {
   });
   it('dispatch UPLOAD_FAILED with error object', (done) => {
     store.dispatch(uploadFailed({ error: 'unable to upload image' }));
+    expect(store.getActions()).toMatchSnapshot();
+    done();
+  });
+  it('dispatch updateProfileFailed with error object', (done) => {
+    store.dispatch(updateProfileFailed({ error: 'invalie information' }));
     expect(store.getActions()).toMatchSnapshot();
     done();
   });

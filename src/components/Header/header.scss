@@ -2,6 +2,11 @@ $white: #ffffff;
 $primary: #5f3518;
 $primary-hover: #775945;
 
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 4;
+}
 .nav-style {
   background: $primary;
   color: $white;

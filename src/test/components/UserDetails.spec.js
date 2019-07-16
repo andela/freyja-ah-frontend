@@ -16,6 +16,9 @@ const props = {
       isCertified: false,
     },
   },
+  toggleEdit: () => {},
+  handleInput: () => {},
+  submitProfile: () => {},
 };
 
 describe('component: Header', () => {

@@ -13,7 +13,13 @@ const props = {
     bio: 'A good man',
     name: 'Tyak',
   },
+  uploadImage: () => {},
+  imageFile: {
+    current: {},
+  },
+  loading: false,
 };
+
 const wrapper = shallow(<ProfileDetails {...props} />);
 describe('component: ProfileDetails', () => {
   it('renders correctly', (done) => {
