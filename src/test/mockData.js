@@ -9,4 +9,8 @@ export default {
     data: {},
     error: null,
   },
+  modules: {
+    errors: {},
+    modules: [],
+  },
 };
