@@ -13,3 +13,4 @@ export const LOGIN_ERROR = 'LOGIN_ERROR';
 export const GET_ALL_MODULES = 'GET_ALL_MODULES';
 
 export const MODULES_ERROR = 'MODULES_ERROR';
+export const VERIFY_USER = 'VERIFY_USER';

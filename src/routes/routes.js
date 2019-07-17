@@ -8,6 +8,7 @@ import NotFound from '../views/NotFound';
 import signUpPage from '../views/Signup/SignUp';
 import ResetPassword from '../views/ResetPassword/ResetPassword';
 import changePassword from '../views/ChangePassword/changePassword';
+import VerifyUserPage from '../views/VerifyUser/verifyUser';
 
 import About from '../views/AboutUs/AboutUs';
 
@@ -22,6 +23,7 @@ const Routes = () => (
     <Route path="/signup" component={signUpPage} />
     <Route path="/change-password" component={changePassword} />
     <Route path="/dashboard" component={Dashboard} />
+    <Route path="/verify" component={VerifyUserPage} />
     <Route component={NotFound} />
   </Switch>
 );

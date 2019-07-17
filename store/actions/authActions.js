@@ -3,13 +3,7 @@
 /* eslint-disable import/prefer-default-export */
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
-import {
-  GET_ERRORS,
-  SET_CURRENT_USER,
-  LOGIN_ERROR,
-  INIT_AUTH_REQUEST,
-  END_AUTH_REQUEST,
-} from './types';
+import { GET_ERRORS, SET_CURRENT_USER, LOGIN_ERROR, INIT_AUTH_REQUEST, END_AUTH_REQUEST, VERIFY_USER } from './types';
 import setAuthToken from '../../src/utils/setAuthToken';
 
 const authUrl = 'https://freyja-ah-backend.herokuapp.com/api/';
@@ -22,6 +16,11 @@ export const setCurrentUser = decoded => ({
 export const setError = error => ({
   type: GET_ERRORS,
   errors: error,
+});
+
+export const verifyUser = state => ({
+  type: VERIFY_USER,
+  isVerified: state,
 });
 
 // Register
@@ -73,5 +72,28 @@ export const loginUser = payload => async dispatch => {
       type: LOGIN_ERROR,
       payload: errorObj,
     });
+  }
+};
+
+export const verifyAuthUser = (token, history) => async dispatch => {
+  console.log('get jere');
+
+  try {
+    const response = await axios(`https://freyja-ah-backend.herokuapp.com/api/user/verify/${token}`, {
+      method: 'GET',
+      headers: {
+        accept: 'application/json',
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
+    // await dispatch(verifyUser(true));
+    console.log(response);
+
+    setTimeout(() => {
+      history.push('/profile');
+    }, 3000);
+  } catch (error) {
+    // dispatch(verifyUser(false));
+    console.log(error.response);
   }
 };
