@@ -21,33 +21,15 @@ const SignUpForm = ({ onSubmit, onChange, authError, valError }) => (
             <img src={Logo} alt="Logo" />
             <Heading title="CREATE AN ACCOUNT" />
             <div className="inf">
-              <Input
-                id="firstname"
-                type="text"
-                placeholder="First Name"
-                name="firstName"
-                onChange={onChange}
-              />
+              <Input id="firstname" type="text" placeholder="First Name" name="firstName" onChange={onChange} />
               {valError && <div className="feedback">{valError.firstName}</div>}
             </div>
             <div className="inf">
-              <Input
-                id="lastname"
-                type="text"
-                placeholder="Last Name"
-                name="lastName"
-                onChange={onChange}
-              />
+              <Input id="lastname" type="text" placeholder="Last Name" name="lastName" onChange={onChange} />
               {valError && <div className="feedback">{valError.lastName}</div>}
             </div>
             <div className="inf">
-              <Input
-                id="username"
-                type="text"
-                placeholder="Username"
-                name="userName"
-                onChange={onChange}
-              />
+              <Input id="username" type="text" placeholder="Username" name="userName" onChange={onChange} />
             </div>
             <div className="inf">
               <Input id="email" type="email" placeholder="Email" name="email" onChange={onChange} />
@@ -55,13 +37,7 @@ const SignUpForm = ({ onSubmit, onChange, authError, valError }) => (
               {authError && <div className="feedback">{authError}</div>}
             </div>
             <div className="inf">
-              <Input
-                id="password"
-                type="password"
-                placeholder="Password"
-                name="password"
-                onChange={onChange}
-              />
+              <Input id="password" type="password" placeholder="Password" name="password" onChange={onChange} />
               {valError && <div className="feedback">{valError.password}</div>}
             </div>
             <div className="inf">
@@ -72,22 +48,18 @@ const SignUpForm = ({ onSubmit, onChange, authError, valError }) => (
                 name="confirmPassword"
                 onChange={onChange}
               />
-              {' '}
               {valError && <div className="feedback">{valError.confirmPassword}</div>}
             </div>
             <Button text="Sign up" />
           </form>
           <div className="btm">
             <Link to="/signup" className="acct">
-              {' '}
               Already have an account
-              {' '}
             </Link>
             <br />
 
             <Link to="/module" className="soc-media">
               Register with Social media
-              {' '}
             </Link>
             <br />
             <div>

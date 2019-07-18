@@ -7,6 +7,8 @@ let newState;
 const initialState = {
   passwordResetError: '',
   passwordResetSuccess: '',
+  passwordChangeError: '',
+  passwordChangeSuccess: '',
   isLoading: false,
   isAuthenticated: false,
   user: {},
@@ -27,13 +29,14 @@ describe('Auth Reducer', () => {
     expect(authReducer(undefined, { type: 'undefinedAction' })).toEqual({
       passwordResetError: '',
       passwordResetSuccess: '',
+      passwordChangeError: '',
+      passwordChangeSuccess: '',
       isLoading: false,
       isAuthenticated: false,
       user: {},
       errors: {},
     });
   });
-
   it('should handle action type SET_CURRENT_USER', () => {
     action = setCurrentUser(newUser);
     newState = authReducer(initialState, action);

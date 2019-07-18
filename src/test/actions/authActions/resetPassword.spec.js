@@ -3,11 +3,9 @@ import sinon from 'sinon';
 import React from 'react';
 import { ResetPasswordCard } from '../../../components/ResetPassword/ResetPassword';
 
-
 describe('Test methods', () => {
   sinon.spy(ResetPasswordCard.prototype, 'handleSubmit');
   sinon.spy(ResetPasswordCard.prototype, 'handleEmail');
-
 
   function shallowSetup() {
     const props = {
@@ -30,7 +28,6 @@ describe('Test methods', () => {
       const { enzymeWrapper } = shallowSetup();
       expect(enzymeWrapper.find('.error').text()).toBe('invalid email');
       expect(enzymeWrapper.find('.success').text()).toBe('please check you email');
-      expect(enzymeWrapper.find('Button').text()).toBe('<Button />');
       expect(enzymeWrapper.find('CardText').first().text()).toBe('<CardText />');
     });
   });
@@ -44,6 +41,7 @@ describe('Test methods', () => {
     it('should update the state property _**`formOpen`**_ and call handleOpen when edit button is clicked', () => {
       const button = wrapper.find('Button').first();
       button.simulate('click');
+
       expect(ResetPasswordCard.prototype.handleSubmit.calledOnce).toBe(true);
     });
 

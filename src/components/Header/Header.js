@@ -53,7 +53,7 @@ export class Header extends React.Component {
         <Navbar className="nav-style" light expand="md">
           <div>
             <Link to="/" className="nav-brand">
-              Communitee
+              CSLC
             </Link>
           </div>
           <NavbarToggler onClick={this.toggle} />

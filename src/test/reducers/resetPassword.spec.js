@@ -30,4 +30,52 @@ describe('reset password reducer', () => {
       },
     )).toMatchSnapshot();
   });
+  it('should handle PASSWORD_CHANGE_ERROR', () => {
+    expect(reducer(
+      initialState,
+      {
+        type: 'PASSWORD_CHANGE_ERROR',
+      },
+    )).toMatchSnapshot();
+  });
+  it('should handle PASSWORD_CHANGE_SUCCESS', () => {
+    expect(reducer(
+      initialState,
+      {
+        type: 'PASSWORD_CHANGE_SUCCESS',
+      },
+    )).toMatchSnapshot();
+  });
+  it('should handle ERROR', () => {
+    expect(reducer(
+      initialState,
+      {
+        type: 'GET_ERRORS',
+      },
+    )).toMatchSnapshot();
+  });
+  it('should handle PASSWORD_CHANGE_ERROR', () => {
+    expect(reducer(
+      initialState,
+      {
+        type: 'PASSWORD_CHANGE_ERROR',
+      },
+    )).toMatchSnapshot();
+  });
+  it('should handle PASSWORD_CHANGE_SUCCESS', () => {
+    expect(reducer(
+      initialState,
+      {
+        type: 'PASSWORD_CHANGE_SUCCESS',
+      },
+    )).toMatchSnapshot();
+  });
+  it('should handle ERROR', () => {
+    expect(reducer(
+      initialState,
+      {
+        type: 'GET_ERRORS',
+      },
+    )).toMatchSnapshot();
+  });
 });

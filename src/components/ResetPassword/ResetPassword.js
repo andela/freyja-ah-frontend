@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import {
-  CardText, CardBody, CardSubtitle, FormGroup,
-} from 'reactstrap';
+import { CardText, CardBody, CardSubtitle, FormGroup } from 'reactstrap';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import propTypes from 'prop-types';
 import './resetpassword.scss';
 import * as actions from '../../../store/actions/authActions/resetPassword';
-import Card from '../Card/card';
+import Card from '../Card/Card';
 import Button from '../Button';
 import Input from '../Inputs/Input';
 import Footer from '../Footer/Footer';
@@ -50,20 +48,16 @@ export class ResetPasswordCard extends Component {
         <Card>
           <CardBody>
             <CardSubtitle>
-              <FontAwesomeIcon icon="lock" />
+              <FontAwesomeIcon icon="lock" className="FontAwesomeIcon" />
             </CardSubtitle>
             <Heading title="Forgot Password?" />
             <CardText>
-             Please enter your email address here and we will send you information to change your
-             password
+              Please enter your email address here and we will
+              send you information to change your password
             </CardText>
             <div className="success">{passwordResetSuccess}</div>
             <FormGroup>
-              <Input
-                placeholder="Email"
-                id="email"
-                onChange={e => this.handleEmail(e)}
-              />
+              <Input placeholder="Email" id="email" onChange={e => this.handleEmail(e)} />
               <div className="error">{passwordResetError}</div>
             </FormGroup>
             <Button

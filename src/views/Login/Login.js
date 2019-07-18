@@ -7,7 +7,7 @@ import { Link, Redirect } from 'react-router-dom';
 import Logo from '../../assets/images/logo3.png';
 import Navbar from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import Card from '../../components/Card';
+import Card from '../../components/Card/Card';
 import Button from '../../components/Button';
 import Input from '../../components/Inputs/Input';
 import { loginUser } from '../../../store/actions/authActions';
@@ -33,7 +33,8 @@ export class Login extends Component {
     this.setState({
       [e.target.name]: e.target.value,
       validationErrors: {
-        ...validationErrors, [e.target.name]: '',
+        ...validationErrors,
+        [e.target.name]: '',
       },
     });
   }
@@ -109,13 +110,14 @@ export class Login extends Component {
         <section className="l-container">
           <Card className="form-container">
             <Form onSubmit={this.handleSubmit} id="form">
-
               <div>
                 <p className="logo">
                   <img src={Logo} alt="Logo" />
                 </p>
                 <h2 className="header"> LOGIN </h2>
-                <span className="error" id="form-feedback">{authError}</span>
+                <span className="error" id="form-feedback">
+                  {authError}
+                </span>
               </div>
 
               <Input
@@ -138,19 +140,18 @@ export class Login extends Component {
               />
               <span className="error">{password || ''}</span>
 
-              <Button
-                type="submit"
-                classname="submit"
-                text={isLoading ? 'Please wait..' : 'Submit'}
-              />
+              <Button type="submit" classname="submit" text={isLoading ? 'Please wait..' : 'Submit'} />
 
-              <p><Link className="forgot-password" to="/password-reset">Forgot Password?</Link></p>
+              <p>
+                <Link className="forgot-password" to="/password-reset">
+                  Forgot Password?
+                </Link>
+              </p>
               <p>
                 Dont have an account yet?
                 <Link className="sign-up" to="/sign-up"> Sign Up</Link>
               </p>
             </Form>
-
           </Card>
         </section>
         <Footer />
@@ -161,7 +162,11 @@ export class Login extends Component {
 
 Login.propTypes = {
   loginUser: PropTypes.func.isRequired,
-  auth: PropTypes.object,
+  auth: PropTypes.shape({
+    isLoading: PropTypes.bool,
+    isAuthenticated: PropTypes.bool,
+    errors: PropTypes.shape({ error: PropTypes.string }),
+  }),
 };
 
 const mapStateToProps = state => ({
@@ -172,7 +177,4 @@ const mapDispatchToProps = {
   loginUser,
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

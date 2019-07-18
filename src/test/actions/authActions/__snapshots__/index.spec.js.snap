@@ -1,6 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`async actions creates PASSWORD_RESET_ERROR when fetching to-dos has been done 1`] = `
+exports[`async actions creates CHANGE_PASSWORD_ERROR when change password action is not successful 1`] = `
+Array [
+  Object {
+    "payload": "sorry, check the link again",
+    "type": "PASSWORD_CHANGE_ERROR",
+  },
+]
+`;
+
+exports[`async actions creates CHANGE_PASSWORD_SUCCESS when change password action is successful 1`] = `
+Array [
+  Object {
+    "payload": "password successfully update",
+    "type": "PASSWORD_CHANGE_SUCCESS",
+  },
+]
+`;
+
+exports[`async actions creates PASSWORD_CHANGE_SUCCESS when 1`] = `
+Array [
+  Object {
+    "type": "LOADING",
+  },
+  Object {
+    "payload": "please send reset password request again",
+    "type": "PASSWORD_CHANGE_ERROR",
+  },
+]
+`;
+
+exports[`async actions creates PASSWORD_RESET_ERROR 1`] = `
 Array [
   Object {
     "type": "LOADING",
@@ -12,7 +42,7 @@ Array [
 ]
 `;
 
-exports[`async actions creates PASSWORD_RESET_ERROR when reset password action was not successful 1`] = `
+exports[`async actions creates PASSWORD_RESET_ERROR when reset password action is not successful 1`] = `
 Array [
   Object {
     "payload": "invalid Email",
@@ -21,7 +51,7 @@ Array [
 ]
 `;
 
-exports[`async actions creates PASSWORD_RESET_SUCCESS when fetching to-dos has been done 1`] = `
+exports[`async actions creates PASSWORD_RESET_SUCCESS 1`] = `
 Array [
   Object {
     "type": "LOADING",
@@ -33,7 +63,7 @@ Array [
 ]
 `;
 
-exports[`async actions creates PASSWORD_RESET_SUCCESS when reset password action was successful 1`] = `
+exports[`async actions creates PASSWORD_RESET_SUCCESS when reset password action is successful 1`] = `
 Array [
   Object {
     "payload": "Please check your email",
