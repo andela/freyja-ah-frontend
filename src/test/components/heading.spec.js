@@ -17,6 +17,6 @@ describe('Heading component', () => {
   });
   it('should render children', () => {
     const wrapper = component.find('h2');
-    expect(wrapper.find('.headsi').exists()).toBe(true);
+    expect(wrapper.find('.heading').exists()).toBe(true);
   });
 });

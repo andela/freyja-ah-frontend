@@ -9,3 +9,7 @@ export const END_AUTH_REQUEST = 'END_AUTH_REQUEST';
 export const SIGNUP_ERROR = 'SIGNUP_ERROR';
 
 export const LOGIN_ERROR = 'LOGIN_ERROR';
+
+export const GET_ALL_MODULES = 'GET_ALL_MODULES';
+
+export const MODULES_ERROR = 'MODULES_ERROR';

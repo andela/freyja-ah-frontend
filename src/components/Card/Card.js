@@ -1,20 +1,29 @@
-import React from 'react';
-import { Card as ReactStrapCard } from 'reactstrap';
+import React, { PureComponent } from 'react';
+import {
+  Card,
+} from 'reactstrap';
 import propTypes from 'prop-types';
 import './card.scss';
 
-const Card = ({ children, cardStyle }) => (
-  <ReactStrapCard className={cardStyle}>
-    {children}
-  </ReactStrapCard>
-);
+class CardComponent extends PureComponent {
+  render() {
+    const {
+      children, cardStyle,
+    } = this.props;
+    return (
+      <Card className={cardStyle}>
+        {children}
+      </Card>
+    );
+  }
+}
 
-Card.propTypes = {
+CardComponent.propTypes = {
   children: propTypes.element,
   cardStyle: propTypes.string,
 };
-
-Card.defaultProps = {
-  cardStyle: 'c-card',
+CardComponent.defaultProps = {
+  cardStyle: '',
 };
-export default Card;
+
+export default CardComponent;

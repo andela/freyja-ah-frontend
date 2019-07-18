@@ -40,8 +40,6 @@ class SignUp extends React.Component {
       password,
       confirmPassword,
     };
-
-    // eslint-disable-next-line react/destructuring-assignment
     this.props.registerUser(newUser, history);
   }
 

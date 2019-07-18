@@ -11,7 +11,9 @@ import Input from '../../components/Inputs/Input';
 import Button from '../../components/Button/index';
 import './signUp.scss';
 
-const SignUpForm = ({ onSubmit, onChange, authError, valError }) => (
+const SignUpForm = ({
+  onSubmit, onChange, authError, valError,
+}) => (
   <Fragment>
     <section className="sec-signup">
       <Navbar className="navbar" />
@@ -82,7 +84,7 @@ const SignUpForm = ({ onSubmit, onChange, authError, valError }) => (
             </Link>
             <br />
 
-            <Link to="/module" className="soc-media">
+            <Link to="/dashboard" className="soc-media">
               Register with Social media
             </Link>
             <br />

@@ -1,4 +1,4 @@
-$white: #fff;
+$white: #ffffff;
 $primary: #5f3518;
 $primary-hover: #775945;
 
@@ -9,7 +9,7 @@ $primary-hover: #775945;
   .nav-brand {
     color: $white;
     display: inline-block;
-    font-size: 1.5em;
+    font-size: 1em;
     margin-right: 1rem;
     padding-bottom: 0.3125rem;
     padding-top: 0.3125rem;
@@ -18,7 +18,6 @@ $primary-hover: #775945;
       text-decoration: none;
     }
   }
-
   .button-style {
     background: $primary;
     border: 0;
