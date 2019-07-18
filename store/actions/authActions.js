@@ -33,7 +33,7 @@ export const registerUser = (newUser, history) => async dispatch => {
       // Save to local storage
       const { token } = user.data;
       // Set token to local storage
-      localStorage.setItem('jwtToken', token);
+      localStorage.setItem('token', token);
       // Decode token to get user data
       const decoded = jwtDecode(token);
       // Set current user
@@ -47,7 +47,7 @@ export const registerUser = (newUser, history) => async dispatch => {
   }
 };
 
-export const loginUser = payload => async (dispatch) => {
+export const loginUser = payload => async dispatch => {
   dispatch({ type: INIT_AUTH_REQUEST });
 
   try {

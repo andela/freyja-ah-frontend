@@ -24,7 +24,6 @@ export const ResetPassword = user => async (dispatch) => {
       headers: {
         accept: 'application/json',
         'Content-type': 'application/json; charset=UTF-8',
-
       },
     });
 
