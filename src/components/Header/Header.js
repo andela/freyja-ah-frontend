@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import './header.scss';
 import Button from '../Button';
+import logo from '../../assets/images/logo.png';
 
 export class Header extends React.Component {
   constructor(props) {
@@ -55,6 +56,7 @@ export class Header extends React.Component {
         <Navbar className="nav-style" light expand="md">
           <div>
             <Link to="/" className="nav-brand">
+              <img src={logo} alt="logo" />
               CSLC
             </Link>
           </div>

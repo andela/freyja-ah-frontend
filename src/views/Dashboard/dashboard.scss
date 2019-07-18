@@ -22,10 +22,28 @@ div.s-row {
 }
 
  .d-sidebar aside {
-   height: 100vh;
+  height: 100%;
   padding: 10px;
 }
 
+.d-links li.module-active {
+  background: #523304;
+  &:hover {
+    border: 0;
+  }
+}
+
+.d-links li.module-active a {
+  color: #fff;
+}
+.d-links li a {
+  text-decoration: none;
+  color: #523304;
+}
+
+.footer-div.d-footer {
+  position: unset;
+}
 ul.d-links {
   list-style: none;
   margin: 0;
@@ -38,9 +56,12 @@ ul.d-links {
   text-align: center;
   padding: 5px;
 }
+
 .d-links li:hover {
   border: 2px solid $sidebar-links-color;
   border-radius: 2px;
 }
 
-  
+a.m-card-link {
+  color: #000;
+}

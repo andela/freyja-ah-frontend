@@ -8,21 +8,38 @@ $module-card-shadow: rgba(54, 52, 52, 0.4);
 }
 
 .m-container div .card{
-  margin:0;
+  margin-bottom: 20px;
   position: unset;
-  height: 20rem;
+  height: 22rem;
   width: 19rem;
+  box-sizing: border-box;
   box-shadow: 10px 10px 10px $module-card-shadow;
   cursor: pointer;
 }
 
 .m-intro {
+  width: 60%;
   padding-left: 4rem;
-  margin-bottom: 4rem;
+  margin: 0 auto 4rem;
+}
+.m-col-adjust {
+  margin-bottom: 15px;
 }
 
+.m-container div .card:hover {
+  border: 2px $base-color solid;
+}
+.t-link {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+}
+.s-m-link {
+  padding: 4rem .4rem;
+  margin: 4rem 0
+}
 .take-course{
-  margin: 5rem auto;
+  margin: 5rem auto 10rem;
   width: 10rem;
 }
 .take-course .btn {
@@ -35,16 +52,26 @@ $module-card-shadow: rgba(54, 52, 52, 0.4);
 .take-course .btn:hover {
   background: $base-color;
   box-shadow: 0 0 4px rgba(54, 52, 52, 0.4);
+  color: $white;
 }
 .m-c-title .card-title {
-  font-weight: bolder;
-  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: left;
 }
-
+.t-n-text{
+  color: #272525;
+}
+.t-d-text {
+  color: #666262;
+}
 .m-c-title .card-subtitle{
   font-weight: 450;
+  color: #000
 }
-.m-c-title .card-text{
-  color: #666262;
+ .m-c-title .card-title{
   margin-bottom: 2rem;
+}
+a.m-card-link {
+  text-decoration: none;
 }

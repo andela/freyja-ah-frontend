@@ -1,20 +1,21 @@
-/* eslint-disable import/prefer-default-export */
+
 import { get } from 'axios';
-import { GET_ALL_MODULES, GET_ALL_MODULES_ERROR } from './types';
+import { GET_ALL_MODULES, MODULES_ERROR } from './types';
 
 const getModules = () => async (dispatch) => {
   try {
-    const modules = await get('https://freyja-ah-backend.herokuapp.com/api/modules', {
+    const modulesRequest = await get('https://freyja-ah-backend.herokuapp.com/api/modules', {
       headers: { Authorization: `${localStorage.getItem('token')}` },
     });
-    console.log(modules);
+
+    const { data } = modulesRequest.data;
     return dispatch({
       type: GET_ALL_MODULES,
-      payload: modules,
+      payload: data,
     });
   } catch (error) {
     return dispatch({
-      type: GET_ALL_MODULES_ERROR,
+      type: MODULES_ERROR,
       payload: error,
     });
   }

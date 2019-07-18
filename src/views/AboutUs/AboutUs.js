@@ -74,7 +74,7 @@ const About = () => (
 
       <section className="Ms-t row">
         <div className="container-A">
-          <h1 className="abt-h">Meet out Trainers</h1>
+          <h1 className="abt-h">Meet our Trainers</h1>
           <br />
           <div className="row">
             <div className="tutors">

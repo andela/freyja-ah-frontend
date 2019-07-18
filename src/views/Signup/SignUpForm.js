@@ -84,7 +84,7 @@ const SignUpForm = ({
             </Link>
             <br />
 
-            <Link to="/module" className="soc-media">
+            <Link to="/dashboard" className="soc-media">
               Register with Social media
             </Link>
             <br />

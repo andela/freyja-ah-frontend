@@ -18,7 +18,7 @@ const Routes = () => (
     <Route path="/login" component={Login} />
     <Route path="/aboutus" component={About} />
     <Route path="/profile" component={Profile} />
-    <Route path="/reset-password" component={ResetPassword} />
+    <Route path="/password-reset" component={ResetPassword} />
     <Route path="/signup" component={signUpPage} />
     <Route path="/change-password" component={changePassword} />
     <Route path="/dashboard" component={Dashboard} />

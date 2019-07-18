@@ -1,63 +1,55 @@
 /* eslint-disable react/prefer-stateless-function */
-import React from 'react';
+import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import {
   CardBody, CardTitle, Row, Col, CardSubtitle, CardText, Button,
 } from 'reactstrap';
+import { arrayOf, object } from 'prop-types';
 import Card from '../Card/Card';
+import Spinner from '../Spinner/Spinner';
 import './modules.scss';
 
-const Module = () => (
+const Modules = ({ modules }) => (
   <div className="m-container cd-view">
     <div className="m-intro">
       <h3>Modules</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>
+      The course modules provide the essential materials,
+      activities and games you will need to understand and improve your customer service skills.
+      </p>
     </div>
     <Row>
-      <Col sm={{ size: 'auto' }}>
-        <Card>
-          <CardBody className="m-c-title">
-            <CardTitle>Module 1</CardTitle>
-            <CardSubtitle>Description</CardSubtitle>
-            <CardText>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </CardText>
-            <CardSubtitle>Introduction</CardSubtitle>
-            <CardText>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </CardText>
-          </CardBody>
-        </Card>
-      </Col>
-      <Col sm={{ size: 'auto' }}>
-        <Card>
-          <CardBody className="m-c-title">
-            <CardTitle>Module 2</CardTitle>
-            <CardSubtitle>Description</CardSubtitle>
-            <CardText>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </CardText>
-            <CardSubtitle>Introduction</CardSubtitle>
-            <CardText>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </CardText>
-          </CardBody>
-        </Card>
-      </Col>
-      <Col sm={{ size: 'auto' }}>
-        <Card>
-          <CardBody className="m-c-title">
-            <CardTitle>Module 3</CardTitle>
-            <CardSubtitle>Description</CardSubtitle>
-            <CardText>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </CardText>
-            <CardSubtitle>Introduction</CardSubtitle>
-            <CardText>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </CardText>
-          </CardBody>
-        </Card>
-      </Col>
+      {!modules && (<Spinner />)}
+      {modules && modules.map(mod => (
+        <Col key={mod.id} sm={{ size: 'auto' }} className="m-col-adjust">
+
+          <Card className="m-g-card">
+            <Fragment>
+              <Link to={`/modules/${mod.id}`} className="m-card-link">
+                <CardBody className="m-c-title">
+                  <CardTitle className="m-title">
+                    {mod.id}
+                    {'. '}
+                    {mod.name}
+                  </CardTitle>
+                  <CardSubtitle>Description</CardSubtitle>
+                  <CardText className="t-d-text">
+                    {mod.description}
+                  </CardText>
+                </CardBody>
+
+              </Link>
+
+              <CardBody className="t-link">
+                <CardText>
+                  <Link to={`/modules/${mod.id}`}>View more </Link>
+                </CardText>
+              </CardBody>
+            </Fragment>
+          </Card>
+
+        </Col>
+      ))}
     </Row>
     <div className="take-course">
       <Button>
@@ -67,5 +59,7 @@ const Module = () => (
   </div>
 );
 
-
-export default Module;
+Modules.propTypes = {
+  modules: arrayOf(object),
+};
+export default Modules;

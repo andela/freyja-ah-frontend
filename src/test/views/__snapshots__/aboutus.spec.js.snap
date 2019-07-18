@@ -122,7 +122,7 @@ exports[`Aboutus component should render without errors 1`] = `
         <h1
           className="abt-h"
         >
-          Meet out Trainers
+          Meet our Trainers
         </h1>
         <br />
         <div

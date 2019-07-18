@@ -23,7 +23,6 @@ CardComponent.propTypes = {
   cardStyle: propTypes.string,
 };
 CardComponent.defaultProps = {
-  children: '',
   cardStyle: '',
 };
 
