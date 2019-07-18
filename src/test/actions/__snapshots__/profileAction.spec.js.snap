@@ -27,7 +27,7 @@ Array [
       "DOB": undefined,
       "bio": "Help me",
       "email": undefined,
-      "image": "https://cdn.umnbootcamp.com/wp-content/uploads/sites/93/2018/03/placeholder-person.png",
+      "image": undefined,
       "industry": undefined,
       "name": "John Grisham",
       "phoneNumber": 7689567890,
@@ -74,6 +74,7 @@ exports[`profile reducer should test the initial state 1`] = `
 Object {
   "data": Object {},
   "error": null,
+  "isLoading": false,
 }
 `;
 
@@ -81,6 +82,7 @@ exports[`profile reducer should test the state for update when get profile fails
 Object {
   "data": Object {},
   "error": undefined,
+  "isLoading": false,
 }
 `;
 
@@ -88,5 +90,56 @@ exports[`profile reducer should test the state for update when get profile succe
 Object {
   "data": undefined,
   "error": null,
+  "isLoading": false,
 }
+`;
+
+exports[`profile reducer should test the state for update when upload image failed 1`] = `
+Object {
+  "data": Object {},
+  "error": undefined,
+  "isLoading": false,
+}
+`;
+
+exports[`profile reducer should test the state for update when upload image failed 2`] = `
+Object {
+  "data": Object {},
+  "error": null,
+  "isLoading": true,
+}
+`;
+
+exports[`profile reducer should test the state for update when upload image success 1`] = `
+Object {
+  "data": Object {
+    "image": undefined,
+  },
+  "error": null,
+  "isLoading": false,
+}
+`;
+
+exports[`upload actions dispatch UPLOAD_FAILED with error object 1`] = `
+Array [
+  Object {
+    "imageUrl": "http//",
+    "type": "UPLOAD_SUCCESS",
+  },
+  Object {
+    "error": Object {
+      "error": "unable to upload image",
+    },
+    "type": "UPLOAD_FAILED",
+  },
+]
+`;
+
+exports[`upload actions dispatch UPLOAD_SUCCESS with image url 1`] = `
+Array [
+  Object {
+    "imageUrl": "http//",
+    "type": "UPLOAD_SUCCESS",
+  },
+]
 `;

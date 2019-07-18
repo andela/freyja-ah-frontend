@@ -1,18 +1,34 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
-import './profileDetails.scss';
+import Spinner from '../../components/Spinner/Spinner';
 import defaultImage from '../../utils/config';
+import './profileDetails.scss';
 
 
-const ProfileDetails = ({ profile }) => (
+const ProfileDetails = ({ profile, loading, imageFile, uploadImage }) => (
   <div className="profile">
     <div className="profileImage">
       <img
         src={profile.image || defaultImage}
         alt="profile"
+        style={{ filter: loading ? 'blur(4px)' : '' }}
       />
-      <FontAwesomeIcon icon="camera" />
+      {loading ? (
+        <div className="spinner-position">
+          <Spinner />
+        </div>
+      ) : ''}
+      <input
+        type="file"
+        name="mediaFile"
+        id="image"
+        style={{ display: 'none' }}
+        ref={imageFile}
+        accept="image/*"
+        onChange={() => uploadImage(imageFile.current.files[0])}
+      />
+      <FontAwesomeIcon icon="camera" onClick={() => imageFile.current.click()} id="uploadIcon" />
     </div>
     <div className="profileDetails">
       <h4>
@@ -44,8 +60,6 @@ const ProfileDetails = ({ profile }) => (
           </div>
         )
       }
-
-
     </div>
   </div>
 
@@ -59,5 +73,10 @@ ProfileDetails.propTypes = {
     bio: PropTypes.string,
     socialMedia: PropTypes.array,
   }),
+  uploadImage: PropTypes.func,
+  imageFile: PropTypes.shape({
+    current: PropTypes.object,
+  }),
+  loading: PropTypes.bool,
 };
 export default ProfileDetails;

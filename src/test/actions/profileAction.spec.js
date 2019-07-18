@@ -1,7 +1,7 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import nock from 'nock';
-import { getProfile, getProfileSuccess } from '../../../store/actions/profile';
+import { getProfile, getProfileSuccess, uploadSuccess, uploadFailed } from '../../../store/actions/profile';
 import profileReducer, { initialState } from '../../../store/reducers/profile';
 
 const token = 'token';
@@ -72,6 +72,20 @@ describe('async actions', () => {
   });
 });
 
+describe('upload actions', () => {
+  const store = mockStore({});
+  it('dispatch UPLOAD_SUCCESS with image url', (done) => {
+    store.dispatch(uploadSuccess('http//'));
+    expect(store.getActions()).toMatchSnapshot();
+    done();
+  });
+  it('dispatch UPLOAD_FAILED with error object', (done) => {
+    store.dispatch(uploadFailed({ error: 'unable to upload image' }));
+    expect(store.getActions()).toMatchSnapshot();
+    done();
+  });
+});
+
 describe('profile reducer', () => {
   it('should test the initial state', () => {
     expect(profileReducer(undefined, {})).toMatchSnapshot();
@@ -81,5 +95,17 @@ describe('profile reducer', () => {
   });
   it('should test the state for update when get profile success', () => {
     expect(profileReducer(initialState, { type: 'GET_PROFILE_SUCCESS' })).toMatchSnapshot();
+  });
+  it('should test the state for update when upload image success', (done) => {
+    expect(profileReducer(initialState, { type: 'UPLOAD_SUCCESS' })).toMatchSnapshot();
+    done();
+  });
+  it('should test the state for update when upload image failed', (done) => {
+    expect(profileReducer(initialState, { type: 'UPLOAD_FAILED' })).toMatchSnapshot();
+    done();
+  });
+  it('should test the state for update when upload image failed', (done) => {
+    expect(profileReducer(initialState, { type: 'UPLOAD_START' })).toMatchSnapshot();
+    done();
   });
 });
