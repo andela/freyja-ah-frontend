@@ -10,6 +10,8 @@ export const SIGNUP_ERROR = 'SIGNUP_ERROR';
 
 export const LOGIN_ERROR = 'LOGIN_ERROR';
 
+export const INIT_MODULE_REQUEST = 'INIT_MODULE_REQUEST';
+
 export const GET_ALL_MODULES = 'GET_ALL_MODULES';
 
 export const GET_SINGLE_MODULE = 'GET_SINGLE_MODULE';

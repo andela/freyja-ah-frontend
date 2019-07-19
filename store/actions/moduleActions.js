@@ -1,6 +1,6 @@
 import { get } from 'axios';
 import {
-  GET_ALL_MODULES, GET_SINGLE_MODULE, MODULES_ERROR,
+  GET_ALL_MODULES, GET_SINGLE_MODULE, MODULES_ERROR, INIT_MODULE_REQUEST,
 } from './types';
 
 const baseUrl = 'https://freyja-ah-backend.herokuapp.com/api/';
@@ -24,7 +24,6 @@ const getModules = () => async (dispatch) => {
   }
 };
 
-
 export const setModule = payload => ({
   type: GET_SINGLE_MODULE,
   payload,
@@ -32,6 +31,7 @@ export const setModule = payload => ({
 
 export const getModule = moduleId => async (dispatch) => {
   try {
+    dispatch({ type: INIT_MODULE_REQUEST });
     const request = await get(`${baseUrl}/modules/${moduleId}`);
     const { data } = request.data;
     dispatch(setModule(data));

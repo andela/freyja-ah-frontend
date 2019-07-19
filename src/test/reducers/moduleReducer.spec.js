@@ -4,13 +4,14 @@ import modules from './modulesMock/modulesMock';
 const initialState = {
   allModules: [],
   errors: {},
+  singleModule: {},
 };
 
 describe('Module reducer', () => {
   it('should set default state', () => {
     const state = modulesReducer(undefined, { type: '@@INIT' });
 
-    expect(state).toEqual({ allModules: [], errors: {} });
+    expect(state).toEqual({ allModules: [], errors: {}, singleModule: {} });
   });
 
   it('should get all modules', () => {

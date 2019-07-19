@@ -23,7 +23,7 @@ const Routes = () => (
     <Route path="/change-password" component={changePassword} />
     <Route path="/dashboard" component={Dashboard} />
     <Route path="/verify" component={VerifyUserPage} />
-    <Route path="/view-module" component={ViewModule} />
+    <Route path="/view-module/:moduleId" component={ViewModule} />
     <Route component={NotFound} />
   </Switch>
 );
