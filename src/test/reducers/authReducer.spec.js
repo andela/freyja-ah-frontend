@@ -13,6 +13,7 @@ const initialState = {
   isAuthenticated: false,
   user: {},
   errors: {},
+  verified: '',
 };
 
 const newUser = {
@@ -35,6 +36,7 @@ describe('Auth Reducer', () => {
       isAuthenticated: false,
       user: {},
       errors: {},
+      verified: '',
     });
   });
   it('should handle action type SET_CURRENT_USER', () => {

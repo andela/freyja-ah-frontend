@@ -76,24 +76,20 @@ export const loginUser = payload => async dispatch => {
 };
 
 export const verifyAuthUser = (token, history) => async dispatch => {
-  console.log('get jere');
-
   try {
-    const response = await axios(`https://freyja-ah-backend.herokuapp.com/api/user/verify/${token}`, {
+    await axios(`https://freyja-ah-backend.herokuapp.com/api/user/verify/${token}`, {
       method: 'GET',
       headers: {
         accept: 'application/json',
         'Content-type': 'application/json; charset=UTF-8',
       },
     });
-    // await dispatch(verifyUser(true));
-    console.log(response);
+    await dispatch(verifyUser("you've been verified, Redirecting to your profile page..."));
 
     setTimeout(() => {
       history.push('/profile');
     }, 3000);
   } catch (error) {
-    // dispatch(verifyUser(false));
-    console.log(error.response);
+    dispatch(verifyUser("Couldn't verify you, Please chcek the link sent to your email again."));
   }
 };

@@ -72,10 +72,28 @@ Array [
 ]
 `;
 
+exports[`async actions update verified state 1`] = `
+Array [
+  Object {
+    "isVerified": true,
+    "type": "VERIFY_USER",
+  },
+]
+`;
+
 exports[`async actions updates loading to true in state 1`] = `
 Array [
   Object {
     "type": "LOADING",
+  },
+]
+`;
+
+exports[`async actions verifies user 1`] = `
+Array [
+  Object {
+    "isVerified": "Couldn't verify you, Please chcek the link sent to your email again.",
+    "type": "VERIFY_USER",
   },
 ]
 `;

@@ -52,8 +52,7 @@ export class ResetPasswordCard extends Component {
             </CardSubtitle>
             <Heading title="Forgot Password?" />
             <CardText>
-              Please enter your email address here and we will send you information to change your
-              password
+              Please enter your email to reset your password
             </CardText>
             <div className="success">{passwordResetSuccess}</div>
             <FormGroup>

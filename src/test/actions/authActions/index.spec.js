@@ -12,6 +12,7 @@ import {
   passwordChangeSuccess,
   passwordChangeError,
 } from '../../../../store/actions/authActions/changePassword';
+import { verifyAuthUser, verifyUser } from '../../../../store/actions/authActions';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -51,6 +52,19 @@ describe('async actions', () => {
     return store.dispatch(ChangePassword('december', 'cadjsdasscdadadsds')).then(() => {
       expect(store.getActions()).toMatchSnapshot();
     });
+  });
+
+  it('verifies user', () => {
+    nock('https://freyja-ah-backend.herokuapp.com').get('api/user/verify/jdkkdkkd').reply(200, {});
+
+    return store.dispatch(verifyAuthUser('dnsanda')).then(() => {
+      expect(store.getActions()).toMatchSnapshot();
+    });
+  });
+
+  it('update verified state', () => {
+    store.dispatch(verifyUser(true));
+    expect(store.getActions()).toMatchSnapshot();
   });
 
   it('creates CHANGE_PASSWORD_SUCCESS when change password action is successful', () => {
