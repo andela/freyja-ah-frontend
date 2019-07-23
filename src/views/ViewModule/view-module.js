@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
 import ModuleSidebar from '../../components/ModuleSidebar';
+import ContentList from '../../components/ContentList/ContentList';
 import Spinner from '../../components/Spinner/Spinner';
 import Navbar from '../../components/Header/Header';
 import Button from '../../components/Button';
@@ -16,34 +17,14 @@ import './view-module.scss';
 export class ViewModule extends Component {
   componentDidMount() {
     const { moduleId } = this.props.match.params;
-    if (typeof Number(moduleId) !== 'number') {
-      return <Redirect to="/dashboard" />;
-    }
     this.props.getModule(moduleId);
   }
 
   render() {
-    let allContents;
-
     if (!this.props.isAuthenticated) {
       return <Redirect to="/login" />;
     }
-
     const { id, name, description, contents } = this.props.singleModule;
-
-    if (contents) {
-      allContents = contents.map((content) => {
-        const { name, link, id } = content;
-
-        return (
-          <div key={id} className="content-item">
-            <a href={link}>
-              <p>{name}</p>
-            </a>
-          </div>
-        );
-      });
-    }
 
     return (
       <React.Fragment>
@@ -71,7 +52,7 @@ export class ViewModule extends Component {
                         <p className="content-header">Content</p>
 
                         <div className="module-content-items">
-                          {allContents || ''}
+                          {contents && <ContentList contents={contents} />}
                         </div>
                       </div>
 

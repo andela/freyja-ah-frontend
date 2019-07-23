@@ -1,7 +1,15 @@
 $sidebar-links-color: #8f5806;
+$dark-brown-color: #523304;
+
+.m-aside {
+  margin-top: 41px;
+  background: #f8f8f8;
+  border: solid #f8f8f8 1px;
+}
 
 .d-aside{
   padding-top: 2rem;
+  min-height: 100vh;
 }
 
  .d-sidebar aside {
@@ -9,7 +17,7 @@ $sidebar-links-color: #8f5806;
 }
 
 .d-links li.module-active {
-  background: #523304;
+  background: $dark-brown-color;
   &:hover {
     border: 0;
   }
@@ -20,7 +28,7 @@ $sidebar-links-color: #8f5806;
 }
 .d-links li a {
   text-decoration: none;
-  color: #523304;
+  color: $dark-brown-color;
 }
 
 ul.d-links {

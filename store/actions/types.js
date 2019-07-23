@@ -17,4 +17,5 @@ export const GET_ALL_MODULES = 'GET_ALL_MODULES';
 export const GET_SINGLE_MODULE = 'GET_SINGLE_MODULE';
 
 export const MODULES_ERROR = 'MODULES_ERROR';
+
 export const VERIFY_USER = 'VERIFY_USER';

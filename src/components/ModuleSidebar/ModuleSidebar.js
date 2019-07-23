@@ -1,12 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import './moduleSidebar.scss';
 import { Link } from 'react-router-dom';
-import Sidebar from '../Sidebar/Sidebar';
 import sideLogo from '../../assets/images/logo.png';
+import './moduleSidebar.scss';
 
 const ModuleSidebar = () => (
-  <Sidebar>
+  <aside className="m-aside">
     <div className="d-aside">
       <div>
         <span className="d-logo">
@@ -21,7 +19,7 @@ const ModuleSidebar = () => (
         <li><Link to="/aboutus">Help</Link></li>
       </ul>
     </div>
-  </Sidebar>
+  </aside>
 );
 
 export default ModuleSidebar;

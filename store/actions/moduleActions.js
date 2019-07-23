@@ -36,7 +36,6 @@ export const getModule = moduleId => async (dispatch) => {
     const { data } = request.data;
     dispatch(setModule(data));
   } catch (error) {
-    console.log(error.response);
     dispatch({
       type: MODULES_ERROR,
       payload: error,
