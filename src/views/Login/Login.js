@@ -153,7 +153,7 @@ export class Login extends Component {
               </p>
               <p>
                 Dont have an account yet?
-                <Link className="sign-up" to="/sign-up">
+                <Link className="sign-up" to="/signup">
                   {' '}
                   Sign Up
                 </Link>

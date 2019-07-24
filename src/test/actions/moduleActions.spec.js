@@ -2,7 +2,6 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import nock from 'nock';
-import 'regenerator-runtime';
 import { getModules, getModule } from '../../../store/actions/moduleActions';
 
 const middlewares = [thunk];

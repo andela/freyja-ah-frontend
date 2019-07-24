@@ -46,6 +46,12 @@ html {
 
 .font {
   width: 30%;
+  padding: 10px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+a.font:focus {
+  outline: none;
 }
 
 .boxx-tex {
