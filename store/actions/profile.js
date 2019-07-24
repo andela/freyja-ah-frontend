@@ -45,8 +45,8 @@ export const getProfile = userId => async (dispatch) => {
       industry: user.profile.industry,
       yrsOfExperience: user.profile.yrsOfExperience,
       isEnrolled: user.profile.isEnrolled,
+      isCertified: user.profile.isCertified,
     };
-
     dispatch(getProfileSuccess(userDetails));
   } catch (error) {
     dispatch(getProfileFailed(error));

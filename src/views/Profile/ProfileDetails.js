@@ -31,9 +31,6 @@ const ProfileDetails = ({ profile, loading, imageFile, uploadImage }) => (
       <FontAwesomeIcon icon="camera" onClick={() => imageFile.current.click()} id="uploadIcon" />
     </div>
     <div className="profileDetails">
-      <h4>
-        {profile.name}
-      </h4>
       <p className="email">
         {profile.email}
       </p>
