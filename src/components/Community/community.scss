@@ -1,0 +1,100 @@
+$border: #333;
+$bg-color: #ffffff;
+$body-color: #c4c4c4;
+$form-color: #f3994a;
+
+.main_com {
+  display: flex;
+  flex-direction: row;
+  padding-left: 60px;
+
+  @media screen and (max-width: 700px) {
+    padding-left: 0;
+  }
+  .d-aside {
+    @media screen and (max-width: 500px) {
+      display: none;
+    }
+    .c-side {
+      padding-left: 45px;
+
+      .c-logo {
+        cursor: pointer;
+        margin: 4rem 1rem;
+        text-align: center;
+        padding: 5px;
+      }
+    }
+  }
+  .main_sec {
+    padding: 1rem;
+    width: 90%;
+    .input_section {
+      textarea,
+      #inp {
+        width: 60%;
+        margin-top: 15px;
+        border: 1px solid $border;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .com_btn {
+        background-color: $form-color;
+        border: 0;
+        border-radius: 5px;
+        color: $bg-color;
+        width: 30%;
+        margin-top: 10px;
+        cursor: pointer;
+        display: block;
+
+        &:hover {
+          opacity: 0.8;
+          transition: 0.7s;
+        }
+      }
+
+      hr {
+        color: $border;
+        border: 1px solid $border;
+        margin-top: 40px;
+      }
+    }
+    .posts {
+      overflow: scroll;
+      max-height: 40vh;
+
+      .posts_section {
+        padding: 1rem;
+
+        .post_title {
+          margin-bottom: 2px;
+          font-size: 20px;
+        }
+
+        .post_body {
+          margin-top: 5px;
+          color: $body-color;
+        }
+
+        .poster_name {
+          display: inline-block;
+          color: $form-color;
+        }
+
+        .poster_role {
+          display: inline-block;
+          padding-left: 1rem;
+        }
+
+        hr {
+          border: 0.5px solid $form-color;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
