@@ -2,7 +2,7 @@
 import React, { Fragment } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Link } from 'react-router-dom';
-import { Card, CardBody } from 'reactstrap';
+import { Card } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import Logo from '../../assets/images/logo3.png';
@@ -80,13 +80,17 @@ const SignUpForm = ({
             <Button text="Sign up" />
           </form>
           <div className="btm">
-            <Link to="/login" className="acct">
-              Already have an account
-            </Link>
             <br />
+            <p className="acct">
+              Already have an account?
+              <Link className="sign-up" to="/login">
+                {' '}
+                login
+              </Link>
+            </p>
 
-            <p className="soc-media">
-              Register with Social media
+            <p className="acct">
+              Register with Social media account
             </p>
             <div>
               <a
@@ -115,7 +119,6 @@ const SignUpForm = ({
               </a>
             </div>
           </div>
-          <CardBody />
         </Card>
       </div>
     </section>

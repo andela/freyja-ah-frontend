@@ -40,7 +40,14 @@ class SignUp extends React.Component {
   }
 
   onSubmit(e) {
-    const { firstName, lastName, userName, email, password, confirmPassword } = this.state;
+    const {
+      firstName,
+      lastName,
+      userName,
+      email,
+      password,
+      confirmPassword,
+    } = this.state;
     const { history, registerAction } = this.props;
     e.preventDefault();
     const newUser = {

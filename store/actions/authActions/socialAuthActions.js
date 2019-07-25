@@ -16,7 +16,6 @@ export const socialAuth = token => async (dispatch) => {
 export const socialAuthPath = (authType) => {
   const url = 'https://freyja-ah-backend.herokuapp.com';
   window.location.href = `${url}/api/auth/${authType}`;
-  return null;
 };
 
 export const getToken = (tokenString) => {
