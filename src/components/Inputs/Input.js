@@ -11,7 +11,7 @@ const InputField = ({ id, type, placeholder, name, onChange, value }) => (
       type={type}
       placeholder={placeholder}
       name={name}
-      value={value}
+      defaultValue={value}
       onChange={onChange}
     />
   </Fragment>
@@ -20,7 +20,10 @@ InputField.propTypes = {
   type: PropTypes.string,
   id: PropTypes.string,
   name: PropTypes.string,
-  value: PropTypes.string,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
 };

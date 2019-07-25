@@ -38,6 +38,11 @@ export default (state = initialState, action) => {
           image: action.imageUrl,
         },
       };
+    case actionTypes.UPDATE_PROFILE_FAILED:
+      return {
+        ...state,
+        error: action.error,
+      };
     default:
       return state;
   }
