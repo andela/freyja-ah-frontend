@@ -1,4 +1,4 @@
-import { SET_CURRENT_USER, GET_ERRORS, LOGIN_ERROR, INIT_AUTH_REQUEST, END_AUTH_REQUEST } from '../actions/types';
+import { SET_CURRENT_USER, GET_ERRORS, LOGIN_ERROR, INIT_AUTH_REQUEST, END_AUTH_REQUEST, VERIFY_USER } from '../actions/types';
 import isEmpty from '../../src/validations/isEmpty';
 
 export const initialState = {
@@ -10,6 +10,7 @@ export const initialState = {
   isAuthenticated: false,
   user: {},
   errors: {},
+  verified: '',
 };
 
 const authReducer = (state = initialState, action) => {
@@ -74,6 +75,11 @@ const authReducer = (state = initialState, action) => {
         passwordChangeError: '',
         passwordChangeSuccess: action.payload,
         isLoading: false,
+      };
+    case VERIFY_USER:
+      return {
+        ...state,
+        verified: action.isVerified,
       };
     default:
       return state;
