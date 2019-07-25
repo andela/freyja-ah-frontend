@@ -2,7 +2,6 @@ import axios from 'axios';
 import * as actionCreators from '../constants/profileContants';
 
 const url = 'https://freyja-ah-backend.herokuapp.com/api/profiles';
-const token = localStorage.getItem('token');
 export const getProfileSuccess = profile => ({
   type: actionCreators.GET_PROFILE_SUCCESS,
   data: profile,
@@ -16,7 +15,7 @@ export const getProfileFailed = error => ({
 export const getProfile = userId => async (dispatch) => {
   const config = {
     headers: {
-      Authorization: token,
+      Authorization: `${localStorage.getItem('token')}`,
     },
   };
   try {
@@ -72,7 +71,7 @@ export const uploadImage = image => async (dispatch) => {
   const config = {
     headers: {
       'Content-type': 'multipart/form-data',
-      Authorization: token,
+      Authorization: `${localStorage.getItem('token')}`,
     },
   };
   try {
@@ -96,7 +95,7 @@ export const updateProfileFailed = error => ({
 export const updateProfile = data => async (dispatch) => {
   const config = {
     headers: {
-      Authorization: token,
+      Authorization: `${localStorage.getItem('token')}`,
     },
   };
   try {

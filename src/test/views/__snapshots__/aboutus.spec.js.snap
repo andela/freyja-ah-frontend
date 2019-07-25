@@ -2,9 +2,7 @@
 
 exports[`Aboutus component should render without errors 1`] = `
 <Fragment>
-  <Header
-    isAuthenticated={false}
-  />
+  <Connect(Header) />
   <div
     className="wrapper"
   >

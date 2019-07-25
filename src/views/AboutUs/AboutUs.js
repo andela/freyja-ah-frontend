@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Form, FormGroup, Input } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Header } from '../../components/Header/Header';
+import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import './aboutus.scss';
 

@@ -81,6 +81,12 @@ const authReducer = (state = initialState, action) => {
         ...state,
         verified: action.isVerified,
       };
+    case 'LOGOUT':
+      return {
+        ...state,
+        user: {},
+        isAuthenticated: false,
+      };
     default:
       return state;
   }
