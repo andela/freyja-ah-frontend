@@ -8,6 +8,28 @@ $form-color: #f3994a;
   flex-direction: row;
   padding-left: 60px;
 
+  .spinner-icon-container {
+    height: 80px;
+    left: 60%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 125px;
+  }
+
+  .spinner_overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    cursor: pointer;
+  }
+
   @media screen and (max-width: 700px) {
     padding-left: 0;
   }
@@ -29,6 +51,8 @@ $form-color: #f3994a;
   .main_sec {
     padding: 1rem;
     width: 90%;
+    margin-top: 50px;
+
     .input_section {
       textarea,
       #inp {
@@ -71,13 +95,19 @@ $form-color: #f3994a;
         padding: 1rem;
 
         .post_title {
-          margin-bottom: 2px;
           font-size: 20px;
+          display: inline;
+        }
+
+        .timeCreated {
+          display: inline-block;
+          margin-left: 5%;
+          color: $body-color;
         }
 
         .post_body {
           margin-top: 5px;
-          color: $body-color;
+          color: $border;
         }
 
         .poster_name {
