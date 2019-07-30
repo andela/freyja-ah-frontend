@@ -17,7 +17,7 @@ function shallowSetup() {
           name: 'Introduction',
           link: 'http://localhost:3000',
           id: 1,
-        }
+        },
       ],
     },
     getModule,
