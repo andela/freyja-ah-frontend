@@ -11,6 +11,7 @@ import ResetPassword from '../views/ResetPassword/ResetPassword';
 import changePassword from '../views/ChangePassword/changePassword';
 import VerifyUserPage from '../views/VerifyUser/verifyUser';
 import CommunityPage from '../views/Community/CommunityPage';
+import Messaging from '../views/Messaging/Messaging';
 
 import About from '../views/AboutUs/AboutUs';
 
@@ -27,6 +28,7 @@ const Routes = () => (
     <Route path="/verify" component={VerifyUserPage} />
     <Route path="/view-module/:moduleId" component={ViewModule} />
     <Route path="/community" component={CommunityPage} />
+    <Route path="/messaging" component={Messaging} />
     <Route component={NotFound} />
   </Switch>
 );

@@ -1,0 +1,22 @@
+.contacts {
+    height: 90vh;
+    margin-top: 20px;
+    overflow: scroll;
+    
+    h4 {
+        padding: 10px;
+    }
+    .contactDetails {
+        cursor: pointer;
+        padding: 10px;
+        border-top: 1px solid black;
+
+        &:hover {
+            background: #afafaf;
+        }
+
+        p {
+            color: grey;
+        }
+    }
+}

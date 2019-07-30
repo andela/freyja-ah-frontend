@@ -1,0 +1,39 @@
+.msg-view {
+    margin-left: 18px;
+    overflow: scroll;
+    height: 83vh;
+    margin-bottom: 4rem;
+    margin-top: 0.5rem;
+}
+.message {
+    width: 52%;
+    margin-bottom: 2rem;
+
+    p {
+        padding: 5px 10px 5px 12px;
+        background: #ebebeb none repeat scroll 0 0;
+        border-radius: 10px;
+        color: #646464;
+        font-size: 18px;
+        margin: 0;
+        width: 100%;
+    }
+
+    span {
+        color: #646464;
+    }
+}
+
+.receivedMsg {
+    float: left;
+}
+
+.sentMsg {
+    float: right;
+    margin-right: 0.6rem;
+
+    p {
+        color: white;
+        background: #a07354;
+    }
+}

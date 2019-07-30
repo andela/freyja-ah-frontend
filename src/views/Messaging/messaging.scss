@@ -1,0 +1,30 @@
+.messageInput {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    padding: 20px;
+    background: whitesmoke;
+}
+
+.sendBtn {
+    width: 53px;
+    border-radius: 50%;
+    height: 37px;
+    position: absolute;
+    right: 26px;
+    top: 26px;
+    background-color: #a07354;
+
+    &:hover {
+        background-color: #77543c;
+    }
+}
+
+#input {
+    border-radius: 50px;
+}
+#input,
+#input::-webkit-input-placeholder {
+    font-size: 20px;
+    padding-left: 10px;
+}
