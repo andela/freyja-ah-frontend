@@ -8,6 +8,7 @@ import { connect } from 'react-redux';
 import './header.scss';
 import Button from '../Button';
 import logo from '../../assets/images/logo.png';
+import { logoutUser } from '../../../store/actions/authActions';
 
 export class Header extends React.Component {
   constructor(props) {
@@ -27,7 +28,7 @@ export class Header extends React.Component {
   }
 
   render() {
-    const { isAuthenticated } = this.props;
+    const { isAuthenticated, logout } = this.props;
     let display = (
       <NavItem>
         <Link to="/login">
@@ -44,8 +45,8 @@ export class Header extends React.Component {
           <Link to="/profile">
             <Button type="button" text="Profile" classname="button-style" />
           </Link>
-          <Link to="/logout">
-            <Button type="button" text="Sign out" classname="button-style" />
+          <Link to="/">
+            <Button type="button" text="Sign out" classname="button-style" onClick={() => logout()} />
           </Link>
         </NavItem>
       );
@@ -78,8 +79,13 @@ Header.defaultProps = {
 
 Header.propTypes = {
   isAuthenticated: PropTypes.bool,
+  logout: PropTypes.func,
 };
 const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated,
 });
-export default connect(mapStateToProps)(Header);
+
+const mapDispatchToprops = dispatch => ({
+  logout: () => dispatch(logoutUser()),
+});
+export default connect(mapStateToProps, mapDispatchToprops)(Header);

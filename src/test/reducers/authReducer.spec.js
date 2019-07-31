@@ -94,4 +94,8 @@ describe('Auth Reducers', () => {
       errors: { error: 'Invalid login credentials' },
     });
   });
+  it('should handle logout', (done) => {
+    expect(authReducer(initialState, { type: 'LOGOUT' })).toMatchSnapshot();
+    done();
+  });
 });

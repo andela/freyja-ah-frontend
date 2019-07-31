@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { Card, CardTitle, CardText, CardBody, CardImg } from 'reactstrap';
-import { Header } from '../../components/Header/Header';
+import Header from '../../components/Header/Header';
 import Button from '../../components/Button';
 import Footer from '../../components/Footer/Footer';
 import './home.scss';

@@ -2,7 +2,7 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import nock from 'nock';
-import { registerUser, loginUser } from '../../../store/actions/authActions';
+import { registerUser, loginUser, logoutUser } from '../../../store/actions/authActions';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -94,5 +94,10 @@ describe('authAction', () => {
 
         expect(actionTypes).toEqual(expectedActions);
       });
+  });
+  it('test lougout action', (done) => {
+    store.dispatch(logoutUser());
+    expect(store.getActions()).toMatchSnapshot();
+    done();
   });
 });

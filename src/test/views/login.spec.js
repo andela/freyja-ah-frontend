@@ -15,6 +15,8 @@ function shallowSetup() {
       },
     },
     loginUser,
+    location: { state: { referrer: '/' } },
+    socialSignOn: () => {},
   };
   const enzymeWrapper = shallow(<Login {...props} />);
 

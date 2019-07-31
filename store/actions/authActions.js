@@ -93,3 +93,10 @@ export const verifyAuthUser = (token, history) => async dispatch => {
     dispatch(verifyUser("Couldn't verify you, Please chcek the link sent to your email again."));
   }
 };
+
+export const logoutUser = () => {
+  localStorage.removeItem('token');
+  return {
+    type: 'LOGOUT',
+  };
+};

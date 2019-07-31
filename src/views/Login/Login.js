@@ -108,9 +108,10 @@ export class Login extends Component {
 
   render() {
     const { isLoading, isAuthenticated, errors } = this.props.auth;
+    const { referrer } = this.props.location.state || { referrer: '/dashboard' };
 
     if (isAuthenticated) {
-      return <Redirect to="/dashboard" />;
+      return <Redirect to={referrer} />;
     }
 
     const authError = errors.error || '';
@@ -219,7 +220,10 @@ Login.propTypes = {
     isAuthenticated: PropTypes.bool,
     errors: PropTypes.shape({ error: PropTypes.string }),
   }),
-  location: PropTypes.shape({ search: PropTypes.string }),
+  location: PropTypes.shape({
+    state: PropTypes.object,
+    search: PropTypes.string,
+  }),
 };
 
 const mapStateToProps = state => ({

@@ -12,21 +12,23 @@ import changePassword from '../views/ChangePassword/changePassword';
 import VerifyUserPage from '../views/VerifyUser/verifyUser';
 import CommunityPage from '../views/Community/CommunityPage';
 
+import PrivateRoute from '../components/PrivateRoute/PrivateRoute';
+import PublicRoute from '../components/PublicRoute/PublicRoute';
 import About from '../views/AboutUs/AboutUs';
 
 const Routes = () => (
   <Switch>
     <Route path="/" exact component={Home} />
-    <Route path="/signup" component={signUpPage} />
-    <Route path="/login" component={Login} />
     <Route path="/aboutus" component={About} />
-    <Route path="/profile" component={Profile} />
-    <Route path="/password-reset" component={ResetPassword} />
-    <Route path="/change-password" component={changePassword} />
-    <Route path="/dashboard" component={Dashboard} />
-    <Route path="/verify" component={VerifyUserPage} />
-    <Route path="/view-module/:moduleId" component={ViewModule} />
-    <Route path="/community" component={CommunityPage} />
+    <PrivateRoute path="/community" component={CommunityPage} />
+    <PrivateRoute path="/view-module/:moduleId" component={ViewModule} />
+    <PublicRoute path="/verify" component={VerifyUserPage} />
+    <PublicRoute path="/signup" component={signUpPage} />
+    <PublicRoute path="/login" component={Login} />
+    <PublicRoute path="/password-reset" component={ResetPassword} />
+    <PublicRoute path="/change-password" component={changePassword} />
+    <PrivateRoute path="/profile" component={Profile} />
+    <PrivateRoute path="/dashboard" component={Dashboard} />
     <Route component={NotFound} />
   </Switch>
 );

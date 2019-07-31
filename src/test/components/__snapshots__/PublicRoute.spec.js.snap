@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component: PublicRoute should render correctly 1`] = `ShallowWrapper {}`;
+
+exports[`component: PublicRoute should render correctly when isAuthenticated is false 1`] = `ShallowWrapper {}`;

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Auth Reducers should handle logout 1`] = `
+Object {
+  "errors": Object {},
+  "isAuthenticated": false,
+  "isLoading": false,
+  "passwordChangeError": "",
+  "passwordChangeSuccess": "",
+  "passwordResetError": "",
+  "passwordResetSuccess": "",
+  "user": Object {},
+  "verified": "",
+}
+`;
