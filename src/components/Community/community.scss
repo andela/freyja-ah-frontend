@@ -2,6 +2,7 @@ $border: #333;
 $bg-color: #ffffff;
 $body-color: #c4c4c4;
 $form-color: #f3994a;
+$delete: #FF0000;
 
 .main_com {
   display: flex;
@@ -34,6 +35,8 @@ $form-color: #f3994a;
     padding-left: 0;
   }
   .d-aside {
+    min-height: 60vh;
+
     @media screen and (max-width: 500px) {
       display: none;
     }
@@ -89,7 +92,7 @@ $form-color: #f3994a;
     }
     .posts {
       overflow: scroll;
-      max-height: 40vh;
+      max-height: 45vh;
 
       .posts_section {
         padding: 1rem;
@@ -120,11 +123,44 @@ $form-color: #f3994a;
           padding-left: 1rem;
         }
 
+        .del {
+          display: inline-block;
+          padding-left: 1rem;
+          cursor: pointer;
+
+          &:hover {
+            color: $delete;
+          }
+        }
+
         hr {
           border: 0.5px solid $form-color;
           margin: 0;
         }
       }
     }
+  }
+}
+
+.del_btn, .cancel_btn {
+  background-color: $form-color;
+  border: 0;
+  border-radius: 5px;
+  color: $bg-color;
+  width: 30%;
+  margin-top: 10px;
+  cursor: pointer;
+  display: block;
+
+  &:hover {
+    opacity: 0.8;
+    transition: 0.7s;
+    background-color: $form-color;
+  }
+}
+
+.del_btn {
+  &:hover {
+    background-color: $delete;
   }
 }

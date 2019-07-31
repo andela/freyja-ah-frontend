@@ -1,9 +1,11 @@
-import { GET_COMMUNITY_MESSAGES, GET_COMMUNITY_MESSAGES_ERROR, LOADING } from '../actions/types';
+import { GET_COMMUNITY_MESSAGES, GET_COMMUNITY_MESSAGES_ERROR, LOADING, DELETE_SUCCESS, DELETE_ERROR } from '../actions/types';
 
 export const initialState = {
   error: null,
   allMessages: [],
   isLoading: false,
+  deleteSuccess: '',
+  deleteError: '',
 };
 
 export default (state = initialState, action) => {
@@ -18,7 +20,6 @@ export default (state = initialState, action) => {
     case GET_COMMUNITY_MESSAGES_ERROR:
       return {
         ...state,
-        allMessages: {},
         isLoading: false,
         error: action.data,
       };
@@ -26,6 +27,18 @@ export default (state = initialState, action) => {
       return {
         ...state,
         isLoading: true,
+      };
+    case DELETE_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        deleteSuccess: action.data,
+      };
+    case DELETE_ERROR:
+      return {
+        ...state,
+        isLoading: false,
+        deleteError: action.data,
       };
     default:
       return state;

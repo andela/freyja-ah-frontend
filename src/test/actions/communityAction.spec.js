@@ -31,4 +31,20 @@ describe('test community action', () => {
       expect(store.getActions()).toMatchSnapshot();
     });
   });
+
+  it('successfully deletes a community message', () => {
+    nock('https://freyja-ah-backend.herokuapp.com').delete('/api/community/messages/2').reply(200, {});
+
+    return store.dispatch(actions.deleteCommunityMessage()).then(() => {
+      expect(store.getActions()).toMatchSnapshot();
+    });
+  });
+
+  it('returns error while trying to delete a community message', () => {
+    nock('https://freyja-ah-backend.herokuapp.com').delete('/api/community/messages/i').reply(404, {});
+
+    return store.dispatch(actions.deleteCommunityMessage()).then(() => {
+      expect(store.getActions()).toMatchSnapshot();
+    });
+  });
 });
