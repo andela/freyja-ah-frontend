@@ -7,7 +7,7 @@ const enhancers = [];
 const middlewares = [thunk, routerMiddleware(history)];
 
 if (process.env.NODE_ENV === 'development') {
-  enhancers.push(window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+  enhancers.push((window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()) || compose);
 }
 
 const composedEnhancers = compose(applyMiddleware(...middlewares), ...enhancers);
