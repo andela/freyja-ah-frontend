@@ -1,10 +1,6 @@
-$base-white: #fff;
-$off-white: rgba(255, 255, 255, 0.90);
-$base-background: #5f3518;
-
 .footer-container {
-  background: $base-background;
-  color: $base-white;
+  background: $base-color;
+  color: $white;
   height: 100px;
   padding: 20px;
   position: relative;
@@ -12,7 +8,7 @@ $base-background: #5f3518;
 }
 
 .footer-links .flink {
-  color: $base-white;
+  color: $white;
   padding: 5px 10px;
 }
 

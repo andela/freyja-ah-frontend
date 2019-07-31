@@ -3,7 +3,6 @@ import { CardText, CardBody, CardSubtitle, FormGroup } from 'reactstrap';
 import { connect } from 'react-redux';
 import queryString from 'query-string';
 import propTypes from 'prop-types';
-import './changePassword.scss';
 import { withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as actions from '../../../store/actions/authActions/changePassword';

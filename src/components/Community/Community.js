@@ -10,7 +10,6 @@ import Sidebar from '../Sidebar/Sidebar';
 import Input from '../Inputs/Input';
 import Button from '../Button';
 import * as actions from '../../../store/actions/community';
-import './community.scss';
 import sideLogo from '../../assets/images/logo.png';
 
 export class Community extends PureComponent {

@@ -2,7 +2,6 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Row, Col } from 'reactstrap';
 import PropTypes from 'prop-types';
-import './userDetails.scss';
 import Input from '../Inputs/Input';
 import Button from '../Button';
 

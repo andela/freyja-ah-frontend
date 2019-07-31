@@ -1,8 +1,6 @@
-$bgcolor: #fff;
 $fontcolor: #676666;
 $headingcolor: #6d6666;
-$altbgcolor: #f4f4f4;
-$bordercolor: #f2994a;
+
 
 .wrapper {
   color: $fontcolor;
@@ -57,9 +55,9 @@ $bordercolor: #f2994a;
     }
 
     .nummm {
-      border: 2px solid $bordercolor;
+      border: 2px solid $form-color;
       border-radius: 50%;
-      color: $bordercolor;
+      color: $form-color;
       display: inline-block;
       font-size: 25px;
       height: 54px;
@@ -88,7 +86,7 @@ $bordercolor: #f2994a;
     .circ3,
     .circ {
       border-radius: 50%;
-      background-image: url('../../assets/images/2.jpg');
+      background-image: url('../src/assets/images/2.jpg');
       background-repeat: no-repeat;
       background-size: cover;
       height: 250px;
@@ -97,11 +95,11 @@ $bordercolor: #f2994a;
     }
 
     .circ1 {
-      background-image: url('../../assets/images/6.jpg');
+      background-image: url('../src/assets/images/6.jpg');
     }
 
     .circ3 {
-      background-image: url('../../assets/images/9.jpg');
+      background-image: url('../src/assets/images/9.jpg');
       background-position: center;
     }
 
@@ -111,7 +109,7 @@ $bordercolor: #f2994a;
       .fci {
         color: $headingcolor;
         &:hover {
-          color: $bordercolor;
+          color: $form-color;
         }
       }
     }
@@ -129,7 +127,7 @@ $bordercolor: #f2994a;
   .psub:active,
   .psub:focus,
   .psub {
-    background-color: $bordercolor;
+    background-color: $form-color;
     border: none;
   }
   .form-hw {
@@ -139,3 +137,4 @@ $bordercolor: #f2994a;
     text-align: center;
   }
 }
+              

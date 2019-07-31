@@ -8,7 +8,6 @@ import { registerUser } from '../../../store/actions/authActions';
 import { socialAuthPath, socialAuth, getToken } from '../../../store/actions/authActions/socialAuthActions';
 import Footer from '../../components/Footer/Footer';
 import SignUpForm from './SignUpForm';
-import './signUp.scss';
 import validateSignupInput from '../../validations/validateSignupInput';
 
 class SignUp extends React.Component {

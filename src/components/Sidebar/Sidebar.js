@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './sidebar.scss';
 
 const Sidebar = ({ children }) => (
   <aside className="aside">

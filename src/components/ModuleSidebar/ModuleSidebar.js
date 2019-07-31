@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import sideLogo from '../../assets/images/logo.png';
-import './moduleSidebar.scss';
 
 const ModuleSidebar = () => (
   <aside className="m-aside">

@@ -7,7 +7,6 @@ import {
 import { arrayOf, object } from 'prop-types';
 import Card from '../Card/Card';
 import Spinner from '../Spinner/Spinner';
-import './modules.scss';
 
 const Modules = ({ modules }) => (
   <div className="m-container cd-view">

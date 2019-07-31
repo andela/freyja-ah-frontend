@@ -4,7 +4,6 @@ import { Button, Form, FormGroup, Input } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Header } from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import './aboutus.scss';
 
 const About = () => (
   <Fragment>

@@ -1,10 +1,7 @@
-$input-color: #f2994a;
-$feedback: #f00;
-$border: #707070;
 
 .input {
  border: 0.5px solid $border;
- border-radius: 5px;
+ border-radius: $m-radius;
  margin: auto;
  padding: 0.6rem;
  width: 100%;
@@ -12,8 +9,8 @@ $border: #707070;
 .input:active,
 .input:focus,
 .input:focus-within {
- border: 0.5px solid $input-color;
- outline-color: $input-color;
+ border: 0.5px solid $form-color;
+ outline-color: $form-color;
 }
 
 .form-control {

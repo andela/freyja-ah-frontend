@@ -1,10 +1,8 @@
-$sidebar-links-color: #8f5806;
-$dark-brown-color: #523304;
 
 .m-aside {
   margin-top: 41px;
-  background: #f8f8f8;
-  border: solid #f8f8f8 1px;
+  background: $sidebar-background;
+  border: solid $sidebar-background 1px;
 }
 
 .d-aside{
@@ -24,7 +22,7 @@ $dark-brown-color: #523304;
 }
 
 .d-links li.module-active a {
-  color: #fff;
+  color: $white;
 }
 .d-links li a {
   text-decoration: none;
@@ -46,9 +44,9 @@ ul.d-links {
 
 .d-links li:hover {
   border: 2px solid $sidebar-links-color;
-  border-radius: 2px;
+  border-radius: $s-radius;
 }
 
 a.m-card-link {
-  color: #000;
+  color: $black
 }

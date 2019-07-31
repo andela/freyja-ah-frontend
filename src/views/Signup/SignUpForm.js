@@ -10,7 +10,6 @@ import { Heading } from '../../components/Heading/Heading';
 import Navbar from '../../components/Header/Header';
 import Input from '../../components/Inputs/Input';
 import Button from '../../components/Button/index';
-import './signUp.scss';
 
 const SignUpForm = ({
   onSubmit, onChange, authError, valError, socialAuthPath,

@@ -14,7 +14,7 @@ import Button from '../../components/Button';
 import Input from '../../components/Inputs/Input';
 import { loginUser } from '../../../store/actions/authActions';
 import { socialAuthPath, socialAuth, getToken } from '../../../store/actions/authActions/socialAuthActions';
-import './login.scss';
+
 
 export class Login extends Component {
   constructor(props) {
@@ -165,7 +165,7 @@ export class Login extends Component {
                   Forgot Password?
                   </Link>
                 </p>
-                <p>
+                <p className="acct">
                 Dont have an account yet?
                   <Link className="sign-up" to="/signup">
                     {' '}

@@ -10,7 +10,6 @@ import Footer from '../../components/Footer/Footer';
 import Modules from '../../components/Modules/Modules';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import { getModules } from '../../../store/actions/moduleActions';
-import './dashboard.scss';
 import sideLogo from '../../assets/images/logo.png';
 
 /**

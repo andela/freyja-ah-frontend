@@ -5,7 +5,6 @@ import {
 } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import './header.scss';
 import Button from '../Button';
 import logo from '../../assets/images/logo.png';
 
