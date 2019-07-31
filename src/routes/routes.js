@@ -11,6 +11,7 @@ import ResetPassword from '../views/ResetPassword/ResetPassword';
 import changePassword from '../views/ChangePassword/changePassword';
 import VerifyUserPage from '../views/VerifyUser/verifyUser';
 import CommunityPage from '../views/Community/CommunityPage';
+import Test from '../views/ModuleTest/ModuleTest';
 
 import About from '../views/AboutUs/AboutUs';
 
@@ -25,6 +26,7 @@ const Routes = () => (
     <Route path="/change-password" component={changePassword} />
     <Route path="/dashboard" component={Dashboard} />
     <Route path="/verify" component={VerifyUserPage} />
+    <Route path="/test/:moduleId" component={Test} />
     <Route path="/view-module/:moduleId" component={ViewModule} />
     <Route path="/community" component={CommunityPage} />
     <Route component={NotFound} />

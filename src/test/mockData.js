@@ -19,4 +19,9 @@ export default {
     allMessages: {},
     isLoading: false,
   },
+  test: {
+    errors: {},
+    data: [],
+    isLoading: false,
+  },
 };
