@@ -7,7 +7,6 @@ import Header from '../../components/Header/Header';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import UserDetails from '../../components/UserDetails/UserDetails';
 import ProfileDetails from './ProfileDetails';
-import './profile.scss';
 import * as actions from '../../../store/actions/profile';
 import Button from '../../components/Button';
 import Footer from '../../components/Footer/Footer';
@@ -83,7 +82,7 @@ export class Profile extends React.Component {
                     ? 'You have started the course journey'
                     : 'You have not enrolled in any course'}
                   <Link to="/dashboard">
-                    <Button type="button" text={profile.isEnrolled ? 'Continue' : 'Start journey'} />
+                    <Button classname="p-button" type="button" text={profile.isEnrolled ? 'Continue' : 'Start journey'} />
                   </Link>
                 </h5>
               </div>

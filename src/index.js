@@ -13,7 +13,7 @@ import store from '../store/index';
 import Routes from './routes/routes';
 import setAuthToken from './utils/setAuthToken';
 import { setCurrentUser } from '../store/actions/authActions';
-import './style.css';
+import '../styles/style.scss';
 
 
 library.add(

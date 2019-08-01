@@ -3,7 +3,6 @@ import { CardText, CardBody, CardSubtitle, FormGroup } from 'reactstrap';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import propTypes from 'prop-types';
-import './resetpassword.scss';
 import * as actions from '../../../store/actions/authActions/resetPassword';
 import Card from '../Card/Card';
 import Button from '../Button';

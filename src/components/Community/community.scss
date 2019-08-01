@@ -1,7 +1,5 @@
 $border: #333;
-$bg-color: #ffffff;
 $body-color: #c4c4c4;
-$form-color: #f3994a;
 
 .main_com {
   display: flex;
@@ -69,7 +67,7 @@ $form-color: #f3994a;
         background-color: $form-color;
         border: 0;
         border-radius: 5px;
-        color: $bg-color;
+        color: $white;
         width: 30%;
         margin-top: 10px;
         cursor: pointer;

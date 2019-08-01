@@ -6,7 +6,6 @@ import { Card, CardTitle, CardText, CardBody, CardImg } from 'reactstrap';
 import { Header } from '../../components/Header/Header';
 import Button from '../../components/Button';
 import Footer from '../../components/Footer/Footer';
-import './home.scss';
 import aboutus from '../../assets/img/aboutus.jpg';
 import howitworks from '../../assets/img/howitworks.jpg';
 import testimonial1 from '../../assets/img/testimonial.jpg';

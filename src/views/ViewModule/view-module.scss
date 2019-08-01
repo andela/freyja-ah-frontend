@@ -1,6 +1,3 @@
-$primary: #5f3518;
-$white: #fff;
-
 .v-container {
   color: #444;
   line-height: 1.5;
@@ -38,12 +35,12 @@ $white: #fff;
   .test-button {
     width: 160px;
     background: $white;
-    border: solid 2px $primary;
-    color: $primary;
+    border: solid 2px $base-color;
+    color: $base-color;
     margin-top: 50px;
 
     &:hover {
-      background: $primary;
+      background: $base-color;
       color: $white;
     }
   }

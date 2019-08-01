@@ -9,7 +9,6 @@ import { Header } from '../Header/Header';
 import Footer from '../Footer/Footer';
 import * as actions from '../../../store/actions/authActions';
 import { Heading } from '../Heading/Heading';
-import './VerifyUser.scss';
 
 export class VerifyUser extends PureComponent {
   state = {

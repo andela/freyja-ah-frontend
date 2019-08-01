@@ -1,11 +1,6 @@
-$theme-color: #f3994a;
-$success-color: #36966c;
-$error-color: #8a0f0f;
-$text-color: #212529;
-$btn-text-color: #fff;
 
 .l-container {
-  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url('../../assets/images/login-banner.jpg');
+  background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url('../src/assets/images/login-banner.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -30,6 +25,7 @@ $btn-text-color: #fff;
     margin-bottom: 17px;
     margin-top: 0;
     text-align: center;
+    color: $auth-color;
   }
 
   .logo {
@@ -68,7 +64,8 @@ $btn-text-color: #fff;
 
   .form-control {
     border: solid 1px #888;
-    border-radius: 4px;
+    border-radius: $m-radius
+    ;
     outline: none;
     padding: 14px;
     width: 100%;
@@ -82,10 +79,10 @@ $btn-text-color: #fff;
   }
 
   .submit {
-    background-color: $theme-color;
+    background-color: $form-color;
     border: 0;
-    border-radius: 4px;
-    color: $btn-text-color;
+    border-radius: $m-radius;
+    color: $white;
     cursor: pointer;
     font-size: 15px;
     margin: 35px 0 30px;
@@ -97,7 +94,7 @@ $btn-text-color: #fff;
   &:hover,
   &:focus {
     .submit {
-      background-color: $theme-color;
+      background-color: $form-color;
       border: 0;
       box-shadow: none;
     }
@@ -105,7 +102,7 @@ $btn-text-color: #fff;
 
   .forgot-password,
   .sign-up {
-    color: $theme-color;
+    color: $form-color;
     font-size: 15px;
     text-decoration: none;
   }

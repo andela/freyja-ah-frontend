@@ -1,18 +1,8 @@
-$orangecolor: #f2994a;
-$browncolor: #5f3518;
-$linkcolor: #6d6666;
-$signcolor: #fff;
-$red: #ff0000;
-$basecolor: #6d6666;
 $backgroundcolor:rgba(5, 0, 0, 0.7), rgba(0, 0, 0, 0.7);
-
-html {
-  color: $basecolor;
-}
 
 .sec-signup {
   background-image: linear-gradient($backgroundcolor),
-    url('../../assets/images/signupbg.jpg');
+    url('../src/assets/images/signupbg.jpg');
   background-size: cover;
   margin: auto;
   width: 100%;
@@ -31,8 +21,8 @@ html {
 }
 
 .signup-box {
-  background: $signcolor;
-  border-radius: 5px;
+  background: $white;
+  border-radius: $m-radius;
   margin: auto;
   padding-top: 2%;
   text-align: center;
@@ -50,7 +40,7 @@ a.font {
   font-size: 2rem;
   cursor: pointer;
   :hover {
-    color: $orangecolor;
+    color: $form-color;
   }
 }
 
@@ -61,6 +51,9 @@ a.font {
 .inf {
   margin-bottom: 1.5rem;
 }
+.input{
+  color: $auth-color;
+}
 
 .sign-form .b-button,
 .input {
@@ -69,16 +62,16 @@ a.font {
 
 
 .sign-form .b-button {
-  background-color: $orangecolor;
-  border: 0.5px solid $orangecolor;
+  background-color: $form-color;
+  border: 0.5px solid $form-color;
   padding: 3.5%;
 }
 
 .sign-form .b-button:hover,
 .sign-form .b-button:active,
 .sign-form .b-button:focus {
-  background-color: $orangecolor;
-  border: 0.5px solid $orangecolor;
+  background-color: $form-color;
+  border: 0.5px solid $form-color;
 }
 
 .sign-form .b-button:hover {
@@ -91,7 +84,7 @@ a.font {
 
 .feedbackk,
 .feedback {
-  color: $red;
+  color: $error-color;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   padding-bottom: 0;
@@ -109,7 +102,7 @@ a.font {
 .btm {
   text-align: center;
   a:hover {
-    color: $orangecolor;
+    color: $form-color;
     text-decoration: none;
     box-shadow: 0 4px 4px rgba(54, 52, 52, 0.4);
   }
@@ -118,11 +111,11 @@ a.font {
   }
 
   a {
-    color: $linkcolor;
+    color: $auth-color;
     font-weight: normal;
   }
   a.sign-up {
-    color: $orangecolor;
+    color: $form-color;
     font-size: 15px;
     padding: 3px;
   }
@@ -136,8 +129,9 @@ a.font {
   padding: 1.5rem;
 }
 
-.acct {
-  color: $linkcolor;
+.acct,
+.soc-media {
+  color: $auth-color;
   cursor: pointer;
   font-size: 14px;
   margin-bottom: 5%;

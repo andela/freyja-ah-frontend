@@ -1,7 +1,6 @@
-$base-color: #fff;
 .card {
-  background: $base-color;
-  border-radius: 5px;
+  background: $white;
+  border-radius: $m-radius;
   margin: auto;
 
   @media screen and (max-width: 420px) {

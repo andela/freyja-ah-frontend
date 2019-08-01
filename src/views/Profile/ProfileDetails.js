@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import Spinner from '../../components/Spinner/Spinner';
 import defaultImage from '../../utils/config';
-import './profileDetails.scss';
 
 
 const ProfileDetails = ({ profile, loading, imageFile, uploadImage }) => (
