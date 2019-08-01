@@ -12,6 +12,30 @@ Array [
 ]
 `;
 
+exports[`test community action returns error while trying to delete a community message 1`] = `
+Array [
+  Object {
+    "type": "LOADING",
+  },
+  Object {
+    "data": "sorry, you cannot delete this message",
+    "type": "DELETE_ERROR",
+  },
+]
+`;
+
+exports[`test community action successfully deletes a community message 1`] = `
+Array [
+  Object {
+    "type": "LOADING",
+  },
+  Object {
+    "data": "sorry, you cannot delete this message",
+    "type": "DELETE_ERROR",
+  },
+]
+`;
+
 exports[`test community action successfully get all community messages 1`] = `
 Array [
   Object {

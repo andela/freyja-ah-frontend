@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Moment from 'react-moment';
@@ -16,6 +18,8 @@ import sideLogo from '../../assets/images/logo.png';
 export class Community extends PureComponent {
   state = {
     messages: [],
+    modal: false,
+    messageId: '',
   };
 
   componentDidMount() {
@@ -28,6 +32,23 @@ export class Community extends PureComponent {
     getCommMessages();
   }
 
+  async HandledelCommunityMessage() {
+    const { delMessage, getCommunityMessages } = this.props;
+    const { messageId } = this.state;
+    await delMessage(messageId);
+    await getCommunityMessages();
+    const { messages } = this.props;
+    this.setState({ messages, modal: false });
+  }
+
+  toggle(id = '') {
+    this.setState(prev => ({
+      modal: !prev.modal,
+      messageId: id,
+    }));
+  }
+
+
   render() {
     const spinner = (
       <div className="spinner-position">
@@ -35,12 +56,48 @@ export class Community extends PureComponent {
       </div>
     );
 
-    const { messages } = this.state;
+    const { messages, modal } = this.state;
     const { loading } = this.props;
+    const display = messages.length === 0
+      ? (<p>No community Post</p>)
+      : (messages.map(msg => (
+        <div className="posts_section" key={msg && msg.id}>
+          <h4 className="post_title">
+            {msg.owner && msg.owner.lastName}
+            {' '}
+            {msg.owner && msg.owner.firstName}
+          </h4>
+          <p className="timeCreated">
+            <Moment local format="LLLL">
+              {msg.createdAt}
+            </Moment>
+          </p>
+          <p className="post_body">{msg.body}</p>
+          <p className="poster_name">{msg.owner && msg.owner.userName}</p>
+          <p className="poster_role">{msg.owner && msg.owner.role}</p>
+          <p className="del" onClick={() => this.toggle(msg.id)} role="presentation">
+            <FontAwesomeIcon icon="trash" className="FontAwesomeIcon" />
+          </p>
+          <hr />
+        </div>
+      ))
+      );
+
     return (
       <div>
         <Header />
         <div className="main_com">
+          <Modal isOpen={modal} toggle={() => this.toggle()}>
+            <ModalHeader toggle={() => this.toggle()}>Delete Message</ModalHeader>
+            <ModalBody>
+           Are you sure?
+            </ModalBody>
+            <ModalFooter>
+              <Button text="Delete" classname="del_btn" onClick={() => this.HandledelCommunityMessage()} />
+              {' '}
+              <Button text="Cancel" classname="cancel_btn" onClick={() => this.toggle()} />
+            </ModalFooter>
+          </Modal>
           <Sidebar>
             <div className="d-aside">
               <div className="c-side">
@@ -75,26 +132,9 @@ export class Community extends PureComponent {
             <div className="posts">
               {loading ? (
                 spinner
-              ) : (
-                messages.map(msg => (
-                  <div className="posts_section" key={msg && msg.id}>
-                    <h4 className="post_title">
-                      {msg.owner && msg.owner.lastName}
-                      {' '}
-                      {msg.owner && msg.owner.firstName}
-                    </h4>
-                    <p className="timeCreated">
-                      <Moment local format="LLLL">
-                        {msg.createdAt}
-                      </Moment>
-                    </p>
-                    <p className="post_body">{msg.body}</p>
-                    <p className="poster_name">{msg.owner && msg.owner.userName}</p>
-                    <p className="poster_role">{msg.owner && msg.owner.role}</p>
-                    <hr />
-                  </div>
-                ))
-              )}
+              )
+                : display
+              }
             </div>
           </div>
         </div>
@@ -112,6 +152,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   getCommunityMessages: () => actions.getCommunityMessages(),
+  delMessage: id => actions.deleteCommunityMessage(id),
 };
 
 Community.propTypes = {
@@ -121,6 +162,7 @@ Community.propTypes = {
     id: PropTypes.number.isRequired,
     body: PropTypes.string,
   })),
+  delMessage: PropTypes.func,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Community));

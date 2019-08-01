@@ -1,8 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`reset password reducer should handle DELETE_ERROR 1`] = `
+Object {
+  "allMessages": Array [],
+  "deleteError": undefined,
+  "deleteSuccess": "",
+  "error": null,
+  "isLoading": false,
+}
+`;
+
+exports[`reset password reducer should handle DELETE_SUCCESS 1`] = `
+Object {
+  "allMessages": Array [],
+  "deleteError": "",
+  "deleteSuccess": undefined,
+  "error": null,
+  "isLoading": false,
+}
+`;
+
 exports[`reset password reducer should handle GET_COMMUNITY_MESSAGES_ERROR 1`] = `
 Object {
-  "allMessages": Object {},
+  "allMessages": Array [],
+  "deleteError": "",
+  "deleteSuccess": "",
   "error": undefined,
   "isLoading": false,
 }
@@ -11,6 +33,8 @@ Object {
 exports[`reset password reducer should handle LOADING 1`] = `
 Object {
   "allMessages": Array [],
+  "deleteError": "",
+  "deleteSuccess": "",
   "error": null,
   "isLoading": true,
 }
@@ -19,6 +43,8 @@ Object {
 exports[`reset password reducer should handleGET_COMMUNITY_MESSAGES 1`] = `
 Object {
   "allMessages": undefined,
+  "deleteError": "",
+  "deleteSuccess": "",
   "error": null,
   "isLoading": false,
 }
@@ -27,6 +53,8 @@ Object {
 exports[`reset password reducer should return the initial state 1`] = `
 Object {
   "allMessages": Array [],
+  "deleteError": "",
+  "deleteSuccess": "",
   "error": null,
   "isLoading": false,
 }

@@ -30,4 +30,20 @@ describe('reset password reducer', () => {
       },
     )).toMatchSnapshot();
   });
+  it('should handle DELETE_SUCCESS', () => {
+    expect(reducer(
+      initialState,
+      {
+        type: 'DELETE_SUCCESS',
+      },
+    )).toMatchSnapshot();
+  });
+  it('should handle DELETE_ERROR', () => {
+    expect(reducer(
+      initialState,
+      {
+        type: 'DELETE_ERROR',
+      },
+    )).toMatchSnapshot();
+  });
 });

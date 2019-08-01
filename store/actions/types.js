@@ -31,3 +31,7 @@ export const GET_TEST = 'GET_TEST';
 export const TEST_ERROR = 'TEST_ERROR';
 
 export const INIT_GET_TEST = 'INIT_GET_TEST';
+
+export const DELETE_SUCCESS = 'DELETE_SUCCESS';
+
+export const DELETE_ERROR = 'DELETE_ERROR';
