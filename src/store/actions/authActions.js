@@ -1,18 +1,27 @@
-/* eslint-disable arrow-parens */
-/* eslint-disable implicit-arrow-linebreak */
-/* eslint-disable import/prefer-default-export */
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
 import { GET_ERRORS, SET_CURRENT_USER, LOGIN_ERROR, INIT_AUTH_REQUEST, END_AUTH_REQUEST, VERIFY_USER } from './types';
-import setAuthToken from '../../src/utils/setAuthToken';
+import setAuthToken from '../../utils/setAuthToken';
+import { baseUrl } from '../../utils/config';
 
-const authUrl = 'https://freyja-ah-backend.herokuapp.com/api/';
-// Set loged in user
+
+/**
+ * @method setCurrentUser
+ * @description sets the current user of the app
+ * @param {object} decoded user details
+  * @returns {object}
+ */
 export const setCurrentUser = decoded => ({
   type: SET_CURRENT_USER,
   payload: decoded,
 });
 
+/**
+ * @method setError
+ * @description sets app error
+ * @param {object} error
+  * @returns {object}
+ */
 export const setError = error => ({
   type: GET_ERRORS,
   errors: error,
@@ -23,22 +32,21 @@ export const verifyUser = state => ({
   isVerified: state,
 });
 
-// Register
-export const registerUser = (newUser, history) => async dispatch => {
+/**
+ * @method registerUser
+ * @description registers a new user
+ * @param {object} newUser
+  * @returns {object} user object
+ */
+export const registerUser = newUser => async (dispatch) => {
   try {
-    const user = await axios.post('https://freyja-ah-backend.herokuapp.com/api/users', newUser);
+    const user = await axios.post(`${baseUrl}/users`, newUser);
 
     if (user) {
-      // Save to local storage
       const { token } = user.data;
-      // Set token to local storage
       localStorage.setItem('token', token);
-      // Decode token to get user data
       const decoded = jwtDecode(token);
-      // Set current user
       dispatch(setCurrentUser(decoded));
-
-      history.push('/dashboard');
     }
   } catch (err) {
     const { error } = err.response.data;
@@ -46,11 +54,17 @@ export const registerUser = (newUser, history) => async dispatch => {
   }
 };
 
-export const loginUser = payload => async dispatch => {
+/**
+ * @method loginUser
+ * @description registers a new user
+ * @param {object} payload
+  * @returns {object} user object
+ */
+export const loginUser = payload => async (dispatch) => {
   dispatch({ type: INIT_AUTH_REQUEST });
 
   try {
-    const request = await axios.post(`${authUrl}users/login`, payload);
+    const request = await axios.post(`${baseUrl}/users/login`, payload);
     dispatch({
       type: END_AUTH_REQUEST,
     });
@@ -75,20 +89,17 @@ export const loginUser = payload => async dispatch => {
   }
 };
 
-export const verifyAuthUser = (token, history) => async dispatch => {
-  try {
-    await axios(`https://freyja-ah-backend.herokuapp.com/api/user/verify/${token}`, {
-      method: 'GET',
-      headers: {
-        accept: 'application/json',
-        'Content-type': 'application/json; charset=UTF-8',
-      },
-    });
-    await dispatch(verifyUser("you've been verified, Redirecting to your profile page..."));
 
-    setTimeout(() => {
-      history.push('/profile');
-    }, 3000);
+/**
+ * @method verifyAuthUser
+ * @description registers a new user
+ * @param {string} token
+  * @returns {string} confirmation message
+ */
+export const verifyAuthUser = token => async (dispatch) => {
+  try {
+    await axios.get(`${baseUrl}/user/verify/${token}`);
+    await dispatch(verifyUser("you've been verified, Redirecting to your profile page..."));
   } catch (error) {
     dispatch(verifyUser("Couldn't verify you, Please chcek the link sent to your email again."));
   }

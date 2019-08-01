@@ -1,4 +1,4 @@
-import { getToken } from '../../../store/actions/authActions/socialAuthActions';
+import { getToken } from '../../store/actions/socialAuthActions';
 
 describe('social actions', () => {
   test('should return a string', () => {

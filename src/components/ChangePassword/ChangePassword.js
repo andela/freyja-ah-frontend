@@ -6,7 +6,7 @@ import propTypes from 'prop-types';
 import './changePassword.scss';
 import { withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import * as actions from '../../../store/actions/authActions/changePassword';
+import * as actions from '../../store/actions/changePasswordActions';
 import Card from '../Card/Card';
 import Button from '../Button';
 import Input from '../Inputs/Input';

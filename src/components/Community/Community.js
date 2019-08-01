@@ -9,7 +9,7 @@ import Footer from '../Footer/Footer';
 import Sidebar from '../Sidebar/Sidebar';
 import Input from '../Inputs/Input';
 import Button from '../Button';
-import * as actions from '../../../store/actions/community';
+import * as actions from '../../store/actions/communityActions';
 import './community.scss';
 import sideLogo from '../../assets/images/logo.png';
 

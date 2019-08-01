@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import { Login } from '../../views/Login/Login';
-import { loginUser } from '../../../store/actions/authActions';
+import { loginUser } from '../../store/actions/authActions';
 
 function shallowSetup() {
   const props = {

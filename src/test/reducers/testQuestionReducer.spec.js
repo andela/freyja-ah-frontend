@@ -1,5 +1,5 @@
-import testReducer from '../../../store/reducers/testReducer';
-import { getTestSuccess, setError } from '../../../store/actions/testActions';
+import testReducer from '../../store/reducers/testReducer';
+import { getTestSuccess, setError } from '../../store/actions/testActions';
 
 let action;
 let newState;

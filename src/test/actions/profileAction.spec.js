@@ -1,8 +1,16 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import nock from 'nock';
-import { getProfile, getProfileSuccess, uploadSuccess, uploadFailed, updateProfileFailed, updateProfile } from '../../../store/actions/profile';
-import profileReducer, { initialState } from '../../../store/reducers/profile';
+import {
+  getProfile,
+  getProfileSuccess,
+  uploadSuccess,
+  uploadFailed,
+  updateProfileFailed,
+  updateProfile,
+} from '../../store/actions/profileActions';
+import { testBaseUrl } from '../config/testConfig';
+import profileReducer, { initialState } from '../../store/reducers/profileReducer';
 
 const token = 'token';
 const middlewares = [thunk];
@@ -40,7 +48,7 @@ describe('async actions', () => {
     nock.cleanAll();
   });
   it('should create getProfileSuccess when profile has been gotten', (done) => {
-    nock('https://freyja-ah-backend.herokuapp.com')
+    nock(`${testBaseUrl}`)
       .get('/api/profiles/4') // Route to catch and mock
       .reply(200, {
         user: {
@@ -56,31 +64,31 @@ describe('async actions', () => {
           },
         },
       });
-    return store.dispatch(getProfile(4, token)).then(() => {
+    store.dispatch(getProfile(4, token)).then(() => {
       expect(store.getActions()).toMatchSnapshot();
       done();
     });
   });
   it('should dispatch getProfileFailed when getProfile fails', (done) => {
-    nock('https://freyja-ah-backend.herokuapp.com')
+    nock(`${testBaseUrl}`)
       .get('/api/profiles/99') // Route to catch and mock
       .reply(404, { error: 'user does not exist' });
-    return store.dispatch(getProfile(4, token)).then(() => {
+    store.dispatch(getProfile(4, token)).then(() => {
       expect(store.getActions()).toMatchSnapshot();
       done();
     });
   });
   it('should dispatch updateProfile', (done) => {
-    nock('https://freyja-ah-backend.herokuapp.com')
+    nock(`${testBaseUrl}`)
       .put('/api/profiles', { industry: 'Andela' })
       .reply(201, { profile: { userId: 45 } });
-    return store.dispatch(updateProfile({ industry: 'Andela' })).then(() => {
+    store.dispatch(updateProfile({ industry: 'Andela' })).then(() => {
       expect(store.getActions()).toMatchSnapshot();
       done();
     });
   });
   it('should dispatch update profile failed', (done) => {
-    nock('https://freyja-ah-backend.herokuapp.com')
+    nock(`${testBaseUrl}`)
       .put('/api/profiles', { dateOfBirth: '10-12' })
       .reply(422, { error: 'invalid date of birth' });
     return store.dispatch(updateProfile({ dateOfBirth: '10-12' })).then(() => {

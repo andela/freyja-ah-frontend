@@ -2,12 +2,16 @@ import { get } from 'axios';
 import {
   GET_ALL_MODULES, GET_SINGLE_MODULE, MODULES_ERROR, INIT_MODULE_REQUEST,
 } from './types';
+import { baseUrl } from '../../utils/config';
 
-const baseUrl = 'https://freyja-ah-backend.herokuapp.com/api/';
-
-const getModules = () => async (dispatch) => {
+/**
+ * @method getModules
+ * @description get all course modules
+  * @returns {object}
+ */
+export const getModules = () => async (dispatch) => {
   try {
-    const modulesRequest = await get('https://freyja-ah-backend.herokuapp.com/api/modules', {
+    const modulesRequest = await get(`${baseUrl}/modules`, {
       headers: { Authorization: `${localStorage.getItem('token')}` },
     });
 
@@ -24,6 +28,12 @@ const getModules = () => async (dispatch) => {
   }
 };
 
+/**
+ * @method setModules
+ * @description set current module
+ * @param {object} payload module object
+  * @returns {object}
+ */
 export const setModule = payload => ({
   type: GET_SINGLE_MODULE,
   payload,
@@ -42,5 +52,3 @@ export const getModule = moduleId => async (dispatch) => {
     });
   }
 };
-
-export { getModules };

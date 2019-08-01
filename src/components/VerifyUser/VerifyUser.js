@@ -7,7 +7,7 @@ import propTypes from 'prop-types';
 import Card from '../Card/Card';
 import { Header } from '../Header/Header';
 import Footer from '../Footer/Footer';
-import * as actions from '../../../store/actions/authActions';
+import * as actions from '../../store/actions/authActions';
 import { Heading } from '../Heading/Heading';
 import './VerifyUser.scss';
 
@@ -18,10 +18,10 @@ export class VerifyUser extends PureComponent {
 
   componentDidMount() {
     const verifyUsers = async () => {
-      const { verifyAuth, history, location } = this.props;
+      const { verifyAuth, location } = this.props;
       const { token } = queryString.parse(location.search);
 
-      await verifyAuth(token, history);
+      await verifyAuth(token);
       const { verified } = this.props;
       this.setState({
         verify: verified,

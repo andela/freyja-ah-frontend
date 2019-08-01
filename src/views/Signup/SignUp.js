@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.css';
-import { registerUser } from '../../../store/actions/authActions';
-import { socialAuthPath, socialAuth, getToken } from '../../../store/actions/authActions/socialAuthActions';
+import { registerUser } from '../../store/actions/authActions';
+import { socialAuthPath, socialAuth, getToken } from '../../store/actions/socialAuthActions';
 import Footer from '../../components/Footer/Footer';
 import SignUpForm from './SignUpForm';
 import './signUp.scss';
@@ -30,6 +30,13 @@ class SignUp extends React.Component {
     if (tokenString) {
       const token = getToken(tokenString);
       socialSignOn(token);
+    }
+  }
+
+  componentWillReceiveProps(nextprops) {
+    const { props: { history } } = this;
+    if (nextprops.auth.isAuthenticated) {
+      history.push('/dashboard');
     }
   }
 
@@ -113,7 +120,10 @@ SignUp.propTypes = {
     errors: PropTypes.any,
     isAuthenticated: PropTypes.bool,
   }),
-  history: PropTypes.shape({ root: PropTypes.string }),
+  history: PropTypes.shape({
+    root: PropTypes.string,
+    push: PropTypes.func.isRequired,
+  }),
   location: PropTypes.shape({ search: PropTypes.string }),
 };
 const mapStateToProps = state => ({

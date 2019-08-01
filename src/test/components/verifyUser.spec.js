@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { VerifyUser } from '../../components/VerifyUser/VerifyUser';
-import store from '../../../store';
+import store from '../../store';
 
 describe('test verify user component', () => {
   const prop = {

@@ -1,18 +1,34 @@
 import axios from 'axios';
-import * as actionCreators from '../constants/profileContants';
+import * as actionCreators from './types';
+import { baseUrl } from '../../utils/config';
 
-const url = 'https://freyja-ah-backend.herokuapp.com/api/profiles';
 const token = localStorage.getItem('token');
+
+/**
+ * @method getProfileSuccess
+ * @param {object} profile profile object
+  * @returns {object}
+ */
 export const getProfileSuccess = profile => ({
   type: actionCreators.GET_PROFILE_SUCCESS,
   data: profile,
 });
 
+/**
+ * @method getProfileFailed
+ * @param {string} error profile object
+  * @returns {object}
+ */
 export const getProfileFailed = error => ({
   type: actionCreators.GET_PROFILE_FAILED,
   error,
 });
 
+/**
+ * @method  getProfile
+ * @param {string} userId user id
+  * @returns {object}
+ */
 export const getProfile = userId => async (dispatch) => {
   const config = {
     headers: {
@@ -20,7 +36,7 @@ export const getProfile = userId => async (dispatch) => {
     },
   };
   try {
-    const profile = await axios.get(`${url}/${userId}`, config);
+    const profile = await axios.get(`${baseUrl}/profiles/${userId}`, config);
     const { data } = profile;
     const { user } = data;
     let dob = null;
@@ -53,20 +69,43 @@ export const getProfile = userId => async (dispatch) => {
   }
 };
 
+/**
+ * @method  uploadStart
+ * @description initiates image upload
+  * @returns {object}
+ */
 export const uploadStart = () => ({
   type: actionCreators.UPLOAD_START,
 });
 
+/**
+ * @method  uploadSuccess
+ * @description handles image upload success
+ * @param {string} imageUrl upload image url
+  * @returns {object}
+ */
 export const uploadSuccess = imageUrl => ({
   type: actionCreators.UPLOAD_SUCCESS,
   imageUrl,
 });
 
+/**
+ * @method  uploadFailed
+ * @description handles image upload failure
+ * @param {object} error error object
+  * @returns {object}
+ */
 export const uploadFailed = error => ({
   type: actionCreators.UPLOAD_FAILED,
   error,
 });
 
+/**
+ * @method  uploadImage
+ * @description handles image upload
+ * @param {file} image image
+  * @returns {object}
+ */
 export const uploadImage = image => async (dispatch) => {
   dispatch(uploadStart());
   const config = {
@@ -79,7 +118,7 @@ export const uploadImage = image => async (dispatch) => {
     const data = new FormData();
     data.append('image', image);
 
-    const upload = await axios.post('https://freyja-ah-backend.herokuapp.com/api/image', data, config);
+    const upload = await axios.post(`${baseUrl}/image`, data, config);
     const imageUrl = upload.data.data;
     dispatch(uploadSuccess(imageUrl));
   } catch (error) {
@@ -87,12 +126,23 @@ export const uploadImage = image => async (dispatch) => {
   }
 };
 
+/**
+ * @method  updateProfileFailed
+ * @description handles profile update failure
+ * @param {object} error update profile error
+  * @returns {object}
+ */
 export const updateProfileFailed = error => ({
   type: actionCreators.UPDATE_PROFILE_FAILED,
   error,
 });
 
-
+/**
+ * @method  updateProfile
+ * @description handles profile update
+ * @param {object} data profile data
+  * @returns {object}
+ */
 export const updateProfile = data => async (dispatch) => {
   const config = {
     headers: {
@@ -100,7 +150,7 @@ export const updateProfile = data => async (dispatch) => {
     },
   };
   try {
-    const profile = await axios.put(url, data, config);
+    const profile = await axios.put(`${baseUrl}/profiles`, data, config);
     await dispatch(getProfile(profile.data.profile.userId));
   } catch (error) {
     dispatch(updateProfileFailed(error.response.data.error));

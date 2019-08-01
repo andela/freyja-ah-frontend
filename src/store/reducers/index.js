@@ -1,19 +1,16 @@
 import { combineReducers } from 'redux';
-import { createBrowserHistory } from 'history';
-import profile from './profile';
 import authReducer from './authReducer';
 import modulesReducer from './modulesReducer';
-import communityM from './community';
-import testreducer from './testReducer';
-
-export const history = createBrowserHistory();
+import testReducer from './testReducer';
+import communityReducer from './communityReducer';
+import profileReducer from './profileReducer';
 
 const appReducer = combineReducers({
   auth: authReducer,
-  profile,
+  profile: profileReducer,
   modules: modulesReducer,
-  community: communityM,
-  test: testreducer,
+  test: testReducer,
+  community: communityReducer,
 });
 
 export default (state, action) => appReducer(state, action);

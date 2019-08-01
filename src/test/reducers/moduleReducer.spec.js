@@ -1,4 +1,4 @@
-import modulesReducer from '../../../store/reducers/modulesReducer';
+import modulesReducer from '../../store/reducers/modulesReducer';
 import modules from './modulesMock/modulesMock';
 
 const initialState = {
