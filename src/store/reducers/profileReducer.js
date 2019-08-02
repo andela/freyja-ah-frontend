@@ -1,4 +1,4 @@
-import * as actionTypes from '../constants/profileContants';
+import * as actionTypes from '../actions/types';
 
 export const initialState = {
   error: null,

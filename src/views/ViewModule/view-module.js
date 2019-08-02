@@ -11,7 +11,7 @@ import Spinner from '../../components/Spinner/Spinner';
 import Navbar from '../../components/Header/Header';
 import Button from '../../components/Button';
 import Footer from '../../components/Footer/Footer';
-import { getModule } from '../../../store/actions/moduleActions';
+import { getModule } from '../../store/actions/moduleActions';
 import './view-module.scss';
 
 export class ViewModule extends Component {

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { getTest } from '../../../store/actions/testActions';
+import { getTest } from '../../store/actions/testActions';
 import Questions from '../../components/Questions/Questions';
 import Navbar from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';

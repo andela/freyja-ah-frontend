@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import Spinner from '../../components/Spinner/Spinner';
-import defaultImage from '../../utils/config';
+import { image } from '../../utils/config';
 import './profileDetails.scss';
 
 
@@ -10,7 +10,7 @@ const ProfileDetails = ({ profile, loading, imageFile, uploadImage }) => (
   <div className="profile">
     <div className="profileImage">
       <img
-        src={profile.image || defaultImage}
+        src={profile.image || image}
         alt="profile"
         style={{ filter: loading && 'blur(4px)' }}
       />

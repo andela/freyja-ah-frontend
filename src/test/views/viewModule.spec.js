@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import { ViewModule } from '../../views/ViewModule/view-module';
-import { getModule } from '../../../store/actions/moduleActions';
+import { getModule } from '../../store/actions/moduleActions';
 
 function shallowSetup() {
   const props = {

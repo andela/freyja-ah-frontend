@@ -1,5 +1,6 @@
 import jwtDecode from 'jwt-decode';
-import { setCurrentUser, setError } from '../authActions';
+import { setCurrentUser, setError } from './authActions';
+import { baseUrl } from '../../utils/config';
 
 export const socialAuth = token => async (dispatch) => {
   try {
@@ -14,8 +15,7 @@ export const socialAuth = token => async (dispatch) => {
 
 
 export const socialAuthPath = (authType) => {
-  const url = 'https://freyja-ah-backend.herokuapp.com';
-  window.location.href = `${url}/api/auth/${authType}`;
+  window.location.href = `${baseUrl}/auth/${authType}`;
 };
 
 export const getToken = (tokenString) => {

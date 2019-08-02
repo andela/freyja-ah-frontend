@@ -1,5 +1,5 @@
-import authReducer from '../../../store/reducers/authReducer';
-import { setCurrentUser } from '../../../store/actions/authActions';
+import authReducer from '../../store/reducers/authReducer';
+import { setCurrentUser } from '../../store/actions/authActions';
 
 let action;
 let newState;

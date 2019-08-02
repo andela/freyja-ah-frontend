@@ -8,7 +8,7 @@ import Sidebar from '../../components/Sidebar/Sidebar';
 import UserDetails from '../../components/UserDetails/UserDetails';
 import ProfileDetails from './ProfileDetails';
 import './profile.scss';
-import * as actions from '../../../store/actions/profile';
+import * as actions from '../../store/actions/profileActions';
 import Button from '../../components/Button';
 import Footer from '../../components/Footer/Footer';
 import profileValidator from '../../validations/profileValidation';

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import propTypes from 'prop-types';
 import './resetpassword.scss';
-import * as actions from '../../../store/actions/authActions/resetPassword';
+import * as actions from '../../store/actions/resetPasswordActions';
 import Card from '../Card/Card';
 import Button from '../Button';
 import Input from '../Inputs/Input';

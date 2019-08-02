@@ -2,11 +2,12 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import nock from 'nock';
-import { getModules, getModule } from '../../../store/actions/moduleActions';
+import { getModules, getModule } from '../../store/actions/moduleActions';
+import { testBaseUrl } from '../config/testConfig';
+
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
-
 
 describe('moduleAction', () => {
   let store;
@@ -18,7 +19,7 @@ describe('moduleAction', () => {
   });
 
   it('should get all modules', async done => {
-    nock('https://freyja-ah-backend.herokuapp.com')
+    nock(`${testBaseUrl}`)
       .get('/api/modules')
       .reply(200, {
         module: [],
@@ -30,7 +31,7 @@ describe('moduleAction', () => {
   });
 
   it('should get a single module', async done => {
-    nock('https://freyja-ah-backend.herokuapp.com')
+    nock(`${testBaseUrl}`)
       .get('/api/modules')
       .reply(200, {
         module: [],

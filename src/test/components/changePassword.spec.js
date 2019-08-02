@@ -2,8 +2,8 @@ import { shallow } from 'enzyme';
 import sinon from 'sinon';
 import React from 'react';
 
-import { ChangePassword } from '../../../components/ChangePassword/ChangePassword';
-import * as actions from '../../../../store/actions/authActions/changePassword';
+import { ChangePassword } from '../../components/ChangePassword/ChangePassword';
+import * as actions from '../../store/actions/changePasswordActions';
 
 describe('test methods', () => {
   sinon.spy(ChangePassword.prototype, 'handleSubmit');
@@ -31,6 +31,9 @@ describe('test methods', () => {
     beforeEach(() => {
       const { enzymeWrapper } = shallowSetup();
       wrapper = enzymeWrapper;
+    });
+    it('should render correctly the reset password component', () => {
+      expect(wrapper).toMatchSnapshot();
     });
 
     it('should test a method', () => {

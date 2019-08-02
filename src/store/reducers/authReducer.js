@@ -1,5 +1,15 @@
-import { SET_CURRENT_USER, GET_ERRORS, LOGIN_ERROR, INIT_AUTH_REQUEST, END_AUTH_REQUEST, VERIFY_USER } from '../actions/types';
-import isEmpty from '../../src/validations/isEmpty';
+import {
+  SET_CURRENT_USER,
+  GET_ERRORS, LOGIN_ERROR,
+  INIT_AUTH_REQUEST,
+  END_AUTH_REQUEST,
+  VERIFY_USER,
+  PASSWORD_RESET_ERROR,
+  PASSWORD_RESET_SUCCESS,
+  PASSWORD_CHANGE_ERROR,
+  PASSWORD_CHANGE_SUCCESS,
+} from '../actions/types';
+import isEmpty from '../../validations/isEmpty';
 
 export const initialState = {
   passwordResetError: '',
@@ -48,28 +58,28 @@ const authReducer = (state = initialState, action) => {
         ...state,
         isLoading: true,
       };
-    case 'PASSWORD_RESET_ERROR':
+    case PASSWORD_RESET_ERROR:
       return {
         ...state,
         passwordResetError: 'invalid email',
         passwordResetSuccess: '',
         isLoading: false,
       };
-    case 'PASSWORD_RESET_SUCCESS':
+    case PASSWORD_RESET_SUCCESS:
       return {
         ...state,
         passwordResetError: '',
         passwordResetSuccess: 'Please check your email',
         isLoading: false,
       };
-    case 'PASSWORD_CHANGE_ERROR':
+    case PASSWORD_CHANGE_ERROR:
       return {
         ...state,
         passwordChangeError: action.payload,
         passwordChangeSuccess: '',
         isLoading: false,
       };
-    case 'PASSWORD_CHANGE_SUCCESS':
+    case PASSWORD_CHANGE_SUCCESS:
       return {
         ...state,
         passwordChangeError: '',

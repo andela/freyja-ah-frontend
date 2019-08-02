@@ -9,10 +9,10 @@ import {
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { BrowserRouter } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
-import store from '../store/index';
+import store from './store/index';
 import Routes from './routes/routes';
 import setAuthToken from './utils/setAuthToken';
-import { setCurrentUser } from '../store/actions/authActions';
+import { setCurrentUser } from './store/actions/authActions';
 import './style.css';
 
 

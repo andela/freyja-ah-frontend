@@ -12,8 +12,8 @@ import Footer from '../../components/Footer/Footer';
 import Card from '../../components/Card/Card';
 import Button from '../../components/Button';
 import Input from '../../components/Inputs/Input';
-import { loginUser } from '../../../store/actions/authActions';
-import { socialAuthPath, socialAuth, getToken } from '../../../store/actions/authActions/socialAuthActions';
+import { loginUser } from '../../store/actions/authActions';
+import { socialAuthPath, socialAuth, getToken } from '../../store/actions/socialAuthActions';
 import './login.scss';
 
 export class Login extends Component {
