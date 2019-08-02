@@ -7,16 +7,25 @@ import Header from '../Header/Header';
 import Spinner from '../Spinner/Spinner';
 import Footer from '../Footer/Footer';
 import Sidebar from '../Sidebar/Sidebar';
-import Input from '../Inputs/Input';
+// import Input from '../Inputs/Input';
 import Button from '../Button';
-import * as actions from '../../../store/actions/community';
+import { getCommunityMessages, sendMessage } from '../../../store/actions/community';
 import './community.scss';
 import sideLogo from '../../assets/images/logo.png';
 
 export class Community extends PureComponent {
-  state = {
-    messages: [],
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      messages: [],
+      body: '',
+      validationError: {},
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.validateFormInput = this.validateFormInput.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
   componentDidMount() {
     const getCommMessages = async () => {
@@ -28,7 +37,43 @@ export class Community extends PureComponent {
     getCommMessages();
   }
 
+  validateFormInput() {
+    const { body } = this.state;
+
+    if (body.length === 0) {
+      this.setState({
+        validationError: {
+          body: 'Please enter a message',
+        },
+      });
+      return false;
+    }
+    return true;
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const { body } = this.state;
+    // eslint-disable-next-line no-shadow
+    const { sendMessage } = this.props;
+
+    if (this.validateFormInput()) {
+      sendMessage({ body });
+    }
+  }
+
+  handleChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value,
+      validationError: {
+        [e.target.name]: '',
+      },
+    });
+  }
+
   render() {
+    const { validationError: { body } } = this.state;
+
     const spinner = (
       <div className="spinner-position">
         <Spinner />
@@ -36,7 +81,7 @@ export class Community extends PureComponent {
     );
 
     const { messages } = this.state;
-    const { loading } = this.props;
+    const { loading, sendMsgLoading } = this.props;
     return (
       <div>
         <Header />
@@ -66,12 +111,17 @@ export class Community extends PureComponent {
             </div>
           </Sidebar>
           <div className="main_sec">
-            <div className="input_section">
-              <Input id="inp" placeholder="Title" />
-              <textarea rows="3" placeholder="enter your message..." />
-              <Button text="Post message" classname="com_btn" />
+            <form onSubmit={this.handleSubmit} className="input_section">
+              {/* <Input id="inp" placeholder="Title" /> */}
+              <textarea onChange={this.handleChange} rows="5" name="body" placeholder="Enter your message..." />
+              <span className="error">{body || ''}</span>
+
+              <Button
+                text={sendMsgLoading ? 'Please wait..' : 'Post message'}
+                classname="com_btn"
+              />
               <hr />
-            </div>
+            </form>
             <div className="posts">
               {loading ? (
                 spinner
@@ -106,17 +156,21 @@ export class Community extends PureComponent {
 
 const mapStateToProps = state => ({
   loading: state.community.isLoading,
+  sendMsgLoading: state.community.sendMsgLoading,
   messages: state.community.allMessages,
   error: state.community.error,
 });
 
 const mapDispatchToProps = {
-  getCommunityMessages: () => actions.getCommunityMessages(),
+  getCommunityMessages: () => getCommunityMessages(),
+  sendMessage,
 };
 
 Community.propTypes = {
   getCommunityMessages: PropTypes.func,
+  sendMessage: PropTypes.func,
   loading: PropTypes.bool,
+  sendMsgLoading: PropTypes.bool,
   messages: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     body: PropTypes.string,

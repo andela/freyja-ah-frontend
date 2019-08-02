@@ -2,6 +2,7 @@ $border: #333;
 $bg-color: #ffffff;
 $body-color: #c4c4c4;
 $form-color: #f3994a;
+$error-color: #8a0f0f;
 
 .main_com {
   display: flex;
@@ -59,16 +60,26 @@ $form-color: #f3994a;
         width: 60%;
         margin-top: 15px;
         border: 1px solid $border;
+        border-radius: 3px;
+        padding: 10px;
 
         &:focus {
           outline: none;
         }
       }
 
+      span.error {
+        color: $error-color;
+        display: block;
+        font-size: 13px;
+        padding-top: 8px;
+      }
+
       .com_btn {
         background-color: $form-color;
         border: 0;
         border-radius: 5px;
+        padding: 13px 0px;
         color: $bg-color;
         width: 30%;
         margin-top: 10px;
