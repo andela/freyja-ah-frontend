@@ -2,16 +2,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Row, Col } from 'reactstrap';
-import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import UserDetails from '../../components/UserDetails/UserDetails';
 import ProfileDetails from './ProfileDetails';
 import './profile.scss';
 import * as actions from '../../../store/actions/profile';
-import Button from '../../components/Button';
 import Footer from '../../components/Footer/Footer';
 import profileValidator from '../../validations/profileValidation';
+import UserProgress from '../../components/UserProgress/UserProgress';
+import badge from '../../assets/images/badge.png';
 
 export class Profile extends React.Component {
   constructor(props) {
@@ -75,18 +75,14 @@ export class Profile extends React.Component {
           <Col md="9" lg="10" sm="9">
             <div className="main">
               <h2 style={{ color: '#6D6666' }}>
-                Welcome back
+                {profile && profile.name}
+                {profile.isCertified && <img src={badge} alt="badge" />}
+
               </h2>
-              <div className="memberCard">
-                <h5>
-                  {profile.isEnrolled
-                    ? 'You have started the course journey'
-                    : 'You have not enrolled in any course'}
-                  <Link to="/dashboard">
-                    <Button type="button" text={profile.isEnrolled ? 'Continue' : 'Start journey'} />
-                  </Link>
-                </h5>
-              </div>
+              <UserProgress
+                certified={profile.isCertified}
+                enrolled={profile.isEnrolled}
+              />
               <UserDetails
                 profile={profile}
                 toggleEdit={this.toggleEdit}
@@ -111,6 +107,7 @@ Profile.propTypes = {
     name: PropTypes.string,
     image: PropTypes.string,
     isEnrolled: PropTypes.bool,
+    isCertified: PropTypes.bool,
   }),
   userId: PropTypes.number.isRequired,
   isLoading: PropTypes.bool,

@@ -29,6 +29,7 @@ Array [
       "email": undefined,
       "image": undefined,
       "industry": undefined,
+      "isCertified": undefined,
       "isEnrolled": undefined,
       "name": "John Grisham",
       "phoneNumber": 7689567890,
